@@ -71,9 +71,9 @@ python scripts/repro_audit.py --active-only
 python scripts/repro_audit.py --active-only --json
 ```
 
-`FAIL` is an integrity error and returns exit code 1. `PENDING` is expected
-until student identities and repository hosting are finalized.
-`--require-complete` also treats `PENDING` or `WARN` as nonzero. The checkpoint
+`FAIL` is an integrity error and returns exit code 1. The finalized artifact
+currently reports no `PENDING` or `WARN` checks; `--require-complete` treats
+either status as nonzero if a future checkout becomes incomplete. The checkpoint
 does not build, launch searches, regenerate analysis, repair files, or write
 scientific state.
 The active artifact is the default audit scope; `--active-only` makes that
