@@ -2,12 +2,12 @@
 \label{sec:methods}
 
 All conditions use one graph-search engine and differ only in when the nested
-heuristic is evaluated.  Figure~\ref{fig:stages} shows the proposed staged ladder.
+heuristic is evaluated.  Figure~\ref{fig:stages} shows the three-level schedule.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{stage_schematic.pdf}
-  \caption{The proposed three-level staged-evaluation ladder.  A non-goal
+  \caption{The three-level staged-evaluation schedule.  A non-goal
   \Staged{} state expands only after reaching \HFull{}.}
   \label{fig:stages}
 \end{figure}
@@ -71,8 +71,8 @@ Moreover, \EagerFull{}, \LazyFull{}, and \Staged{} all expand non-goal states
 only with the same \HFull{} value.  Promotion preserves ordinal, and
 Equation~\ref{eq:open} fixes final-stage ordering.  Therefore they should
 enumerate successors in the same sequence.  The implementation hashes that
-sequence.  Digest equality is used as a fail-closed empirical invariant in
-addition to the proof and independent BFS cost check.
+sequence.  Digest equality is checked alongside the proof and independent BFS
+cost validation before performance is analyzed.
 
 Counters distinguish deterministic work from timing: expanded and generated
 states, relaxations, pops, stale pops, requeues, calls to Manhattan/prefix/

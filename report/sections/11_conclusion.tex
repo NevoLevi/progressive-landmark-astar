@@ -3,7 +3,7 @@
 
 Progressively evaluating a fixed differential-landmark prefix is correct and
 can avoid substantial heuristic work, but the additional OPEN cycle is not
-free.  Under the locked $4\rightarrow32$ schedule, staging saved a median
+free.  Under the prespecified $4\rightarrow32$ schedule, staging saved a median
 3.10\% of pivot evaluations and 3.02\% of distance reads, while its primary
 paired time ratio relative to ordinary Lazy \Astar{} was 1.0543 with a 95\%
 hierarchical bootstrap interval of $[0.9890,1.1016]$.  The pooled result does
@@ -18,10 +18,9 @@ finding is descriptive and implementation-conditional, but it is supported by
 exact work counters, a negative read-saving/time-ratio association, independent
 BFS validation, and identical full-landmark expansion traces.
 
-The study's scientific value lies in disciplined scope: it combines familiar
-course concepts into a reproducible experiment, states an honest prior-art
-boundary, preserves a sealed map-disjoint protocol, and reports a mixed result
-rather than tuning it away.  Future work could preregister multiple prefix
-sizes or a deployment selector on new maps, port the engine to a lower-level
-language, and test weighted or directed graphs.  Those extensions require new
-data and are not inferred from this evaluation.
+The map-disjoint protocol and exact work counters provide a reproducible
+characterization of one fixed schedule, including the regimes in which it
+helps and those in which it does not.  Future work could preregister multiple
+prefix sizes or a deployment selector on new maps, port the engine to a
+lower-level language, and test weighted or directed graphs.  Those extensions
+would require new data.

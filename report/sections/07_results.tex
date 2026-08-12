@@ -3,22 +3,22 @@
 
 \subsection{Integrity and hypothesis outcomes}
 
-All 800 sealed queries were retained.  Independent BFS and deterministic
+All 800 evaluation queries were retained.  Independent BFS and deterministic
 search replay passed for every query; all four methods returned the BFS cost,
 and \EagerFull{}, \LazyFull{}, and \Staged{} had matching full-landmark
 expansion digests in all 800 cases.  No post-hoc exclusion was made.  These
-checks passed before performance fields were exposed to the analysis.
+checks passed before timing was analyzed.
 
 \begin{table*}[t]
 \centering
 \small
-\caption{Prospectively generated hypothesis outcomes.  H3 is descriptive;
+\caption{Outcomes under the prespecified analysis.  H3 is descriptive;
 its bootstrap fraction and correlation are not significance or causal tests.}
 \label{tab:hypotheses}
 \resizebox{\textwidth}{!}{\input{generated/hypothesis_table.tex}}
 \end{table*}
 
-Table~\ref{tab:hypotheses} reports the registered outcomes.  H2 was supported:
+Table~\ref{tab:hypotheses} reports the prespecified outcomes.  H2 was supported:
 relative to \LazyFull{}, \Staged{} saved a median 3.0976\% of pivot
 evaluations and 3.0172\% of table reads.  The corresponding query-level
 medians were 28 fewer pivots/reads and one avoided suffix call, while the
@@ -59,10 +59,9 @@ compared with 1197.86 and 4043.00 for Manhattan.  Eager evaluation minimized
 OPEN operations but averaged 9,945.68 pivot evaluations.  Ordinary lazy
 evaluation reduced this to 8,353.88 at the cost of 260.06 requeues.  Staging
 reduced it further to 6,048.29 but averaged 437.78 requeues and 599.86 pops.
-No method reopened a state.  The mean-of-query-median times in
-Table~\ref{tab:methods} do not contradict the primary ratio: a ratio of paired
-times and a mean of raw times are different estimands, especially under
-strong map heterogeneity.
+No method reopened a state.  Table~\ref{tab:methods} averages query medians,
+whereas the primary statistic is a median of paired time ratios.  These are
+different estimands, especially under strong map heterogeneity.
 
 \subsection{Map and family crossover}
 

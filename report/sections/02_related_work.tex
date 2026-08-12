@@ -17,11 +17,11 @@ accelerate shortest-path search \citep{goldberg2005computing}.  For an
 undirected graph, a differential heuristic takes
 $|d(\ell,n)-d(\ell,t)|$ and maximizes over pivots
 \citep{sturtevant2009memory}.  Landmark placement, count, memory, and
-preprocessing are therefore established design dimensions, not contributions
-of this project.  Likewise, selecting a fixed subset from many admissible
-heuristics has been studied directly \citep{rayner2013subset}.  We lock a
-deterministic farthest-first order and evaluate its first four members as an
-intermediate stage; we do not optimize a subset on the reported maps.
+preprocessing are established design dimensions.  Selecting a fixed subset
+from many admissible heuristics has also been studied directly
+\citep{rayner2013subset}.  Our intermediate stage uses the first four members
+of a deterministic farthest-first order, without optimizing a subset on the
+reported maps.
 
 \paragraph{Lazy and selective deployment.}
 Lazy \Astar{} initially keys a generated state with a cheap heuristic and
@@ -33,9 +33,10 @@ the archival treatment develops contextual rational deployment more broadly
 \citep{karpas2018rational}.  Selective Max instead learns which heuristic to
 evaluate \citep{domshlak2010max,domshlak2012online}.  Our schedule is neither
 rational nor learned: every non-goal state must reach the complete 32-pivot
-bound before expansion.  The Lazy \Astar{} literature describes extension to
-multiple heuristic stages as straightforward.  Consequently, adding a third
-stage alone is not an algorithmic novelty claim.
+bound before expansion.  The Lazy \Astar{} literature notes that the same
+procedure extends to more than two heuristic stages.  We evaluate the
+resulting cost tradeoff for nested landmark prefixes rather than proposing
+multi-stage evaluation itself.
 
 Dynamic-heuristic work gives a broader formal setting for refining estimates
 during optimal search \citep{christen2025dynamic}.  We use the simpler nested,
@@ -46,11 +47,8 @@ staged full-landmark modes should enumerate successors in exactly the same
 order.
 
 \paragraph{Position of this study.}
-Prior work establishes all ingredients separately: landmark preprocessing,
+Prior work establishes the individual ingredients: landmark preprocessing,
 differential maxima, subset selection, lazy evaluation, and multi-stage
-extension.  Our residual contribution is empirical.  We combine a fixed
-four-pivot prefix with a fixed 32-pivot final bound, then measure whether
-suffix calls avoided on surplus nodes outweigh the added requeues and pops.
-This mechanism-first scope resembles the course's example projects, which
-is useful pedagogically, but algorithmic facts and novelty boundaries here
-are supported by the primary literature rather than by course examples.
+extension.  Here a fixed four-pivot prefix precedes a fixed 32-pivot final
+bound.  The experiments measure whether suffix calls avoided on surplus nodes
+outweigh the added requeues and pops.

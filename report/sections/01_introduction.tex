@@ -19,23 +19,21 @@ heuristic calls compete with extra priority-queue operations.  With a set of
 fixed four-landmark prefix at the first competitive pop, and compute the other
 28 terms only if the state remains competitive at a later pop.
 
-This is a deliberately bounded course project.  It stays within optimal
-single-agent \Astar{}, admissible and consistent heuristics, OPEN-list
-behavior, and empirical comparison---the core material of a search-methods
-course.  The extension adds no learned selector, calibration phase, rational
-bypass, multi-agent solver, or new domain.  Its research question is narrow:
-\emph{does an intermediate fixed landmark prefix save enough remaining
-heuristic work to justify another OPEN cycle, and in which map regimes?}
+We study a fixed schedule for optimal single-agent \Astar{}: Manhattan distance
+at generation, a four-landmark prefix at the first competitive pop, and all 32
+landmarks at the second.  The central question is whether the prefix avoids
+enough suffix evaluations to repay the extra OPEN cycle, and how that balance
+varies across map topologies.
 
-We answer that question under a prospectively fixed protocol.  Four methods
-share one deterministic graph-search engine: Manhattan distance,
+The protocol compares four methods in one deterministic graph-search engine:
+Manhattan distance,
 eager evaluation of 32 landmarks, ordinary Lazy \Astar{} from Manhattan to all
 32 landmarks, and progressive evaluation from Manhattan to four and then 32
-landmarks.  The prefix and full counts are fixed at $K=4$ and $M=32$; no
-development outcome selects them.  Twelve checksum-pinned Moving AI maps
-define a map-disjoint split: four development maps authorize the unchanged
-run, and eight sealed maps supply the reported 800-query evaluation.  Timing
-uses rotated blocks in which every method occurs twice in every order
+landmarks.  The prefix and full counts were set to $K=4$ and $M=32$ before the
+formal runs.  Twelve checksum-pinned Moving AI maps define a map-disjoint
+split: four development maps validate the implementation and analysis, and
+eight previously untouched maps supply the reported 800-query evaluation.
+Timing uses rotated blocks in which every method occurs twice in every order
 position.
 
 The central result is a mechanism/performance split.  The staged method did
@@ -49,13 +47,11 @@ read saving and log time ratio had descriptive Spearman correlation
 $\rho=-0.6406$, consistent with a crossover but not identifying a causal
 effect.
 
-The paper contributes (i) a fully specified three-level evaluation schedule
-for a nested differential heuristic; (ii) a correctness argument and a
-trace-invariance gate that separates scheduling from search order; and (iii)
+The paper contributes (i) a specified three-level evaluation schedule for a
+nested differential heuristic; (ii) a correctness argument and a
+trace-invariance test that separates scheduling from search order; and (iii)
 a reproducible, map-disjoint decomposition of saved pivot work, extra OPEN
-work, runtime, and preprocessing amortization.  The novelty boundary is
-intentionally modest.  Landmark lower bounds, differential heuristics,
-heuristic subsets, Lazy \Astar{}, and extension to more than two stages are
-prior ideas.  A targeted literature search did not locate this exact fixed-
-prefix, node-level staging experiment; that is not an exhaustive priority
-claim.
+work, runtime, and preprocessing amortization.  Landmark lower bounds,
+differential heuristics, heuristic subsets, Lazy \Astar{}, and multi-stage
+evaluation are established ideas.  We found no prior node-level experiment
+with this fixed-prefix schedule, although differently named work may exist.

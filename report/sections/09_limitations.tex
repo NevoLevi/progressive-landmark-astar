@@ -17,11 +17,11 @@ Families occur on both sides of the map-disjoint split, so this tests new maps
 within known families rather than unseen-domain generalization.
 
 \paragraph{Fixed design choices.}
-$K=4$, $M=32$, and deterministic farthest-first placement are one locked
+$K=4$, $M=32$, and deterministic farthest-first placement form one prespecified
 configuration.  The prefix may be unusually informative in some topologies
 and redundant in others.  We did not compare alternate prefix sizes, pivot
 orders, compression, adaptive stopping, or active-landmark techniques.  This
-restriction prevents tuning to the sealed maps but limits the conclusions to
+restriction prevents tuning to the evaluation maps but limits the conclusions to
 the specified schedule.
 
 \paragraph{Implementation and measurement.}
@@ -38,7 +38,7 @@ A shared engine and trace digest greatly reduce implementation confounds, but
 they also share any common bug.  Independent BFS, legal-path validation,
 exhaustive small-map tests, immutable source hashes, deterministic replays,
 and strict artifact loaders provide independent layers.  Expansion-trace
-equality is an implementation invariant under the frozen tie breaker; it is
+equality is an implementation invariant under the specified tie breaker; it is
 not a general theorem that every Lazy \Astar{} implementation must duplicate
 eager order.
 
@@ -47,19 +47,17 @@ Every algorithmic ingredient has close prior art.  ALT and differential
 heuristics establish landmark bounds; subset work establishes that a fixed
 selection can trade evaluation cost and informativeness; Lazy \Astar{}
 establishes delayed evaluation and notes straightforward multi-stage
-extension.  We claim only a controlled study of their intersection and did
-not find an exact match in a targeted search.  Differently named or unpublished
-work may exist.
+extension.  This experiment studies their intersection.  A targeted search
+found no exact match, although differently named or unpublished work may
+exist.
 
-\paragraph{Mechanical rerun.}
+\paragraph{Analysis rerun.}
 The first complete development/evaluation attempt is preserved separately.
-Before statistical output was published, analysis failed closed because it
-compared an immutable loaded schedule represented by tuples with the
-equivalent JSON plan represented by lists.  One container-normalization fix
-and a direct regression test were added.  No algorithm, protocol, query,
-$K/M$ value, or estimand changed.  Because the analysis source was
-prospectively hash-bound, all formal searches were rerun under the separately
-identified \texttt{progressive\_landmarks\_v2\_rerun1} bundle.  The 800
-deterministic summaries match the first attempt exactly; only timings were
-remeasured.  This is an analysis-integration correction, not a result-driven
-rerun.
+Before statistical output was produced, analysis stopped on a representation
+mismatch: the loaded schedule used tuples while the equivalent JSON plan used
+lists.  We normalized the container types, added a regression test, and reran
+the full experiment because the analysis source hash had been fixed before the
+first run.  The algorithm, protocol, queries, $K/M$ values, and estimands were
+unchanged.  The 800 deterministic summaries match the first attempt; only
+timings were remeasured.  The correction was not prompted by the observed
+performance.

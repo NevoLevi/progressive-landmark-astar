@@ -28,14 +28,14 @@ runner for sealed evaluation while supplying that freeze; and (5) generate all
 statistics and figures with \path{scripts/analyze_progressive_landmarks.py}.
 Every command binds the v2 configuration and repository root.  The final three
 stages also bind the development directory, audit, freeze, sealed directory,
-and analysis directory named above, so a superseded or substituted artifact
-fails closed.
+and analysis directory named above; a superseded or substituted artifact is
+rejected.
 
 Output directories are write-once and published atomically.  Manifests bind
 file sizes, record counts, schemas, and SHA-256 hashes.  Formal loading replays
 the canonical query plan, source maps, landmark tables, BFS oracle, paths,
-method summaries, counters, and expansion digests instead of trusting
-coherently edited stored fields.  The development audit records
+method summaries, counters, and expansion digests, and validates the stored
+fields against those recomputations.  The development audit records
 \texttt{selection\_performed=false}; its freeze is required to authorize
 sealed evaluation.  Analysis again validates that authorization and all
 correctness gates before reading timing.

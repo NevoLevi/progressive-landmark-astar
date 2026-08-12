@@ -62,9 +62,8 @@ one was 0.053.  The crossover was strongly regime-dependent: both maze maps
 favored staging, whereas both warehouse maps had zero median read saving and
 favored ordinary lazy evaluation.  Thus the extra OPEN cycle can erase a real
 reduction in heuristic work; a fixed prefix is useful only when it filters
-enough full evaluations.  The contribution is this controlled empirical
-combination and mechanism decomposition, not a claim to invent landmarks,
-subsets, or multi-stage Lazy \Astar{}.
+enough full evaluations.  The experiment isolates that tradeoff by separating
+saved landmark work from the additional OPEN operations introduced by staging.
 \end{abstract}
 
 \input{sections/01_introduction}

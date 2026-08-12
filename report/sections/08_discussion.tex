@@ -1,18 +1,18 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{RQ1: controlled correctness.}
-The correctness and invariance gate passed without exceptions.  Cost equality
+\paragraph{RQ1: correctness and trace invariance.}
+All correctness and trace-invariance checks passed.  Cost equality
 alone would allow subtle scheduling differences to remain hidden.  Identical
 full-landmark expansion digests additionally show that eager, lazy, and staged
-conditions performed the same successor-enumerating search under the frozen
+conditions performed the same successor-enumerating search under the specified
 tie breaker.  Their differences in time and counters can therefore be
 localized to evaluation timing and OPEN promotions rather than to different
 expanded state sets.
 
-\paragraph{RQ2: staging saved real work.}
-The prefix was not merely ceremonial.  Staging reduced median pivot and read
-work by about 3\%, and much more on maze queries.  In operational terms,
+\paragraph{RQ2: staging saved landmark work.}
+Staging reduced median pivot and read work by about 3\%, and much more on maze
+queries.  In operational terms,
 \LazyFull{} evaluates all 32 terms whenever a cheap state becomes competitive;
 \Staged{} spends four reads first and avoids the other 28 when that prefix
 pushes the state below competitors.  The saving is exact and deterministic.
@@ -24,9 +24,8 @@ Every intermediate evaluation requires another pop and requeue.  The staged
 schedule averaged roughly 178 more requeues and 178 more pops per query than
 ordinary lazy evaluation.  Its primary paired ratio of 1.0543 therefore points toward
 a modest slowdown at the pooled median, while the 95\% interval includes
-parity.  We interpret this as bounded negative evidence for universal use of
-this fixed prefix, not as proof that staging can never help.  Indeed, the maze
-maps show the expected positive regime.
+parity.  The result argues against universal use of this fixed prefix, but does
+not imply that staging never helps.  The maze maps show a positive regime.
 
 The strong negative Spearman association between read saving and log time
 ratio supports the proposed mechanism descriptively: queries that avoided a
@@ -41,14 +40,14 @@ median saving on both maps, so it added a nearly pure heap cycle before the
 same suffix work.  Mazes are the clearest success regime: the prefix filtered
 enough candidates to save about 30\% of reads on both maps, outweighing
 promotion overhead.  Random and room maps occupy intermediate or mixed
-regimes.  This crossover is more informative than a single leaderboard rank:
-it specifies when the simple schedule's mechanism is active.
+regimes.  The crossover shows that the schedule's effect depends on whether
+the prefix filters enough suffix evaluations in a given topology.
 
 Landmark construction changes the deployment decision at a different level.
 If a map receives only a few queries, even a fast landmark search cannot repay
 dozens of BFS preprocessing passes.  At high query volume the fixed cost is
 small per query, and all landmark modes beat Manhattan under the study's
-equal-map average.  The analysis deliberately charges the same build cost to
+equal-map average.  The analysis charges the same build cost to
 eager, lazy, and staged modes because they use the same table; staging is a
 query-time schedule, not a preprocessing improvement.
 
@@ -59,5 +58,5 @@ calls saved on surplus nodes versus extra OPEN manipulation
 do not challenge rational or learned methods, which may choose conditionally
 whether to evaluate \citep{karpas2018rational,domshlak2012online}.  A natural
 extension would use predecision features to choose between ordinary lazy and
-staged schedules.  That is intentionally future work: fitting such a selector
-after seeing these maps would change the question and require a new split.
+staged schedules.  Fitting such a selector on these maps would require a new
+split to avoid post-hoc adaptation.
