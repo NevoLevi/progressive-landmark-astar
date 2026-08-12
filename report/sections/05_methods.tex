@@ -1,0 +1,82 @@
+\section{Methods and Correctness}
+\label{sec:methods}
+
+All conditions use one graph-search engine and differ only in when the nested
+heuristic is evaluated.  Figure~\ref{fig:stages} shows the proposed staged ladder.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{stage_schematic.pdf}
+  \caption{The proposed three-level staged-evaluation ladder.  A non-goal
+  \Staged{} state expands only after reaching \HFull{}.}
+  \label{fig:stages}
+\end{figure}
+
+\paragraph{\Manhattan.}
+The start and every accepted state receive only \HMan{} and expand on a valid
+pop.  This is the cheap, weak baseline.
+
+\paragraph{\EagerFull.}
+Every accepted state receives \HFull{} immediately.  This avoids heuristic
+promotion and requeue overhead but pays all 32 landmark terms even for states
+that never expand.
+
+\paragraph{\LazyFull.}
+Following Lazy \Astar{}, the start is fully evaluated before insertion.
+Other accepted states initially receive \HMan{}.  A valid non-goal pop at the
+cheap stage computes \HFull{} and requeues the state with the same insertion
+ordinal; a later full-stage pop expands it.  A promotion occurs even when the
+numeric estimate does not increase.
+
+\paragraph{\Staged.}
+The start computes \HPrefix{} and then the remaining 28 terms before its
+initial insertion.  Other states begin with \HMan{}.  Their first valid
+non-goal pop computes \HPrefix{} and requeues; a second competitive pop
+computes only the remaining terms and requeues; a full-stage pop expands.
+This method cannot bypass the suffix if a state is to expand.
+
+\subsection{Shared graph-search contract}
+
+OPEN entries are ordered lexicographically by
+\begin{equation}
+ (f,-g,\textit{ordinal},\textit{row-major id},
+  \textit{version},\textit{stage}).
+ \label{eq:open}
+\end{equation}
+A successful relaxation receives a fresh ordinal; heuristic promotion
+preserves it.  Per-state labels store the best $g$, parent, version, ordinal,
+completed stage, and current $h$.  Stale entries are discarded.  Cached
+heuristic stages survive a later strict better-$g$ relaxation because their
+values do not depend on $g$.  CLOSED reopening is implemented even though
+consistency made its count zero in this experiment.
+
+On a valid pop, the goal test precedes expensive refinement.  Every heuristic
+is zero at the goal, so refinement could not raise its key.  A non-goal state
+enumerates successors only at its condition's final stage.  We define
+\emph{expanded} accordingly; the returned goal is not counted as expanded and
+does not enter the expansion digest.
+
+\subsection{Optimality and trace equivalence}
+
+At every stage, $f=g+h$ is a lower bound on the cost of a solution through the
+entry.  Suppose a goal with cost $C$ is validly popped.  If a cheaper solution
+of cost $C'<C$ existed, some frontier state on that path would have a current
+key at most $C'$.  If unrefined, it would be popped, refined to another lower
+bound no greater than $C'$, and requeued; if fully refined, it would precede
+the goal.  Either case contradicts the goal being minimal in OPEN.  Finite
+maps, positive costs, stale-entry rejection, and reopening give completeness
+for every valid query.
+
+Moreover, \EagerFull{}, \LazyFull{}, and \Staged{} all expand non-goal states
+only with the same \HFull{} value.  Promotion preserves ordinal, and
+Equation~\ref{eq:open} fixes final-stage ordering.  Therefore they should
+enumerate successors in the same sequence.  The implementation hashes that
+sequence.  Digest equality is used as a fail-closed empirical invariant in
+addition to the proof and independent BFS cost check.
+
+Counters distinguish deterministic work from timing: expanded and generated
+states, relaxations, pops, stale pops, requeues, calls to Manhattan/prefix/
+suffix/full stages, pivot evaluations, table reads, cache hits, discovered
+states, and maximum OPEN/live-state sizes.  Timing covers the complete search,
+while per-stage timers are disabled to avoid instrumentation changing the
+quantity measured.

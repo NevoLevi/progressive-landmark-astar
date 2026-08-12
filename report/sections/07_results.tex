@@ -1,0 +1,162 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Integrity and hypothesis outcomes}
+
+All 800 sealed queries were retained.  Independent BFS and deterministic
+search replay passed for every query; all four methods returned the BFS cost,
+and \EagerFull{}, \LazyFull{}, and \Staged{} had matching full-landmark
+expansion digests in all 800 cases.  No post-hoc exclusion was made.  These
+checks passed before performance fields were exposed to the analysis.
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Prospectively generated hypothesis outcomes.  H3 is descriptive;
+its bootstrap fraction and correlation are not significance or causal tests.}
+\label{tab:hypotheses}
+\resizebox{\textwidth}{!}{\input{generated/hypothesis_table.tex}}
+\end{table*}
+
+Table~\ref{tab:hypotheses} reports the registered outcomes.  H2 was supported:
+relative to \LazyFull{}, \Staged{} saved a median 3.0976\% of pivot
+evaluations and 3.0172\% of table reads.  The corresponding query-level
+medians were 28 fewer pivots/reads and one avoided suffix call, while the
+median additional OPEN work was 116 combined queue operations (insertions and
+pops).  Pivot-evaluation savings were nonnegative (420 positive, 380 zero) and
+skewed: the median was 3.10\%, the mean 13.44\%, and the IQR 0--27.34\%.  This is a
+heuristic-work improvement, not a wall-clock improvement.
+
+\subsection{Search time and deterministic work}
+
+The primary staged/lazy time ratio was 1.054300.  Its map-then-query
+hierarchical bootstrap interval was $[0.989043,1.101585]$; 5.3\% of bootstrap
+replicates had a ratio below one.  Since the interval includes one and only
+eight top-level clusters are available, we make no categorical dominance or
+significance claim.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Overall per-query summaries on 800 evaluation queries.  Time is the
+mean of each query's eight-run median, in ms; counters are query means.}
+\label{tab:methods}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Time & Expanded & Pops & Requeues & Reads \\
+\midrule
+Manhattan & 15.535 & 1197.86 & 1356.08 & 0.00 & 0.00 \\
+Eager full & 8.149 & 160.69 & 162.09 & 0.00 & 9977.68 \\
+Lazy full & 8.282 & 160.69 & 422.15 & 260.06 & 8385.88 \\
+Staged & 8.056 & 160.69 & 599.86 & 437.78 & 6080.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:methods} exposes the tradeoff.  All full-landmark schedules
+averaged 160.69 expansions and 517.30 generated successors per query,
+compared with 1197.86 and 4043.00 for Manhattan.  Eager evaluation minimized
+OPEN operations but averaged 9,945.68 pivot evaluations.  Ordinary lazy
+evaluation reduced this to 8,353.88 at the cost of 260.06 requeues.  Staging
+reduced it further to 6,048.29 but averaged 437.78 requeues and 599.86 pops.
+No method reopened a state.  The mean-of-query-median times in
+Table~\ref{tab:methods} do not contradict the primary ratio: a ratio of paired
+times and a mean of raw times are different estimands, especially under
+strong map heterogeneity.
+
+\subsection{Map and family crossover}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{per_map_time_ratios.pdf}
+  \caption{Per-map distributions of paired staged/lazy search-time ratios.
+  The horizontal reference at one denotes equal time.}
+  \label{fig:map-ratios}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Per-map medians.  Ratio $<1$ favors staged evaluation; read saving is
+relative to ordinary lazy evaluation.  V and H denote validation- and
+holdout-source maps.}
+\label{tab:maps}
+\begin{tabular}{llrr}
+\toprule
+Family & Source/map & Time ratio & Read saving \\
+\midrule
+Maze & V: 128-2 & 0.935 & 31.17\% \\
+Maze & H: 128-10 & 0.934 & 30.34\% \\
+Random & V: 32-20 & 1.069 & 2.50\% \\
+Random & H: 32-10 & 1.110 & 0.00\% \\
+Room & V: 64-16 & 0.990 & 18.47\% \\
+Room & H: 32-4 & 1.039 & 11.46\% \\
+Warehouse & V: 10-20-1 & 1.137 & 0.00\% \\
+Warehouse & H: 10-20-2 & 1.157 & 0.00\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:map-ratios} and Table~\ref{tab:maps} show repeatable family
+regimes.  Both maze maps saved about 30--31\% of reads and favored staging by
+about 6.5\%.  Both warehouse maps had zero median read saving and favored
+ordinary lazy evaluation by 13.7--15.7\%.  Random maps favored lazy, while the
+two room maps lay on opposite sides of one.  The same direction on the two
+maze and two warehouse maps is suggestive replication within those families,
+not a population-level guarantee.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{family_mechanism_decomposition.pdf}
+  \caption{Family-level decomposition of saved landmark work and added OPEN
+  work.  Families are equal-weighted through their constituent queries.}
+  \label{fig:families}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{saved_work_vs_time.pdf}
+  \caption{Query-level exact work changes versus paired time ratio.  The
+  association is descriptive and queries within a map are dependent.}
+  \label{fig:saved-work}
+\end{figure*}
+
+Across all 800 queries, read-saving fraction and log time ratio had Spearman
+$\rho=-0.640611$; extra OPEN work and log ratio had $\rho=-0.240994$.
+Figure~\ref{fig:saved-work} makes the crossover visible but does not isolate a
+causal coefficient: difficulty, topology, and absolute search size affect both
+the counters and time.
+
+\subsection{Preprocessing amortization}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{preprocessing_amortization.pdf}
+  \caption{Equal-map-weighted amortized time as the one-time 32-landmark table
+  construction is spread over $Q$ queries.}
+  \label{fig:amortization}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Mean amortized ms/query, equal-weighting eight maps.}
+\label{tab:amortization}
+\begin{tabular}{rrrrr}
+\toprule
+$Q$ & Manhattan & Eager & Lazy & Staged \\
+\midrule
+1 & 15.535 & 1881.862 & 1881.995 & 1881.769 \\
+10 & 15.535 & 195.520 & 195.653 & 195.427 \\
+100 & 15.535 & 26.886 & 27.019 & 26.793 \\
+1000 & 15.535 & 10.023 & 10.155 & 9.929 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Preprocessing dominates when a table serves few queries
+(Figure~\ref{fig:amortization}, Table~\ref{tab:amortization}).  At $Q=100$ all
+landmark modes remain slower than Manhattan after charging construction;
+at $Q=1000$ they are faster under this equal-map average.  Because all three
+landmark schedules share exactly the same table, preprocessing barely changes
+their relative order; it changes the practical comparison with Manhattan.

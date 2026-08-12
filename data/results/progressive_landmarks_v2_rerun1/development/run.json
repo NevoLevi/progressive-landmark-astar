@@ -1,0 +1,368 @@
+{
+  "bindings": {
+    "code": {
+      "files": {
+        "analysis": {
+          "bytes": 85541,
+          "path": "src/python/progressive_landmarks/analysis.py",
+          "sha256": "9497e8d6df3964e391aef1d651152e9824f415d254504184e3177cbd7625d853"
+        },
+        "analysis_cli": {
+          "bytes": 2932,
+          "path": "scripts/analyze_progressive_landmarks.py",
+          "sha256": "35d8a8e8a44ff536f51bc4c2466e1a6d0f5d3f5e66aeee2cc35a3eb07c1705a2"
+        },
+        "cli": {
+          "bytes": 2116,
+          "path": "scripts/run_progressive_landmarks.py",
+          "sha256": "87c632e593be32f2b0f4e6c7d23a8fba1258170caced332df8063204b4b6ade6"
+        },
+        "core": {
+          "bytes": 34013,
+          "path": "src/python/progressive_landmarks/core.py",
+          "sha256": "fe95b1bb90ad2c4df46ce068d4095694680948e5ed965e41a71c3ade6d826b38"
+        },
+        "development_gate": {
+          "bytes": 40041,
+          "path": "src/python/progressive_landmarks/development_gate.py",
+          "sha256": "c14aabca1c027b682aae354ff18cc6ca6aea623515bacef196dd6e94c66f76c3"
+        },
+        "freeze_cli": {
+          "bytes": 2552,
+          "path": "scripts/freeze_progressive_landmarks_development.py",
+          "sha256": "137aed37de8daa92d387e8c2f3622b5d3298ab786580bcdfe746b442a0d6c79f"
+        },
+        "package_init": {
+          "bytes": 1130,
+          "path": "src/python/progressive_landmarks/__init__.py",
+          "sha256": "aef76874738886fac021b1c554d51b255c3c62e97e3716b1ad3df36ee7d06025"
+        },
+        "protocol": {
+          "bytes": 32758,
+          "path": "src/python/progressive_landmarks/protocol.py",
+          "sha256": "baee6d0ab05b0fd46594364b917370c1108feba629ec3f3c54f5bf5cd21f376b"
+        },
+        "runner": {
+          "bytes": 80051,
+          "path": "src/python/progressive_landmarks/runner.py",
+          "sha256": "79e6922fe6cae05c5ced8877af2910c88d144f338ca8f82c041076bec7f51964"
+        }
+      },
+      "sha256": "6412fb0e509302fed5c3f58d82b5e0dae761ffcf8da5ee7ae7aab5c11d0d0d92"
+    },
+    "config": {
+      "hash_basis": "file-bytes",
+      "path": "configs/progressive_landmarks_v2.json",
+      "sha256": "850176ee199020920e9a425db2fced560c776993148775472e2098e33c125410"
+    },
+    "environment": {
+      "sha256": "81b259dab46ecd63103a3a5e302c791a9b14732ad5ed4da93c1551ebf58b7830",
+      "value": {
+        "byteorder": "little",
+        "cpu_count": 8,
+        "machine": "AMD64",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+        "python_compiler": "MSC v.1943 64 bit (AMD64)",
+        "python_executable": "C:\\Users\\user\\miniforge3\\python.exe",
+        "python_implementation": "CPython",
+        "python_version": "3.12.9",
+        "pythonhashseed": null
+      }
+    },
+    "plan_sha256": "01aa82ec39842555d2e24216ccd93b9197f498daebf30e0e61aedd4fee5bd523",
+    "protocol_id": "progressive_landmarks_v2",
+    "source": {
+      "sha256": "59b2b998a8d0b4588c84ec5129681904d981faa094441344a92c936adb02733c",
+      "value": {
+        "snapshot": {
+          "checksums": {
+            "path": "SHA256SUMS",
+            "sha256": "099900be19063488f8d09a77e691977c2a1182bbc2f7e33dc00c2c7e22c1a47f"
+          },
+          "corpus_id": "cbs_cgdgwdg_map_split_v1",
+          "manifest": {
+            "path": "CORPUS_MANIFEST.json",
+            "sha256": "c4425b97a0ed60cf389c35d7bda9a2756da89bd687431593e10e89b3757e1bb9"
+          },
+          "relative_root": "data/source/movingai_mapf_2021-06-17"
+        },
+        "split_inputs": [
+          {
+            "experiment_split": "development",
+            "family": "maze",
+            "map": {
+              "connected_components": 1,
+              "height": 128,
+              "path": "corpus/maps/maze-128-128-1.map",
+              "sha256": "9ef42dc6c43a2b07364c9678b7501a6a7ff1fc7e61215abae6d34000ba8e70c9",
+              "traversable_states": 8191,
+              "width": 128
+            },
+            "query_count": 40,
+            "scenarios": [
+              {
+                "index": 1,
+                "path": "corpus/scenarios/maze-128-128-1-random-1.scen",
+                "sha256": "fc9bdd0ab63ff0c4ba49a173912991f120adfec10791c64f6aedf3c53c865c97"
+              },
+              {
+                "index": 2,
+                "path": "corpus/scenarios/maze-128-128-1-random-2.scen",
+                "sha256": "d10fd5803e9f65ceadbbccf4ad1ba54f653e9e27c11e8f3fcdf781ca9e91ecfa"
+              },
+              {
+                "index": 3,
+                "path": "corpus/scenarios/maze-128-128-1-random-3.scen",
+                "sha256": "b4a49653e2806bcc970eeeac42cde1551f1f108ced57116648e7df642b6d403f"
+              },
+              {
+                "index": 4,
+                "path": "corpus/scenarios/maze-128-128-1-random-4.scen",
+                "sha256": "7525d937c86764b9614b84a3ee517c8f8d1691b5e88f43bfc8191498c1776703"
+              }
+            ],
+            "source_split": "train"
+          },
+          {
+            "experiment_split": "development",
+            "family": "random",
+            "map": {
+              "connected_components": 1,
+              "height": 64,
+              "path": "corpus/maps/random-64-64-10.map",
+              "sha256": "b31c671228f884a113ca11c41b83630dc042e58e07f9b36da74ec508f82a5659",
+              "traversable_states": 3687,
+              "width": 64
+            },
+            "query_count": 40,
+            "scenarios": [
+              {
+                "index": 1,
+                "path": "corpus/scenarios/random-64-64-10-random-1.scen",
+                "sha256": "6c1701dc331408bd92f0762abb039abddf47a0d3e81a1d097b374f29de3e75a7"
+              },
+              {
+                "index": 2,
+                "path": "corpus/scenarios/random-64-64-10-random-2.scen",
+                "sha256": "30a474f11d443bfe69599aabfbd85c6428dc0ac13026e659c3d32e24f2ad3e2a"
+              },
+              {
+                "index": 3,
+                "path": "corpus/scenarios/random-64-64-10-random-3.scen",
+                "sha256": "347d73b98f8b484b353a562401a5307660b4aa318bc49c5efb6b14cf8de24475"
+              },
+              {
+                "index": 4,
+                "path": "corpus/scenarios/random-64-64-10-random-4.scen",
+                "sha256": "67296b3043eaa665a87bf0ddd0feb739dccb8742ff84197142da50309c58a4ab"
+              }
+            ],
+            "source_split": "train"
+          },
+          {
+            "experiment_split": "development",
+            "family": "room",
+            "map": {
+              "connected_components": 1,
+              "height": 64,
+              "path": "corpus/maps/room-64-64-8.map",
+              "sha256": "56946a2411a64631f4ab7ca8dd17439e619ad066fc1d2bf2fd19516fc24f28dc",
+              "traversable_states": 3232,
+              "width": 64
+            },
+            "query_count": 40,
+            "scenarios": [
+              {
+                "index": 1,
+                "path": "corpus/scenarios/room-64-64-8-random-1.scen",
+                "sha256": "5a1a811af4953d76d14eb4c4482ed9efbb6a61876344be1ab89e8be512324406"
+              },
+              {
+                "index": 2,
+                "path": "corpus/scenarios/room-64-64-8-random-2.scen",
+                "sha256": "b6a5bac9c52303b3fc2225db1e0a9e049ca5c6d661bd8453a36a19d3b6c854a1"
+              },
+              {
+                "index": 3,
+                "path": "corpus/scenarios/room-64-64-8-random-3.scen",
+                "sha256": "ae83c40d15b1dd27d4ead03501f5950d73a73a0f187e948ab302e8155712c6fc"
+              },
+              {
+                "index": 4,
+                "path": "corpus/scenarios/room-64-64-8-random-4.scen",
+                "sha256": "8980fe26c111d1bd2171b92a1612a7681bbcebcbef9e511d65c84b735be42f88"
+              }
+            ],
+            "source_split": "train"
+          },
+          {
+            "experiment_split": "development",
+            "family": "warehouse",
+            "map": {
+              "connected_components": 1,
+              "height": 123,
+              "path": "corpus/maps/warehouse-20-40-10-2-1.map",
+              "sha256": "bd3bec2d1c20a8bbf900583cb4c2cf9dc16101470fbfae93b272ee0fb575d3ec",
+              "traversable_states": 22599,
+              "width": 321
+            },
+            "query_count": 40,
+            "scenarios": [
+              {
+                "index": 1,
+                "path": "corpus/scenarios/warehouse-20-40-10-2-1-random-1.scen",
+                "sha256": "b7447e1dfd250ddebc748d7e87da23071d9a77437da755759bc4beab9f5ffd31"
+              },
+              {
+                "index": 2,
+                "path": "corpus/scenarios/warehouse-20-40-10-2-1-random-2.scen",
+                "sha256": "4ef0ed80d7c035020636dd15bfe8485bf6fabb7cdc992cf34cc1244091570f54"
+              },
+              {
+                "index": 3,
+                "path": "corpus/scenarios/warehouse-20-40-10-2-1-random-3.scen",
+                "sha256": "6fee71f4a6d4afa254d9d547ff5f96375078c0dc60f22db5daf3f77ed8c69d8a"
+              },
+              {
+                "index": 4,
+                "path": "corpus/scenarios/warehouse-20-40-10-2-1-random-4.scen",
+                "sha256": "81f85e6a5a839fb4917af57b418fed93e90319b7dcc098b94092d3785ded0daa"
+              }
+            ],
+            "source_split": "train"
+          }
+        ]
+      }
+    }
+  },
+  "completed_at_utc": "2026-08-12T14:26:40.479605Z",
+  "counts": {
+    "maps": 4,
+    "queries": 160,
+    "search_runs": 5760,
+    "searches_per_query": 36,
+    "timed_repetitions": 8,
+    "warmup_repetitions": 1
+  },
+  "evaluation_authorization": null,
+  "experiment_split": "development",
+  "formal": true,
+  "landmarks": {
+    "full_pivots": 32,
+    "staged_prefix_pivots": 4
+  },
+  "methods": [
+    "manhattan",
+    "eager_full",
+    "lazy_full",
+    "staged"
+  ],
+  "nonformal_smoke": false,
+  "protocol_id": "progressive_landmarks_v2",
+  "schedule": [
+    {
+      "methods": [
+        "manhattan",
+        "eager_full",
+        "lazy_full",
+        "staged"
+      ],
+      "phase": "warmup",
+      "repetition": 0,
+      "timed": false
+    },
+    {
+      "methods": [
+        "manhattan",
+        "eager_full",
+        "lazy_full",
+        "staged"
+      ],
+      "phase": "timed",
+      "repetition": 0,
+      "timed": true
+    },
+    {
+      "methods": [
+        "eager_full",
+        "lazy_full",
+        "staged",
+        "manhattan"
+      ],
+      "phase": "timed",
+      "repetition": 1,
+      "timed": true
+    },
+    {
+      "methods": [
+        "lazy_full",
+        "staged",
+        "manhattan",
+        "eager_full"
+      ],
+      "phase": "timed",
+      "repetition": 2,
+      "timed": true
+    },
+    {
+      "methods": [
+        "staged",
+        "manhattan",
+        "eager_full",
+        "lazy_full"
+      ],
+      "phase": "timed",
+      "repetition": 3,
+      "timed": true
+    },
+    {
+      "methods": [
+        "manhattan",
+        "eager_full",
+        "lazy_full",
+        "staged"
+      ],
+      "phase": "timed",
+      "repetition": 4,
+      "timed": true
+    },
+    {
+      "methods": [
+        "eager_full",
+        "lazy_full",
+        "staged",
+        "manhattan"
+      ],
+      "phase": "timed",
+      "repetition": 5,
+      "timed": true
+    },
+    {
+      "methods": [
+        "lazy_full",
+        "staged",
+        "manhattan",
+        "eager_full"
+      ],
+      "phase": "timed",
+      "repetition": 6,
+      "timed": true
+    },
+    {
+      "methods": [
+        "staged",
+        "manhattan",
+        "eager_full",
+        "lazy_full"
+      ],
+      "phase": "timed",
+      "repetition": 7,
+      "timed": true
+    }
+  ],
+  "schema": "progressive-landmarks-run-v2",
+  "started_at_utc": "2026-08-12T14:25:31.041676Z",
+  "status": "complete",
+  "validation": "passed"
+}

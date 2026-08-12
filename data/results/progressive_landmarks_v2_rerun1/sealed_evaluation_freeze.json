@@ -1,0 +1,58 @@
+{
+  "authorization": "sealed_evaluation",
+  "bindings": {
+    "analysis_cli_sha256": "35d8a8e8a44ff536f51bc4c2466e1a6d0f5d3f5e66aeee2cc35a3eb07c1705a2",
+    "analysis_sha256": "9497e8d6df3964e391aef1d651152e9824f415d254504184e3177cbd7625d853",
+    "cli_sha256": "87c632e593be32f2b0f4e6c7d23a8fba1258170caced332df8063204b4b6ade6",
+    "code_sha256": "6412fb0e509302fed5c3f58d82b5e0dae761ffcf8da5ee7ae7aab5c11d0d0d92",
+    "config_sha256": "850176ee199020920e9a425db2fced560c776993148775472e2098e33c125410",
+    "core_sha256": "fe95b1bb90ad2c4df46ce068d4095694680948e5ed965e41a71c3ade6d826b38",
+    "development_gate_sha256": "c14aabca1c027b682aae354ff18cc6ca6aea623515bacef196dd6e94c66f76c3",
+    "environment_sha256": "81b259dab46ecd63103a3a5e302c791a9b14732ad5ed4da93c1551ebf58b7830",
+    "freeze_cli_sha256": "137aed37de8daa92d387e8c2f3622b5d3298ab786580bcdfe746b442a0d6c79f",
+    "plan_sha256": "01aa82ec39842555d2e24216ccd93b9197f498daebf30e0e61aedd4fee5bd523",
+    "protocol_id": "progressive_landmarks_v2",
+    "protocol_sha256": "baee6d0ab05b0fd46594364b917370c1108feba629ec3f3c54f5bf5cd21f376b",
+    "runner_sha256": "79e6922fe6cae05c5ced8877af2910c88d144f338ca8f82c041076bec7f51964",
+    "source_snapshot_sha256": "75640e53f03ca928a5e528ae392e9cad95affb8f7368934b1e5d33d35c8b64b1"
+  },
+  "development_audit": {
+    "path": "development_audit.json",
+    "schema": "progressive-landmarks-development-audit-v2",
+    "sha256": "d8792f0d34ef344b9dcd7aa441b4463c38769724803f2b9e807ba992fa8beab1"
+  },
+  "development_result": {
+    "artifact_bindings": {
+      "development_freeze_candidate.json": {
+        "bytes": 2153,
+        "records": 1,
+        "sha256": "dcb98ad65e6ddb274d3cdec46454b8918db6a17a2ad46dbdfe23b7442278d679"
+      },
+      "maps.json": {
+        "bytes": 8323,
+        "records": 4,
+        "sha256": "f426aee15cee7e3dd83a448b0fb930b8c203403cbf70f6d60ccbe706d5a001f1"
+      },
+      "queries.jsonl": {
+        "bytes": 4404376,
+        "records": 160,
+        "sha256": "6dc517fd7b239b24ab82bfd578b2dea27b130bf9dfce9eb9d3305617518e6bb3"
+      },
+      "run.json": {
+        "bytes": 11834,
+        "records": 1,
+        "sha256": "ec98e11f1a5a94eba1cf09f0038fc94185b18754d2a855b9fc3bb316d3d3bf0d"
+      }
+    },
+    "complete": true,
+    "formal": true,
+    "manifest_path": "development/manifest.json",
+    "manifest_sha256": "1d993d4ac7106730f5cddbfe7b5c15d979e8e4da9652b2a2d9f67b781d68814d",
+    "map_count": 4,
+    "query_count": 160,
+    "search_run_count": 5760,
+    "validation": "passed"
+  },
+  "issued_by": "progressive-landmarks-external-development-gate-v2",
+  "schema": "progressive-landmarks-sealed-evaluation-freeze-v2"
+}

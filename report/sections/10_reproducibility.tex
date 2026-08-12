@@ -1,0 +1,48 @@
+\section{Reproducibility and Provenance}
+\label{sec:reproducibility}
+
+Exact experiment and figure-generation code, configuration, source manifests,
+frozen raw results, and analysis are preserved at:
+
+\begin{center}
+\fbox{\parbox{0.92\columnwidth}{\centering
+\textbf{BLOCKER: INSERT PUBLIC REPOSITORY URL AND COMMIT SHA}}}
+\end{center}
+
+The authoritative configuration is
+\path{configs/progressive_landmarks_v2.json} (SHA-256 prefix
+\texttt{850176ee1990}); its canonical plan hash begins
+\texttt{01aa82ec3984}.  The reported raw bundle is exclusively
+\path{data/results/progressive_landmarks_v2_rerun1}; the sealed manifest binds
+800 query records and 28,800 search runs.  The analysis directory is
+\path{data/processed/progressive_landmarks_analysis_v2}; its manifest binds 800
+query rows, eight map rows, summary/provenance files, and ten plots.  The
+generated analysis summary hash begins \texttt{0f6e9fc457c3}.
+
+The root \path{README.md} gives the exact copy-pasteable commands and arguments.
+Their fixed order is: (1) verify the protocol with
+\path{scripts/verify_progressive_landmarks_protocol.py}; (2) run development
+with \path{scripts/run_progressive_landmarks.py}; (3) audit and freeze it with
+\path{scripts/freeze_progressive_landmarks_development.py}; (4) invoke the same
+runner for sealed evaluation while supplying that freeze; and (5) generate all
+statistics and figures with \path{scripts/analyze_progressive_landmarks.py}.
+Every command binds the v2 configuration and repository root.  The final three
+stages also bind the development directory, audit, freeze, sealed directory,
+and analysis directory named above, so a superseded or substituted artifact
+fails closed.
+
+Output directories are write-once and published atomically.  Manifests bind
+file sizes, record counts, schemas, and SHA-256 hashes.  Formal loading replays
+the canonical query plan, source maps, landmark tables, BFS oracle, paths,
+method summaries, counters, and expansion digests instead of trusting
+coherently edited stored fields.  The development audit records
+\texttt{selection\_performed=false}; its freeze is required to authorize
+sealed evaluation.  Analysis again validates that authorization and all
+correctness gates before reading timing.
+
+The report figures are byte-for-byte copies of the analysis PDFs.  The
+hypothesis table is the generated \LaTeX{} fragment rather than a manually
+retyped result.  Compact method, map, and amortization tables were transcribed
+only from the immutable summary JSON and map CSV and are cross-checked in the
+report audit.  Build the paper from \texttt{report/} with
+\texttt{pdflatex}, \texttt{bibtex}, and two final \texttt{pdflatex} passes.

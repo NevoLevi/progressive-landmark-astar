@@ -1,0 +1,471 @@
+{
+  "analysis_code": {
+    "files": {
+      "analysis": {
+        "bytes": 85541,
+        "path": "src/python/progressive_landmarks/analysis.py",
+        "sha256": "9497e8d6df3964e391aef1d651152e9824f415d254504184e3177cbd7625d853"
+      },
+      "cli": {
+        "bytes": 2932,
+        "path": "scripts/analyze_progressive_landmarks.py",
+        "sha256": "35d8a8e8a44ff536f51bc4c2466e1a6d0f5d3f5e66aeee2cc35a3eb07c1705a2"
+      }
+    },
+    "sha256": "d048b1f333f93c9eee7a37fa51bebad0855de48e43e2f0567598d6650b34e6cd"
+  },
+  "analysis_parameters": {
+    "amortization_queries": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "bootstrap_hierarchy": "map-then-query-within-map",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 23725513,
+    "timing_reducer": "even median of eight"
+  },
+  "analyzer": "progressive-landmarks-prospective-analysis-v2",
+  "development_authorization": {
+    "audit": {
+      "bytes": 6066,
+      "path": "data/results/progressive_landmarks_v2_rerun1/development_audit.json",
+      "sha256": "d8792f0d34ef344b9dcd7aa441b4463c38769724803f2b9e807ba992fa8beab1"
+    },
+    "audit_sha256": "e632bcbeede7890de270117b547cd3d96f2f2833d4534aae11435ae859073ad1",
+    "development_manifest": {
+      "bytes": 944,
+      "path": "data/results/progressive_landmarks_v2_rerun1/development/manifest.json",
+      "sha256": "1d993d4ac7106730f5cddbfe7b5c15d979e8e4da9652b2a2d9f67b781d68814d"
+    },
+    "development_outcomes_used_in_analysis": false,
+    "freeze": {
+      "bytes": 2660,
+      "path": "data/results/progressive_landmarks_v2_rerun1/sealed_evaluation_freeze.json",
+      "sha256": "3bce31ce4f942eccb0a0fc18c302e47fa477503a06b466cf6d798b21340f0e72"
+    },
+    "selection_performed": false
+  },
+  "protocol": {
+    "config": {
+      "bytes": 4040,
+      "path": "configs/progressive_landmarks_v2.json",
+      "sha256": "850176ee199020920e9a425db2fced560c776993148775472e2098e33c125410"
+    },
+    "plan_sha256": "01aa82ec39842555d2e24216ccd93b9197f498daebf30e0e61aedd4fee5bd523"
+  },
+  "provenance_sha256": "3cc37126a44393494b1a371cd7fd2a5fa5d3aa70963f333697aa20221a4a6511",
+  "schema": "progressive-landmarks-analysis-provenance-v2",
+  "sealed_evaluation": {
+    "artifact_bindings": {
+      "maps.json": {
+        "bytes": 16549,
+        "records": 8,
+        "sha256": "47db3e4a2b5b05a9671f27fec65259dc95318f055763e9dacae2dda640edb2d5"
+      },
+      "queries.jsonl": {
+        "bytes": 21988333,
+        "records": 800,
+        "sha256": "8ba0e1a008bcfe1e8281c98b454ff243bad1e9c367bc5f25ac35236218e63ed5"
+      },
+      "run.json": {
+        "bytes": 18207,
+        "records": 1,
+        "sha256": "23e35eae365cf0780094c3e087b684b73cd26ca4a554dcc2d7539263321fc55f"
+      }
+    },
+    "bindings": {
+      "code": {
+        "files": {
+          "analysis": {
+            "bytes": 85541,
+            "path": "src/python/progressive_landmarks/analysis.py",
+            "sha256": "9497e8d6df3964e391aef1d651152e9824f415d254504184e3177cbd7625d853"
+          },
+          "analysis_cli": {
+            "bytes": 2932,
+            "path": "scripts/analyze_progressive_landmarks.py",
+            "sha256": "35d8a8e8a44ff536f51bc4c2466e1a6d0f5d3f5e66aeee2cc35a3eb07c1705a2"
+          },
+          "cli": {
+            "bytes": 2116,
+            "path": "scripts/run_progressive_landmarks.py",
+            "sha256": "87c632e593be32f2b0f4e6c7d23a8fba1258170caced332df8063204b4b6ade6"
+          },
+          "core": {
+            "bytes": 34013,
+            "path": "src/python/progressive_landmarks/core.py",
+            "sha256": "fe95b1bb90ad2c4df46ce068d4095694680948e5ed965e41a71c3ade6d826b38"
+          },
+          "development_gate": {
+            "bytes": 40041,
+            "path": "src/python/progressive_landmarks/development_gate.py",
+            "sha256": "c14aabca1c027b682aae354ff18cc6ca6aea623515bacef196dd6e94c66f76c3"
+          },
+          "freeze_cli": {
+            "bytes": 2552,
+            "path": "scripts/freeze_progressive_landmarks_development.py",
+            "sha256": "137aed37de8daa92d387e8c2f3622b5d3298ab786580bcdfe746b442a0d6c79f"
+          },
+          "package_init": {
+            "bytes": 1130,
+            "path": "src/python/progressive_landmarks/__init__.py",
+            "sha256": "aef76874738886fac021b1c554d51b255c3c62e97e3716b1ad3df36ee7d06025"
+          },
+          "protocol": {
+            "bytes": 32758,
+            "path": "src/python/progressive_landmarks/protocol.py",
+            "sha256": "baee6d0ab05b0fd46594364b917370c1108feba629ec3f3c54f5bf5cd21f376b"
+          },
+          "runner": {
+            "bytes": 80051,
+            "path": "src/python/progressive_landmarks/runner.py",
+            "sha256": "79e6922fe6cae05c5ced8877af2910c88d144f338ca8f82c041076bec7f51964"
+          }
+        },
+        "sha256": "6412fb0e509302fed5c3f58d82b5e0dae761ffcf8da5ee7ae7aab5c11d0d0d92"
+      },
+      "config": {
+        "hash_basis": "file-bytes",
+        "path": "configs/progressive_landmarks_v2.json",
+        "sha256": "850176ee199020920e9a425db2fced560c776993148775472e2098e33c125410"
+      },
+      "environment": {
+        "sha256": "81b259dab46ecd63103a3a5e302c791a9b14732ad5ed4da93c1551ebf58b7830",
+        "value": {
+          "byteorder": "little",
+          "cpu_count": 8,
+          "machine": "AMD64",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+          "python_compiler": "MSC v.1943 64 bit (AMD64)",
+          "python_executable": "C:\\Users\\user\\miniforge3\\python.exe",
+          "python_implementation": "CPython",
+          "python_version": "3.12.9",
+          "pythonhashseed": null
+        }
+      },
+      "plan_sha256": "01aa82ec39842555d2e24216ccd93b9197f498daebf30e0e61aedd4fee5bd523",
+      "protocol_id": "progressive_landmarks_v2",
+      "source": {
+        "sha256": "db5f8e6173210f74fae88fd36a69a4afa85a4ba93f1646266e535b5a64770b53",
+        "value": {
+          "snapshot": {
+            "checksums": {
+              "path": "SHA256SUMS",
+              "sha256": "099900be19063488f8d09a77e691977c2a1182bbc2f7e33dc00c2c7e22c1a47f"
+            },
+            "corpus_id": "cbs_cgdgwdg_map_split_v1",
+            "manifest": {
+              "path": "CORPUS_MANIFEST.json",
+              "sha256": "c4425b97a0ed60cf389c35d7bda9a2756da89bd687431593e10e89b3757e1bb9"
+            },
+            "relative_root": "data/source/movingai_mapf_2021-06-17"
+          },
+          "split_inputs": [
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "maze",
+              "map": {
+                "connected_components": 1,
+                "height": 128,
+                "path": "corpus/maps/maze-128-128-2.map",
+                "sha256": "9a22a1f6b63ac1914af03a24e4397e31000a3b4ffa85a6a4a813e04b5fa49bd1",
+                "traversable_states": 10858,
+                "width": 128
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/maze-128-128-2-random-1.scen",
+                  "sha256": "54fc2b56aa2ce4457de1cf2ac3b42ec0bc6e02407efbaf074b2e0592eb249b45"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/maze-128-128-2-random-2.scen",
+                  "sha256": "68b87840da74ea306dc8c186da1679294229c4b48fc44d0a659364b4235a62d1"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/maze-128-128-2-random-3.scen",
+                  "sha256": "7b26be0646f4aa80aec77e94ba534dcb5f46005549bbe0aa665a4377425e6c21"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/maze-128-128-2-random-4.scen",
+                  "sha256": "7a26f70ea98e6d3708680ef7ce7ae1a437536a50d09f9dd1b9cc4bce3b3db4f5"
+                }
+              ],
+              "source_split": "validation"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "random",
+              "map": {
+                "connected_components": 1,
+                "height": 32,
+                "path": "corpus/maps/random-32-32-20.map",
+                "sha256": "8c5a83498ab92a2579aeef91c5f42d9ecf9019ef038cf98e623061a15beb6f56",
+                "traversable_states": 819,
+                "width": 32
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/random-32-32-20-random-1.scen",
+                  "sha256": "c239c49e4afaac2a4ff7ba9d005f56f2081b64055e524cc49918521c9bd58a40"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/random-32-32-20-random-2.scen",
+                  "sha256": "005533b1f90d70d552340812a1a4a985a52699a31cde78dee0b756e802d6964e"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/random-32-32-20-random-3.scen",
+                  "sha256": "96bff51b6d147608e858d0ea9e600a50c5a40cf0a5f05c225a5a647f884f801f"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/random-32-32-20-random-4.scen",
+                  "sha256": "2ad34eca9370c5604ada456d2bb169576915e23296f130eacbd4fdfdd22dc722"
+                }
+              ],
+              "source_split": "validation"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "room",
+              "map": {
+                "connected_components": 1,
+                "height": 64,
+                "path": "corpus/maps/room-64-64-16.map",
+                "sha256": "983df5c9bf0c59799daa107feb1b2d3ed81c5d32bf4b23d019f06161d0be6092",
+                "traversable_states": 3646,
+                "width": 64
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/room-64-64-16-random-1.scen",
+                  "sha256": "1a4c70b3a9182d88e7162444f363cbc97ee999015f75b1987a0ff6efa9f884ec"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/room-64-64-16-random-2.scen",
+                  "sha256": "12ed1ea379ab524bd4393d01c1a0123d56e55c9c544a185c3a4c78267293a140"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/room-64-64-16-random-3.scen",
+                  "sha256": "cf38ff89553d2c7c9ca5aeedd403600f9da75358c5bf0497da0ce70456e72d31"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/room-64-64-16-random-4.scen",
+                  "sha256": "523ec88c47933de718caa2ad6b9e6b80b2531b6ee03d26e00ae18880990a4254"
+                }
+              ],
+              "source_split": "validation"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "warehouse",
+              "map": {
+                "connected_components": 1,
+                "height": 63,
+                "path": "corpus/maps/warehouse-10-20-10-2-1.map",
+                "sha256": "c8d1b2f24788ed6bd1ccf45065b96b4ce82d65f88c72de750e03e2758637bff0",
+                "traversable_states": 5699,
+                "width": 161
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-1-random-1.scen",
+                  "sha256": "cc8694ea3b0781781bde18fab744386cecc09a836e7cbf12849728ef07a19868"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-1-random-2.scen",
+                  "sha256": "18f034a2297b24efccf9d311ae37162c72885c70859eb6a387a312039dcc7055"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-1-random-3.scen",
+                  "sha256": "1dda14bd7c040f68f95fa4a6cbe38c4242e25f36a010316858ba4114bc9cf70e"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-1-random-4.scen",
+                  "sha256": "dea783b3f1eebeb399db71d6cb059077694700824e9c2de1964ffc21a2da1f59"
+                }
+              ],
+              "source_split": "validation"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "maze",
+              "map": {
+                "connected_components": 1,
+                "height": 128,
+                "path": "corpus/maps/maze-128-128-10.map",
+                "sha256": "2281ef15df0c94efc79b7c62f0c60ce4cb22c43c2cc584226d307c7676d53986",
+                "traversable_states": 14818,
+                "width": 128
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/maze-128-128-10-random-1.scen",
+                  "sha256": "7476fcbb6668e9d0d9f2f88966137d9f15e83293a13da89febaf81a68e175447"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/maze-128-128-10-random-2.scen",
+                  "sha256": "114a6198b1ad76662571c9f32cf909de2d6a05138053d65b63724dcf6ae03328"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/maze-128-128-10-random-3.scen",
+                  "sha256": "4da0a7f29d63411eb89059a1fea120755c9e51bb7d69ca32851e6e4086794f43"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/maze-128-128-10-random-4.scen",
+                  "sha256": "a61c52dbfd5aadce409ca7e1b73e1a08e0a504820ee168df374c16c0f2b8a550"
+                }
+              ],
+              "source_split": "holdout"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "random",
+              "map": {
+                "connected_components": 1,
+                "height": 32,
+                "path": "corpus/maps/random-32-32-10.map",
+                "sha256": "4240fddfa77d88b72ce779e02acf46a5ff056a3b04af5a4e35f7bc86cdfba3ec",
+                "traversable_states": 922,
+                "width": 32
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/random-32-32-10-random-1.scen",
+                  "sha256": "277dc2ed57625d4fb62e28a3d974e192d598d54496d726bc68c755da312a6bec"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/random-32-32-10-random-2.scen",
+                  "sha256": "dc55caa82416b495680eec454b6366cacb3947420aba7c4d63914555d7157bee"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/random-32-32-10-random-3.scen",
+                  "sha256": "c10c4b75355db3cd5b1a127ecf3bf6a617edd4e9b628dc539e1b62fa9cfb3e72"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/random-32-32-10-random-4.scen",
+                  "sha256": "00675f3356ad88fdd086bb126a27a37b4abc628c1a9b916cc65f81d992557b2a"
+                }
+              ],
+              "source_split": "holdout"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "room",
+              "map": {
+                "connected_components": 1,
+                "height": 32,
+                "path": "corpus/maps/room-32-32-4.map",
+                "sha256": "f107fefbf63c7a1a3753e4a033452301a1cdd7043cab7f45e4ed0e7dec1e90a9",
+                "traversable_states": 682,
+                "width": 32
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/room-32-32-4-random-1.scen",
+                  "sha256": "a7b890d6e18853407bdff49e1f625d6d39080e353fb3cdbcb2ecb6f057c267d4"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/room-32-32-4-random-2.scen",
+                  "sha256": "04fb777fd103a7a48cc08eaabcee2de03017b03bf55385199d3ff966f7c72d21"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/room-32-32-4-random-3.scen",
+                  "sha256": "f6c3ef8fe0e06cd6d5b8e2e7da1659f009e7522eb1c2ba44c6ea45c589509312"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/room-32-32-4-random-4.scen",
+                  "sha256": "2786334e0bfa1547da382f25b88e726e97e2e9b30c90630080b3ad70b758a34f"
+                }
+              ],
+              "source_split": "holdout"
+            },
+            {
+              "experiment_split": "sealed_evaluation",
+              "family": "warehouse",
+              "map": {
+                "connected_components": 1,
+                "height": 84,
+                "path": "corpus/maps/warehouse-10-20-10-2-2.map",
+                "sha256": "4f06e82c2b87238daa8e308086afdba701112bf023e94e740e5bf9508a6adec3",
+                "traversable_states": 9776,
+                "width": 170
+              },
+              "query_count": 100,
+              "scenarios": [
+                {
+                  "index": 1,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-2-random-1.scen",
+                  "sha256": "4b9b8c1ba6de56a1448733fbf690977b70f6c88c03f45a9bca936cb99a5e2566"
+                },
+                {
+                  "index": 2,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-2-random-2.scen",
+                  "sha256": "2c42ec20c1eb139093f8a50d216f61891f30d5cbbc93c42eded815e5b1d2956c"
+                },
+                {
+                  "index": 3,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-2-random-3.scen",
+                  "sha256": "de1993a5a7f0e78593e00d14b747d933b60463ad434f557f2a8484fbc7c81a24"
+                },
+                {
+                  "index": 4,
+                  "path": "corpus/scenarios/warehouse-10-20-10-2-2-random-4.scen",
+                  "sha256": "8f51482ece23ce822fadb7e728a420b5fbd1b330c690f225d1198c4d62d46d26"
+                }
+              ],
+              "source_split": "holdout"
+            }
+          ]
+        }
+      }
+    },
+    "manifest": {
+      "bytes": 779,
+      "path": "data/results/progressive_landmarks_v2_rerun1/sealed_evaluation/manifest.json",
+      "sha256": "edaea56bb3aaa0b55b903e6dcde9692217a9d24a77da6a66bb52c1e583e62d53"
+    }
+  },
+  "source_run_timestamps": {
+    "development_completed_at_utc": "2026-08-12T14:26:40.479605Z",
+    "development_started_at_utc": "2026-08-12T14:25:31.041676Z",
+    "sealed_evaluation_completed_at_utc": "2026-08-12T14:35:07.284309Z",
+    "sealed_evaluation_started_at_utc": "2026-08-12T14:29:19.289125Z"
+  }
+}

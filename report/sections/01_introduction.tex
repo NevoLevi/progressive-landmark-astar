@@ -1,0 +1,61 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Heuristics save search only after their own computational cost is paid.  This
+tension is easy to hide when heuristic evaluation is treated as a constant:
+a more informed admissible estimate generally expands no more states under a
+fixed ordering, but it may still take longer to solve a problem.  Landmark
+heuristics make the tradeoff concrete.  A preprocessing pass stores exact
+distances from selected pivots; a query then obtains lower bounds from the
+triangle inequality.  More pivots can strengthen the maximum, but each
+evaluated state performs more table reads.
+
+Lazy \Astar{} changes when this cost is paid.  A newly discovered state first
+receives a cheap bound.  Only if it rises to the top of OPEN is an expensive
+bound computed and the state reinserted; surplus states may never receive the
+expensive heuristic \citep{tolpin2013towards,karpas2018rational}.  The saved
+heuristic calls compete with extra priority-queue operations.  With a set of
+32 differential landmarks, there is a natural intermediate design: compute a
+fixed four-landmark prefix at the first competitive pop, and compute the other
+28 terms only if the state remains competitive at a later pop.
+
+This is a deliberately bounded course project.  It stays within optimal
+single-agent \Astar{}, admissible and consistent heuristics, OPEN-list
+behavior, and empirical comparison---the core material of a search-methods
+course.  The extension adds no learned selector, calibration phase, rational
+bypass, multi-agent solver, or new domain.  Its research question is narrow:
+\emph{does an intermediate fixed landmark prefix save enough remaining
+heuristic work to justify another OPEN cycle, and in which map regimes?}
+
+We answer that question under a prospectively fixed protocol.  Four methods
+share one deterministic graph-search engine: Manhattan distance,
+eager evaluation of 32 landmarks, ordinary Lazy \Astar{} from Manhattan to all
+32 landmarks, and progressive evaluation from Manhattan to four and then 32
+landmarks.  The prefix and full counts are fixed at $K=4$ and $M=32$; no
+development outcome selects them.  Twelve checksum-pinned Moving AI maps
+define a map-disjoint split: four development maps authorize the unchanged
+run, and eight sealed maps supply the reported 800-query evaluation.  Timing
+uses rotated blocks in which every method occurs twice in every order
+position.
+
+The central result is a mechanism/performance split.  The staged method did
+less deterministic landmark work: median pivot and read savings were 3.10\%
+and 3.02\% relative to ordinary lazy evaluation.  Nevertheless, its median
+paired time ratio was 1.0543, with a map-hierarchical 95\% bootstrap interval
+from 0.9890 to 1.1016.  Savings and timing varied by topology.  Both maze maps
+had substantial landmark savings and staged/lazy ratios below one; both
+warehouse maps had zero median savings and ratios above one.  Across queries,
+read saving and log time ratio had descriptive Spearman correlation
+$\rho=-0.6406$, consistent with a crossover but not identifying a causal
+effect.
+
+The paper contributes (i) a fully specified three-level evaluation schedule
+for a nested differential heuristic; (ii) a correctness argument and a
+trace-invariance gate that separates scheduling from search order; and (iii)
+a reproducible, map-disjoint decomposition of saved pivot work, extra OPEN
+work, runtime, and preprocessing amortization.  The novelty boundary is
+intentionally modest.  Landmark lower bounds, differential heuristics,
+heuristic subsets, Lazy \Astar{}, and extension to more than two stages are
+prior ideas.  A targeted literature search did not locate this exact fixed-
+prefix, node-level staging experiment; that is not an exhaustive priority
+claim.

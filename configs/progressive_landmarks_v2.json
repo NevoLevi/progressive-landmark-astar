@@ -1,0 +1,161 @@
+{
+  "schema": "progressive-landmarks-protocol-v2",
+  "protocol_id": "progressive_landmarks_v2",
+  "master_seed": 23725513,
+  "source_snapshot": {
+    "relative_root": "data/source/movingai_mapf_2021-06-17",
+    "corpus_id": "cbs_cgdgwdg_map_split_v1",
+    "manifest_schema": "movingai-mapf-corpus-manifest-v1",
+    "manifest": {
+      "path": "CORPUS_MANIFEST.json",
+      "sha256": "c4425b97a0ed60cf389c35d7bda9a2756da89bd687431593e10e89b3757e1bb9"
+    },
+    "checksums": {
+      "path": "SHA256SUMS",
+      "sha256": "099900be19063488f8d09a77e691977c2a1182bbc2f7e33dc00c2c7e22c1a47f"
+    },
+    "payload_roots": [
+      "archives",
+      "corpus"
+    ]
+  },
+  "experimental_split": {
+    "families": [
+      "maze",
+      "random",
+      "room",
+      "warehouse"
+    ],
+    "development_source_splits": [
+      "train"
+    ],
+    "sealed_evaluation_source_splits": [
+      "validation",
+      "holdout"
+    ],
+    "maps": {
+      "development": [
+        {
+          "family": "maze",
+          "map": "maze-128-128-1.map",
+          "source_split": "train"
+        },
+        {
+          "family": "random",
+          "map": "random-64-64-10.map",
+          "source_split": "train"
+        },
+        {
+          "family": "room",
+          "map": "room-64-64-8.map",
+          "source_split": "train"
+        },
+        {
+          "family": "warehouse",
+          "map": "warehouse-20-40-10-2-1.map",
+          "source_split": "train"
+        }
+      ],
+      "sealed_evaluation": [
+        {
+          "family": "maze",
+          "map": "maze-128-128-2.map",
+          "source_split": "validation"
+        },
+        {
+          "family": "random",
+          "map": "random-32-32-20.map",
+          "source_split": "validation"
+        },
+        {
+          "family": "room",
+          "map": "room-64-64-16.map",
+          "source_split": "validation"
+        },
+        {
+          "family": "warehouse",
+          "map": "warehouse-10-20-10-2-1.map",
+          "source_split": "validation"
+        },
+        {
+          "family": "maze",
+          "map": "maze-128-128-10.map",
+          "source_split": "holdout"
+        },
+        {
+          "family": "random",
+          "map": "random-32-32-10.map",
+          "source_split": "holdout"
+        },
+        {
+          "family": "room",
+          "map": "room-32-32-4.map",
+          "source_split": "holdout"
+        },
+        {
+          "family": "warehouse",
+          "map": "warehouse-10-20-10-2-2.map",
+          "source_split": "holdout"
+        }
+      ]
+    }
+  },
+  "query_selection": {
+    "scenario_kind": "random",
+    "scenario_file_indices": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "development_valid_rows_per_file": 10,
+    "sealed_evaluation_valid_rows_per_file": 25,
+    "selection_rule": "first-valid-n-in-source-order",
+    "validity_rule": "distinct-traversable-endpoints-in-same-4-neighbor-component",
+    "duplicate_key": "map-start-goal",
+    "upstream_reference_distance": "ignored",
+    "correctness_oracle": "independent-unit-cost-4-neighbor-bfs"
+  },
+  "search_model": {
+    "agents": 1,
+    "movement": "4-neighbor-cardinal",
+    "edge_cost": 1,
+    "wait_actions": false,
+    "traversable_symbols": [
+      "."
+    ],
+    "blocked_symbols": [
+      "@",
+      "T"
+    ]
+  },
+  "methods": [
+    "manhattan",
+    "eager_full",
+    "lazy_full",
+    "staged"
+  ],
+  "landmarks": {
+    "scope": "per-map",
+    "selection": "deterministic-row-major-farthest-first-v1",
+    "distance_model": "unit-cost-4-neighbor",
+    "full_pivots": 32,
+    "staged_prefix_pivots": 4,
+    "initial_pivot": "row-major-first-traversable-state",
+    "farthest_tie_break": "row-major"
+  },
+  "timing": {
+    "warmup_repetitions": 1,
+    "timed_repetitions": 8,
+    "method_order": "left-rotate-base-order-by-repetition",
+    "warmup_rotation": 0
+  },
+  "limits": {
+    "max_maps": 12,
+    "max_scenario_files": 48,
+    "max_queries": 960,
+    "max_planned_search_runs": 34560,
+    "max_scenario_rows_scanned_per_file": 10000,
+    "max_map_cells": 100000
+  }
+}

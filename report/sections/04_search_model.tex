@@ -1,0 +1,55 @@
+\section{Search Model and Heuristics}
+\label{sec:model}
+
+\subsection{Grid graph}
+
+Each map induces an undirected unit-cost graph $G=(V,E)$.  A vertex is a cell
+marked ``\texttt{.}''; ``\texttt{@}'' and ``\texttt{T}'' are blocked.  Edges
+connect horizontal and vertical neighbors only.  There are no diagonals or
+wait actions.  A query has distinct traversable start $s$ and goal $t$ in the
+same connected component.  Although scenario files contain a reference
+distance, it may reflect a different movement model and is ignored.  An
+independent four-neighbor BFS supplies the oracle.
+
+\subsection{Nested differential bounds}
+
+Let $d(x,y)$ be exact graph distance and let $\ell_i$ be the $i$th map-level
+landmark.  Manhattan distance is
+\begin{equation}
+  \HMan(v,t)=|x_v-x_t|+|y_v-y_t|.
+\end{equation}
+For one landmark, reverse triangle inequality gives
+\begin{equation}
+  \phi_i(v,t)=|d(\ell_i,v)-d(\ell_i,t)| \leq d(v,t).
+\end{equation}
+Distances involving a landmark in another connected component are ignored.
+For the first $k$ pivots we define
+\begin{equation}
+ H_k(v,t)=\max\!\left(\HMan(v,t),\max_{1\leq i\leq k}
+                         \phi_i(v,t)\right).
+ \label{eq:hk}
+\end{equation}
+The experiment fixes $K=4$ and $M=32$, yielding
+\begin{equation}
+ \HMan(v,t)\leq \HPrefix(v,t)\leq \HFull(v,t)\leq d(v,t).
+ \label{eq:nesting}
+\end{equation}
+
+For adjacent $v,w$, the triangle inequality also gives
+$\phi_i(v,t)\leq 1+\phi_i(w,t)$.  Manhattan distance is consistent on the
+four-neighbor grid, and a pointwise maximum of consistent heuristics remains
+consistent.  Thus every $H_k$ is both admissible and consistent.  Refining
+from \HMan{} to \HPrefix{} to \HFull{} can only preserve or increase a
+state's lower-bound key.
+
+\subsection{Landmark order and storage}
+
+Placement is deterministic and independent of queries.  Traversable cells
+are enumerated in row-major order; the first is $\ell_1$.  Each later pivot
+maximizes its minimum distance to the selected set, with row-major tie
+breaking.  An unrepresented connected component has infinite priority so it
+receives a representative before a represented component receives another,
+subject to the 32-pivot budget.  One BFS per pivot produces immutable
+little-endian unsigned 32-bit distance rows with an explicit unreachable
+sentinel.  The artifact records the ordered coordinates, map and table hashes,
+packed bytes, and build time.

@@ -1,0 +1,17 @@
+# Preserve source readability while preventing checkout-time mutation of
+# checksum-bound experimental and third-party payloads.
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.bst text eol=lf
+*.sty text eol=lf
+
+/data/source/** -text
+/data/results/** -text
+/data/processed/** -text
+/report/generated/*.pdf -text
+/report/main.pdf -text
+*.zip -text

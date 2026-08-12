@@ -1,0 +1,44 @@
+# Local build/dependency trees
+/build/
+/build-*/
+/vcpkg_installed/
+/external/
+
+# Disposable feasibility work; formal raw results are not ignored
+/tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+
+# Experiment scratch/checkpoints
+/data/checkpoints/
+/data/processed/
+/data/external/
+
+# The authoritative active-project analysis is publication evidence.
+!/data/processed/
+/data/processed/*
+!/data/processed/progressive_landmarks_analysis_v2/
+!/data/processed/progressive_landmarks_analysis_v2/**
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Editors / OS
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db

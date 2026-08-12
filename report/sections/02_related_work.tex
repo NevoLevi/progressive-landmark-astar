@@ -1,0 +1,56 @@
+\section{Background and Related Work}
+\label{sec:related}
+
+\paragraph{Optimal heuristic search.}
+\Astar{} orders search states by $f(n)=g(n)+h(n)$, where $g$ is path cost and
+$h$ estimates remaining cost \citep{hart1968formal}.  An admissible heuristic
+never exceeds the true remaining cost; consistency additionally requires
+$h(n)\leq c(n,n')+h(n')$ for every edge.  These properties and the details of
+graph search, reopening, and tie breaking matter to optimality and comparisons
+of expansion behavior \citep{dechter1985generalized}.  Our implementation
+uses only lower-bound keys, supports reopening, and makes all final-stage
+ordering deterministic.
+
+\paragraph{Landmarks and differential heuristics.}
+ALT uses exact distances to selected landmarks with triangle inequalities to
+accelerate shortest-path search \citep{goldberg2005computing}.  For an
+undirected graph, a differential heuristic takes
+$|d(\ell,n)-d(\ell,t)|$ and maximizes over pivots
+\citep{sturtevant2009memory}.  Landmark placement, count, memory, and
+preprocessing are therefore established design dimensions, not contributions
+of this project.  Likewise, selecting a fixed subset from many admissible
+heuristics has been studied directly \citep{rayner2013subset}.  We lock a
+deterministic farthest-first order and evaluate its first four members as an
+intermediate stage; we do not optimize a subset on the reported maps.
+
+\paragraph{Lazy and selective deployment.}
+Lazy \Astar{} initially keys a generated state with a cheap heuristic and
+computes an expensive heuristic only when that state becomes competitive in
+OPEN.  The start is fully evaluated, and a valid popped goal is accepted
+before unnecessary refinement \citep{tolpin2013towards}.  Rational Lazy
+\Astar{} may bypass a costly evaluation using estimated usefulness and cost;
+the archival treatment develops contextual rational deployment more broadly
+\citep{karpas2018rational}.  Selective Max instead learns which heuristic to
+evaluate \citep{domshlak2010max,domshlak2012online}.  Our schedule is neither
+rational nor learned: every non-goal state must reach the complete 32-pivot
+bound before expansion.  The Lazy \Astar{} literature describes extension to
+multiple heuristic stages as straightforward.  Consequently, adding a third
+stage alone is not an algorithmic novelty claim.
+
+Dynamic-heuristic work gives a broader formal setting for refining estimates
+during optimal search \citep{christen2025dynamic}.  We use the simpler nested,
+consistent case.  Each promotion preserves or raises the key, and every
+fully expanded state uses the same final heuristic.  This structure lets us
+test a stronger invariant than cost equality: eager, ordinary lazy, and
+staged full-landmark modes should enumerate successors in exactly the same
+order.
+
+\paragraph{Position of this study.}
+Prior work establishes all ingredients separately: landmark preprocessing,
+differential maxima, subset selection, lazy evaluation, and multi-stage
+extension.  Our residual contribution is empirical.  We combine a fixed
+four-pivot prefix with a fixed 32-pivot final bound, then measure whether
+suffix calls avoided on surplus nodes outweigh the added requeues and pops.
+This mechanism-first scope resembles the course's example projects, which
+is useful pedagogically, but algorithmic facts and novelty boundaries here
+are supported by the primary literature rather than by course examples.

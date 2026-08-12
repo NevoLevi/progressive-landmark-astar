@@ -1,0 +1,48 @@
+{
+  "schema": "movingai-mapf-corpus-manifest-v1",
+  "corpus_id": "cbs_cgdgwdg_map_split_v1",
+  "retrieved_utc": "2026-08-12T02:10:53Z",
+  "source": {
+    "index_url": "https://www.movingai.com/benchmarks/mapf/index.html",
+    "overview_url": "https://www.movingai.com/benchmarks/mapf.html",
+    "map_archive_url": "https://www.movingai.com/benchmarks/mapf/mapf-map.zip",
+    "map_archive_sha256": "9da2e4c5ce03aa4e063b3a283ce874590b36cc4f31a297fe7ecb00d105abf288",
+    "random_scenario_archive_url": "https://www.movingai.com/benchmarks/mapf/mapf-scen-random.zip",
+    "random_scenario_archive_sha256": "20b7838f7a51f13e90a63ee138e9435fb4e41b0381becbc7313b7d3a7d859276",
+    "license": "ODC-By-1.0",
+    "license_url": "https://opendatacommons.org/licenses/by/1-0/",
+    "upstream_last_change_reported": "2021-06-17"
+  },
+  "selection": {
+    "scenario_kind": "random",
+    "scenario_file_indices": [1, 2, 3, 4],
+    "bounded_sprint_scenario_file_indices": [1, 2],
+    "development_extension_scenario_file_indices": [3, 4],
+    "agent_selection": "first-k-rows",
+    "movement": "4-neighbor-cardinal-plus-wait",
+    "objective": "sum-of-costs",
+    "provided_single_agent_optimal_length_field": "ignored-because-it-assumes-diagonal-costs",
+    "split_unit": "whole-map",
+    "split_seed": "cbs-map-split-v1",
+    "split_rule": "Within each preregistered family candidate set, sort ascending by lowercase SHA256(UTF8(split_seed + '|' + family + '|' + map_filename)); assign ranks 0,1,2 to train,validation,holdout.",
+    "instances_per_map": 8,
+    "total_instances": 96,
+    "bounded_sprint_instances": 32,
+    "development_instances_before_holdout": 64,
+    "sealed_holdout_instances": 32
+  },
+  "maps": [
+    {"family":"maze","map":"maze-128-128-1.map","split":"train","split_digest":"17c813fdcfe0daa096385f0efaa7a5c35bb1c55a7161f1245e0f7a5c37f34943","states":8191,"agent_bands":{"low":20,"high":40}},
+    {"family":"maze","map":"maze-128-128-2.map","split":"validation","split_digest":"d77a6b2cad490259a6cf88aace58208eb81b7ad23b87c978eac3bee2f948b23c","states":10858,"agent_bands":{"low":20,"high":40}},
+    {"family":"maze","map":"maze-128-128-10.map","split":"holdout","split_digest":"ebd321fe78e6b324df3c6bc9887cbf755dd0b2cae5e1a1a2ef9faf6ec17087b5","states":14818,"agent_bands":{"low":20,"high":40}},
+    {"family":"random","map":"random-64-64-10.map","split":"train","split_digest":"078069d8980bafd6872991089894808bd0150952e95b5951e96360a3b75a0fbf","states":3687,"agent_bands":{"low":40,"high":80}},
+    {"family":"random","map":"random-32-32-20.map","split":"validation","split_digest":"53e71a298c3a22394dcb4e0102453df26d5c65f53f95b9823478452938b66b5c","states":819,"agent_bands":{"low":20,"high":40}},
+    {"family":"random","map":"random-32-32-10.map","split":"holdout","split_digest":"707d4273a1e09fd6df1900e8128ba747b824037cf4407e7e11c31a3767c4bf85","states":922,"agent_bands":{"low":20,"high":40}},
+    {"family":"room","map":"room-64-64-8.map","split":"train","split_digest":"3f49fc5597c33d590ec6a4ade83be4f638c3eaa7ea1284b85b390d1246c45e9f","states":3232,"agent_bands":{"low":30,"high":60}},
+    {"family":"room","map":"room-64-64-16.map","split":"validation","split_digest":"9f180de0fa4e56793adace29e29c37658103b4b964e722f942548f9c46dc9f0f","states":3646,"agent_bands":{"low":30,"high":60}},
+    {"family":"room","map":"room-32-32-4.map","split":"holdout","split_digest":"dc73f8e6b99b96f1c216e5520cdb254fc16654ece512c301b4efdf92456218fc","states":682,"agent_bands":{"low":15,"high":30}},
+    {"family":"warehouse","map":"warehouse-20-40-10-2-1.map","split":"train","split_digest":"0d9e4346e6dabfa85e80778bc145e418c83052795eea78ad52ffe15487e67f48","states":22599,"agent_bands":{"low":80,"high":160}},
+    {"family":"warehouse","map":"warehouse-10-20-10-2-1.map","split":"validation","split_digest":"495e8cab6c332652bb86ca7ca05a2aad437cbd20ab04889787a7e33075201f93","states":5699,"agent_bands":{"low":50,"high":100}},
+    {"family":"warehouse","map":"warehouse-10-20-10-2-2.map","split":"holdout","split_digest":"f62f508e140a25267d6505caf14c7335905ca73167dd2e671e5e8c5038f8f8eb","states":9776,"agent_bands":{"low":50,"high":100}}
+  ]
+}

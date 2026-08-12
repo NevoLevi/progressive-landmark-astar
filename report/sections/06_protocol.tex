@@ -1,0 +1,85 @@
+\section{Experimental Protocol}
+\label{sec:protocol}
+
+\subsection{Prospective split and query selection}
+
+The checksum-pinned source snapshot contains Moving AI pathfinding maps and
+random scenario files \citep{sturtevant2012benchmarks}.  Table~\ref{tab:design}
+summarizes the immutable plan.  The same four topology families occur on both
+sides, but no map file overlaps.  Development uses one train map per family
+and 40 queries per map.  It validates correctness, completeness, binding, and
+the frozen analysis code; it performs no selection.  Only after an external
+audit issues a freeze does sealed evaluation use two new maps per family and
+100 queries per map.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Frozen protocol.  Each query-method pair has one warm-up and eight
+timed searches.}
+\label{tab:design}
+\begin{tabular}{lrrr}
+\toprule
+Split & Maps & Queries & Search runs \\
+\midrule
+Development & 4 & 160 & 5,760 \\
+Sealed evaluation & 8 & 800 & 28,800 \\
+\midrule
+Total & 12 & 960 & 34,560 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each map, scenario files 1--4 are read in original source order.  A row is
+valid when endpoints are distinct traversable cells in the same four-neighbor
+component.  The plan takes the first 10 valid rows per file for development
+and the first 25 for evaluation.  Duplicate $(\text{map},s,t)$ keys fail
+closed.  No query is sampled, replaced, or removed after timing.
+
+The four development maps are
+\texttt{maze-128-128-1}, \texttt{random-64-64-10},
+\texttt{room-64-64-8}, and \texttt{warehouse-20-40-10-2-1}.
+The evaluation's validation-source maps are
+\texttt{maze-128-128-2}, \texttt{random-32-32-20},
+\texttt{room-64-64-16}, and \texttt{warehouse-10-20-10-2-1};
+its holdout-source maps are \texttt{maze-128-128-10},
+\texttt{random-32-32-10}, \texttt{room-32-32-4}, and
+\texttt{warehouse-10-20-10-2-2}.
+
+\subsection{Balanced timing}
+
+Within every query, the base method order is Manhattan, eager full, lazy full,
+and staged.  One untimed warm-up uses that order.  Eight timed repetitions
+left-rotate it by repetition index, cycling through the four positions twice.
+Thus every method appears exactly twice in every position for every query.
+Runs are sequential on one machine (Windows 11, CPython 3.12.9, 8 logical
+CPUs); no concurrent search workers are used.
+
+For a query and method, search time is the ordinary even median of eight
+observations: the mean of the fourth and fifth sorted values.  Repetitions
+reduce measurement noise and are not statistical units.  The primary
+staged/lazy estimand is
+\begin{equation}
+ \exp\!\left(\operatorname{median}_{q}
+     \log\frac{T_{q,\mathrm{staged}}}{T_{q,\mathrm{lazy}}}\right).
+ \label{eq:ratio}
+\end{equation}
+Its percentile interval uses 10,000 deterministic bootstrap replicates
+(seed 23725513), sampling maps first and then queries within sampled maps.
+The eight maps are the top-level clusters.  Quartiles use Hyndman--Fan type 7.
+
+\subsection{Gating and analysis}
+
+All 800 records must be present, all costs must match replayed BFS, every path
+must be legal, method summaries must match all repetitions, and the three
+full-landmark expansion digests must agree.  Only then is timing unlocked.
+There are no post-hoc exclusions.  Mechanism measures are exact per-query
+counter differences.  Spearman associations use average ranks and are
+descriptive.  Preprocessing amortization computes, within each map,
+\begin{equation}
+ A_m(Q)=\overline{T}_{m}+B_m/Q,
+ \label{eq:amortization}
+\end{equation}
+where $B_m$ is measured landmark construction time and $Q$ is queries served;
+the reported value equal-weights the eight maps.  Manhattan has $B_m=0$;
+all landmark modes receive the same build charge.

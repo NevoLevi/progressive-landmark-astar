@@ -1,0 +1,65 @@
+\section{Limitations and Threats to Validity}
+\label{sec:limitations}
+
+\paragraph{Statistical scope.}
+The evaluation has 800 queries but only eight top-level map clusters.  The
+hierarchical bootstrap respects this structure, yet eight maps cannot support
+precise population claims.  Two maps per family show useful within-family
+replication, not coverage of all instances in that family.  The 0.053
+bootstrap fraction is descriptive, not a $p$-value, and the interval is not
+evidence of equivalence.
+
+\paragraph{External validity.}
+All problems are undirected, unit-cost, four-neighbor grids from four known
+families.  Results may change on weighted or directed graphs, road networks,
+diagonal movement, dynamic tasks, or other pivot-distance representations.
+Families occur on both sides of the map-disjoint split, so this tests new maps
+within known families rather than unseen-domain generalization.
+
+\paragraph{Fixed design choices.}
+$K=4$, $M=32$, and deterministic farthest-first placement are one locked
+configuration.  The prefix may be unusually informative in some topologies
+and redundant in others.  We did not compare alternate prefix sizes, pivot
+orders, compression, adaptive stopping, or active-landmark techniques.  This
+restriction prevents tuning to the sealed maps but limits the conclusions to
+the specified schedule.
+
+\paragraph{Implementation and measurement.}
+Packed-array reads and priority-queue operations have Python- and
+hardware-specific costs.  Short searches remain sensitive to OS scheduling,
+cache state, allocator behavior, and timer resolution despite a warm-up,
+balanced order positions, and eight-run medians.  Disabling stage timers
+avoids one perturbation but prevents assigning nanoseconds cleanly to prefix,
+suffix, and heap operations.  Exact counters are more portable than runtime
+crossover points.
+
+\paragraph{Internal validity.}
+A shared engine and trace digest greatly reduce implementation confounds, but
+they also share any common bug.  Independent BFS, legal-path validation,
+exhaustive small-map tests, immutable source hashes, deterministic replays,
+and strict artifact loaders provide independent layers.  Expansion-trace
+equality is an implementation invariant under the frozen tie breaker; it is
+not a general theorem that every Lazy \Astar{} implementation must duplicate
+eager order.
+
+\paragraph{Novelty.}
+Every algorithmic ingredient has close prior art.  ALT and differential
+heuristics establish landmark bounds; subset work establishes that a fixed
+selection can trade evaluation cost and informativeness; Lazy \Astar{}
+establishes delayed evaluation and notes straightforward multi-stage
+extension.  We claim only a controlled study of their intersection and did
+not find an exact match in a targeted search.  Differently named or unpublished
+work may exist.
+
+\paragraph{Mechanical rerun.}
+The first complete development/evaluation attempt is preserved separately.
+Before statistical output was published, analysis failed closed because it
+compared an immutable loaded schedule represented by tuples with the
+equivalent JSON plan represented by lists.  One container-normalization fix
+and a direct regression test were added.  No algorithm, protocol, query,
+$K/M$ value, or estimand changed.  Because the analysis source was
+prospectively hash-bound, all formal searches were rerun under the separately
+identified \texttt{progressive\_landmarks\_v2\_rerun1} bundle.  The 800
+deterministic summaries match the first attempt exactly; only timings were
+remeasured.  This is an analysis-integration correction, not a result-driven
+rerun.

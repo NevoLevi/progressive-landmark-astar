@@ -1,0 +1,32 @@
+\section{Questions and Hypotheses}
+\label{sec:questions}
+
+The study has four research questions.
+
+\begin{description}
+  \item[RQ1: Correctness and control.] Do all four modes return the independent
+  BFS cost, and do the three modes that ultimately use \HFull{} have identical
+  successor-expansion traces?
+
+  \item[RQ2: Mechanism.] Relative to \LazyFull{}, how many pivot evaluations,
+  distance-table reads, and suffix calls does \Staged{} avoid, and how many
+  additional OPEN operations does it introduce?
+
+  \item[RQ3: Search time.] What is the paired staged/lazy search-time ratio
+  over map-disjoint evaluation queries, with maps rather than timing
+  repetitions treated as the top-level independent units?
+
+  \item[RQ4: Regimes and amortization.] How do the mechanism and timing ratio
+  vary across maze, random, room, and warehouse maps, and how does one-time
+  landmark construction affect total cost at different query volumes?
+\end{description}
+
+The prospectively encoded analysis maps these questions to three hypotheses.
+H1 is a hard gate: all 800 sealed queries must pass BFS equality and
+full-landmark trace invariance before timing is analyzed.  H2 expects staged
+evaluation to save exact pivot evaluations and distance reads relative to
+ordinary lazy evaluation.  H3 evaluates the paired time ratio and the
+association between saved work and time; it is explicitly descriptive.  In
+particular, the bootstrap fraction of replicates with a ratio below one is
+not treated as a frequentist $p$-value, and the Spearman coefficient does not
+support a causal claim.

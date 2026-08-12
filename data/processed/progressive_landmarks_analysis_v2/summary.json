@@ -1,0 +1,6379 @@
+{
+  "analyzer": "progressive-landmarks-prospective-analysis-v2",
+  "descriptive_spearman": {
+    "extra_open_work_vs_log_time_ratio": -0.2409936805831001,
+    "interpretation": "descriptive association; no causal claim",
+    "n": 800,
+    "rank_ties": "average ranks",
+    "read_saving_vs_log_time_ratio": -0.6406108532643578
+  },
+  "design": {
+    "experimental_units": "maps (top-level) and queries within maps",
+    "families": [
+      "maze",
+      "random",
+      "room",
+      "warehouse"
+    ],
+    "maps": 8,
+    "methods": [
+      "manhattan",
+      "eager_full",
+      "lazy_full",
+      "staged"
+    ],
+    "quartile_definition": "Hyndman-Fan type 7 linear empirical quantile",
+    "queries": 800,
+    "queries_per_map": 100,
+    "query_timing_reducer": "ordinary even median: mean of sorted fourth and fifth of eight",
+    "repetitions_are_units": false,
+    "timed_repetitions_per_query_method": 8
+  },
+  "families": {
+    "maze": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 27817.28,
+              "median": 22384.0,
+              "sum": 5563456
+            },
+            "expanded": {
+              "mean": 466.045,
+              "median": 349.5,
+              "sum": 93209
+            },
+            "full_calls": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            },
+            "generated": {
+              "mean": 1502.395,
+              "median": 1158.0,
+              "sum": 300479
+            },
+            "heuristic_cache_hits": {
+              "mean": 50.8,
+              "median": 0.0,
+              "sum": 10160
+            },
+            "manhattan_calls": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            },
+            "max_live_states": {
+              "mean": 402.265,
+              "median": 353.5,
+              "sum": 80453
+            },
+            "max_open_entries": {
+              "mean": 451.65,
+              "median": 385.0,
+              "sum": 90330
+            },
+            "pivot_evaluations": {
+              "mean": 27785.28,
+              "median": 22352.0,
+              "sum": 5557056
+            },
+            "pops": {
+              "mean": 468.44,
+              "median": 350.5,
+              "sum": 93688
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 918.09,
+              "median": 739.5,
+              "sum": 183618
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 1.395,
+              "median": 0.0,
+              "sum": 279
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            }
+          },
+          "median_search_ns": {
+            "max": 100989650.0,
+            "mean": 23831204.25,
+            "median": 18543850.0,
+            "min": 432600.0,
+            "n": 200,
+            "q1": 9302587.5,
+            "q3": 33388050.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 26541.12,
+              "median": 21584.0,
+              "sum": 5308224
+            },
+            "expanded": {
+              "mean": 466.045,
+              "median": 349.5,
+              "sum": 93209
+            },
+            "full_calls": {
+              "mean": 828.41,
+              "median": 673.5,
+              "sum": 165682
+            },
+            "generated": {
+              "mean": 1502.395,
+              "median": 1158.0,
+              "sum": 300479
+            },
+            "heuristic_cache_hits": {
+              "mean": 50.8,
+              "median": 0.0,
+              "sum": 10160
+            },
+            "manhattan_calls": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            },
+            "max_live_states": {
+              "mean": 402.265,
+              "median": 353.5,
+              "sum": 80453
+            },
+            "max_open_entries": {
+              "mean": 451.65,
+              "median": 385.0,
+              "sum": 90330
+            },
+            "pivot_evaluations": {
+              "mean": 26509.12,
+              "median": 21552.0,
+              "sum": 5301824
+            },
+            "pops": {
+              "mean": 1295.85,
+              "median": 1015.5,
+              "sum": 259170
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 918.09,
+              "median": 739.5,
+              "sum": 183618
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 827.41,
+              "median": 672.5,
+              "sum": 165482
+            },
+            "stale_pops": {
+              "mean": 1.395,
+              "median": 0.0,
+              "sum": 279
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            }
+          },
+          "median_search_ns": {
+            "max": 121317200.0,
+            "mean": 26214212.5,
+            "median": 19031575.0,
+            "min": 238900.0,
+            "n": 200,
+            "q1": 9366287.5,
+            "q3": 34629987.5
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 4298.44,
+              "median": 3310.0,
+              "sum": 859688
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 14444.905,
+              "median": 11260.5,
+              "sum": 2888981
+            },
+            "heuristic_cache_hits": {
+              "mean": 578.665,
+              "median": 323.0,
+              "sum": 115733
+            },
+            "manhattan_calls": {
+              "mean": 4382.02,
+              "median": 3436.5,
+              "sum": 876404
+            },
+            "max_live_states": {
+              "mean": 106.885,
+              "median": 81.5,
+              "sum": 21377
+            },
+            "max_open_entries": {
+              "mean": 294.195,
+              "median": 89.0,
+              "sum": 58839
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 4860.56,
+              "median": 3861.5,
+              "sum": 972112
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 4959.685,
+              "median": 3961.5,
+              "sum": 991937
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 561.12,
+              "median": 316.5,
+              "sum": 112224
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 4382.02,
+              "median": 3436.5,
+              "sum": 876404
+            }
+          },
+          "median_search_ns": {
+            "max": 168377400.0,
+            "mean": 55284890.25,
+            "median": 41600750.0,
+            "min": 127100.0,
+            "n": 200,
+            "q1": 20155987.5,
+            "q3": 82272612.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 18118.3,
+              "median": 14064.0,
+              "sum": 3623660
+            },
+            "expanded": {
+              "mean": 466.045,
+              "median": 349.5,
+              "sum": 93209
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 1502.395,
+              "median": 1158.0,
+              "sum": 300479
+            },
+            "heuristic_cache_hits": {
+              "mean": 50.8,
+              "median": 0.0,
+              "sum": 10160
+            },
+            "manhattan_calls": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            },
+            "max_live_states": {
+              "mean": 402.265,
+              "median": 353.5,
+              "sum": 80453
+            },
+            "max_open_entries": {
+              "mean": 451.65,
+              "median": 385.0,
+              "sum": 90330
+            },
+            "pivot_evaluations": {
+              "mean": 18086.3,
+              "median": 14032.0,
+              "sum": 3617260
+            },
+            "pops": {
+              "mean": 1822.445,
+              "median": 1429.5,
+              "sum": 364489
+            },
+            "prefix_calls": {
+              "mean": 828.41,
+              "median": 673.5,
+              "sum": 165682
+            },
+            "relaxations": {
+              "mean": 918.09,
+              "median": 739.5,
+              "sum": 183618
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 1354.005,
+              "median": 1051.0,
+              "sum": 270801
+            },
+            "stale_pops": {
+              "mean": 1.395,
+              "median": 0.0,
+              "sum": 279
+            },
+            "suffix_calls": {
+              "mean": 527.595,
+              "median": 404.0,
+              "sum": 105519
+            },
+            "unique_discovered": {
+              "mean": 868.29,
+              "median": 698.5,
+              "sum": 173658
+            }
+          },
+          "median_search_ns": {
+            "max": 127878550.0,
+            "mean": 24800130.0,
+            "median": 17708675.0,
+            "min": 261450.0,
+            "n": 200,
+            "q1": 8253650.0,
+            "q3": 33829962.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 5506.0,
+          "mean": 1053.19,
+          "median": 806.0,
+          "min": 12.0,
+          "n": 200,
+          "q1": 395.5,
+          "q3": 1490.0
+        },
+        "pivot_saved": {
+          "max": 36988.0,
+          "mean": 8422.82,
+          "median": 6426.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 3479.0,
+          "q3": 11613.0
+        },
+        "pivot_saving": {
+          "max": 0.5019736842105263,
+          "mean": 0.30898799762729984,
+          "median": 0.31181409130816506,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.24056241925064598,
+          "q3": 0.4155190894242548
+        },
+        "read_saved": {
+          "max": 36988.0,
+          "mean": 8422.82,
+          "median": 6426.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 3479.0,
+          "q3": 11613.0
+        },
+        "read_saving": {
+          "max": 0.5006561679790026,
+          "mean": 0.3081745467978083,
+          "median": 0.31060761401968484,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.24015134110619724,
+          "q3": 0.41425363149847094
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.2723698964929689,
+          "mean": -0.06398643724474089,
+          "median": -0.06707043635039381,
+          "min": -0.3777075214617546,
+          "n": 200,
+          "q1": -0.15429346195581684,
+          "q3": 0.038284661072028076
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.313072612447001,
+          "mean": 0.946358114632169,
+          "median": 0.9351298079761063,
+          "min": 0.6854309451924984,
+          "n": 200,
+          "q1": 0.8570204814271639,
+          "q3": 1.0390276557506026
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.575197889182058,
+          "mean": 0.3540763999199827,
+          "median": 0.3573159582935998,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.27540015059950185,
+          "q3": 0.47633483737544646
+        },
+        "suffix_avoided_calls": {
+          "max": 1321.0,
+          "mean": 300.815,
+          "median": 229.5,
+          "min": 0.0,
+          "n": 200,
+          "q1": 124.25,
+          "q3": 414.75
+        }
+      },
+      "queries": 200
+    },
+    "random": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1718.56,
+              "median": 1600.0,
+              "sum": 343712
+            },
+            "expanded": {
+              "mean": 21.955,
+              "median": 20.0,
+              "sum": 4391
+            },
+            "full_calls": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            },
+            "generated": {
+              "mean": 75.605,
+              "median": 69.0,
+              "sum": 15121
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.155,
+              "median": 0.0,
+              "sum": 31
+            },
+            "manhattan_calls": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            },
+            "max_live_states": {
+              "mean": 30.75,
+              "median": 28.5,
+              "sum": 6150
+            },
+            "max_open_entries": {
+              "mean": 30.905,
+              "median": 28.5,
+              "sum": 6181
+            },
+            "pivot_evaluations": {
+              "mean": 1686.56,
+              "median": 1568.0,
+              "sum": 337312
+            },
+            "pops": {
+              "mean": 22.955,
+              "median": 21.0,
+              "sum": 4591
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 51.86,
+              "median": 48.0,
+              "sum": 10372
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            }
+          },
+          "median_search_ns": {
+            "max": 3689950.0,
+            "mean": 1206437.0,
+            "median": 1052875.0,
+            "min": 154750.0,
+            "n": 200,
+            "q1": 678287.5,
+            "q3": 1621275.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 884.8,
+              "median": 768.0,
+              "sum": 176960
+            },
+            "expanded": {
+              "mean": 21.955,
+              "median": 20.0,
+              "sum": 4391
+            },
+            "full_calls": {
+              "mean": 26.65,
+              "median": 23.0,
+              "sum": 5330
+            },
+            "generated": {
+              "mean": 75.605,
+              "median": 69.0,
+              "sum": 15121
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.155,
+              "median": 0.0,
+              "sum": 31
+            },
+            "manhattan_calls": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            },
+            "max_live_states": {
+              "mean": 30.75,
+              "median": 28.5,
+              "sum": 6150
+            },
+            "max_open_entries": {
+              "mean": 30.905,
+              "median": 28.5,
+              "sum": 6181
+            },
+            "pivot_evaluations": {
+              "mean": 852.8,
+              "median": 736.0,
+              "sum": 170560
+            },
+            "pops": {
+              "mean": 48.605,
+              "median": 43.5,
+              "sum": 9721
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 51.86,
+              "median": 48.0,
+              "sum": 10372
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 25.65,
+              "median": 22.0,
+              "sum": 5130
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            }
+          },
+          "median_search_ns": {
+            "max": 3515650.0,
+            "mean": 885205.5,
+            "median": 760675.0,
+            "min": 83050.0,
+            "n": 200,
+            "q1": 472550.0,
+            "q3": 1208450.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 33.4,
+              "median": 24.0,
+              "sum": 6680
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 112.275,
+              "median": 83.0,
+              "sum": 22455
+            },
+            "heuristic_cache_hits": {
+              "mean": 4.57,
+              "median": 0.0,
+              "sum": 914
+            },
+            "manhattan_calls": {
+              "mean": 64.19,
+              "median": 54.5,
+              "sum": 12838
+            },
+            "max_live_states": {
+              "mean": 30.85,
+              "median": 29.0,
+              "sum": 6170
+            },
+            "max_open_entries": {
+              "mean": 35.11,
+              "median": 30.0,
+              "sum": 7022
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 34.685,
+              "median": 25.0,
+              "sum": 6937
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 67.76,
+              "median": 55.5,
+              "sum": 13552
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.285,
+              "median": 0.0,
+              "sum": 57
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 64.19,
+              "median": 54.5,
+              "sum": 12838
+            }
+          },
+          "median_search_ns": {
+            "max": 4636650.0,
+            "mean": 522531.25,
+            "median": 402325.0,
+            "min": 50400.0,
+            "n": 200,
+            "q1": 250487.5,
+            "q3": 664462.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 822.92,
+              "median": 736.0,
+              "sum": 164584
+            },
+            "expanded": {
+              "mean": 21.955,
+              "median": 20.0,
+              "sum": 4391
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 75.605,
+              "median": 69.0,
+              "sum": 15121
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.155,
+              "median": 0.0,
+              "sum": 31
+            },
+            "manhattan_calls": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            },
+            "max_live_states": {
+              "mean": 30.75,
+              "median": 28.5,
+              "sum": 6150
+            },
+            "max_open_entries": {
+              "mean": 30.905,
+              "median": 28.5,
+              "sum": 6181
+            },
+            "pivot_evaluations": {
+              "mean": 790.92,
+              "median": 704.0,
+              "sum": 158184
+            },
+            "pops": {
+              "mean": 72.045,
+              "median": 65.0,
+              "sum": 14409
+            },
+            "prefix_calls": {
+              "mean": 26.65,
+              "median": 23.0,
+              "sum": 5330
+            },
+            "relaxations": {
+              "mean": 51.86,
+              "median": 48.0,
+              "sum": 10372
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 49.09,
+              "median": 44.0,
+              "sum": 9818
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 24.44,
+              "median": 22.0,
+              "sum": 4888
+            },
+            "unique_discovered": {
+              "mean": 52.705,
+              "median": 49.0,
+              "sum": 10541
+            }
+          },
+          "median_search_ns": {
+            "max": 3737950.0,
+            "mean": 953996.5,
+            "median": 816175.0,
+            "min": 80900.0,
+            "n": 200,
+            "q1": 531775.0,
+            "q3": 1284112.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 134.0,
+          "mean": 46.88,
+          "median": 42.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 25.5,
+          "q3": 64.0
+        },
+        "pivot_saved": {
+          "max": 1288.0,
+          "mean": 61.88,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 56.0
+        },
+        "pivot_saving": {
+          "max": 0.49085365853658536,
+          "mean": 0.05244613370221303,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.06631944444444444
+        },
+        "read_saved": {
+          "max": 1288.0,
+          "mean": 61.88,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 56.0
+        },
+        "read_saving": {
+          "max": 0.4791666666666667,
+          "mean": 0.05047225398261873,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.06348778735632184
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.4298424779154205,
+          "mean": 0.08190564613954691,
+          "median": 0.0817979054506716,
+          "min": -0.5129755951841801,
+          "n": 200,
+          "q1": 0.012035277081278717,
+          "q3": 0.1550972620258687
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.5370153906097799,
+          "mean": 1.096760535732256,
+          "median": 1.0852368820756437,
+          "min": 0.5987114028689521,
+          "n": 200,
+          "q1": 1.0121079940806363,
+          "q3": 1.1677721236887784
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.575,
+          "mean": 0.06283272928435178,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 199,
+          "q1": 0.0,
+          "q3": 0.08249158249158249
+        },
+        "suffix_avoided_calls": {
+          "max": 46.0,
+          "mean": 2.21,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 2.0
+        }
+      },
+      "queries": 200
+    },
+    "room": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 3727.84,
+              "median": 2320.0,
+              "sum": 745568
+            },
+            "expanded": {
+              "mean": 49.535,
+              "median": 36.0,
+              "sum": 9907
+            },
+            "full_calls": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            },
+            "generated": {
+              "mean": 170.895,
+              "median": 113.5,
+              "sum": 34179
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.08,
+              "median": 0.0,
+              "sum": 216
+            },
+            "manhattan_calls": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            },
+            "max_live_states": {
+              "mean": 65.96,
+              "median": 36.5,
+              "sum": 13192
+            },
+            "max_open_entries": {
+              "mean": 66.85,
+              "median": 36.5,
+              "sum": 13370
+            },
+            "pivot_evaluations": {
+              "mean": 3695.84,
+              "median": 2288.0,
+              "sum": 739168
+            },
+            "pops": {
+              "mean": 50.725,
+              "median": 37.0,
+              "sum": 10145
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 115.575,
+              "median": 70.5,
+              "sum": 23115
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.19,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            }
+          },
+          "median_search_ns": {
+            "max": 11854900.0,
+            "mean": 2672387.0,
+            "median": 1611900.0,
+            "min": 116200.0,
+            "n": 200,
+            "q1": 925475.0,
+            "q3": 3364287.5
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 2704.96,
+              "median": 1760.0,
+              "sum": 540992
+            },
+            "expanded": {
+              "mean": 49.535,
+              "median": 36.0,
+              "sum": 9907
+            },
+            "full_calls": {
+              "mean": 83.53,
+              "median": 54.0,
+              "sum": 16706
+            },
+            "generated": {
+              "mean": 170.895,
+              "median": 113.5,
+              "sum": 34179
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.08,
+              "median": 0.0,
+              "sum": 216
+            },
+            "manhattan_calls": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            },
+            "max_live_states": {
+              "mean": 65.96,
+              "median": 36.5,
+              "sum": 13192
+            },
+            "max_open_entries": {
+              "mean": 66.85,
+              "median": 36.5,
+              "sum": 13370
+            },
+            "pivot_evaluations": {
+              "mean": 2672.96,
+              "median": 1728.0,
+              "sum": 534592
+            },
+            "pops": {
+              "mean": 133.255,
+              "median": 91.0,
+              "sum": 26651
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 115.575,
+              "median": 70.5,
+              "sum": 23115
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 82.53,
+              "median": 53.0,
+              "sum": 16506
+            },
+            "stale_pops": {
+              "mean": 0.19,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            }
+          },
+          "median_search_ns": {
+            "max": 10825800.0,
+            "mean": 2437640.75,
+            "median": 1389050.0,
+            "min": 73500.0,
+            "n": 200,
+            "q1": 779287.5,
+            "q3": 2994512.5
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 353.23,
+              "median": 85.0,
+              "sum": 70646
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 1291.02,
+              "median": 259.0,
+              "sum": 258204
+            },
+            "heuristic_cache_hits": {
+              "mean": 85.125,
+              "median": 7.5,
+              "sum": 17025
+            },
+            "manhattan_calls": {
+              "mean": 404.95,
+              "median": 125.0,
+              "sum": 80990
+            },
+            "max_live_states": {
+              "mean": 54.39,
+              "median": 36.5,
+              "sum": 10878
+            },
+            "max_open_entries": {
+              "mean": 102.69,
+              "median": 40.0,
+              "sum": 20538
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 421.705,
+              "median": 86.0,
+              "sum": 84341
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 489.075,
+              "median": 131.0,
+              "sum": 97815
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 67.475,
+              "median": 1.0,
+              "sum": 13495
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 404.95,
+              "median": 125.0,
+              "sum": 80990
+            }
+          },
+          "median_search_ns": {
+            "max": 44629050.0,
+            "mean": 4680106.75,
+            "median": 993100.0,
+            "min": 41350.0,
+            "n": 200,
+            "q1": 437100.0,
+            "q3": 4192912.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1967.44,
+              "median": 1374.0,
+              "sum": 393488
+            },
+            "expanded": {
+              "mean": 49.535,
+              "median": 36.0,
+              "sum": 9907
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 170.895,
+              "median": 113.5,
+              "sum": 34179
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.08,
+              "median": 0.0,
+              "sum": 216
+            },
+            "manhattan_calls": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            },
+            "max_live_states": {
+              "mean": 65.96,
+              "median": 36.5,
+              "sum": 13192
+            },
+            "max_open_entries": {
+              "mean": 66.85,
+              "median": 36.5,
+              "sum": 13370
+            },
+            "pivot_evaluations": {
+              "mean": 1935.44,
+              "median": 1342.0,
+              "sum": 387088
+            },
+            "pops": {
+              "mean": 189.445,
+              "median": 129.0,
+              "sum": 37889
+            },
+            "prefix_calls": {
+              "mean": 83.53,
+              "median": 54.0,
+              "sum": 16706
+            },
+            "relaxations": {
+              "mean": 115.575,
+              "median": 70.5,
+              "sum": 23115
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 138.72,
+              "median": 91.5,
+              "sum": 27744
+            },
+            "stale_pops": {
+              "mean": 0.19,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 57.19,
+              "median": 41.0,
+              "sum": 11438
+            },
+            "unique_discovered": {
+              "mean": 115.495,
+              "median": 71.5,
+              "sum": 23099
+            }
+          },
+          "median_search_ns": {
+            "max": 9800700.0,
+            "mean": 2343473.25,
+            "median": 1416175.0,
+            "min": 78050.0,
+            "n": 200,
+            "q1": 851262.5,
+            "q3": 2911875.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 450.0,
+          "mean": 112.38,
+          "median": 80.0,
+          "min": 2.0,
+          "n": 200,
+          "q1": 44.0,
+          "q3": 142.0
+        },
+        "pivot_saved": {
+          "max": 6552.0,
+          "mean": 737.52,
+          "median": 196.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 28.0,
+          "q3": 791.0
+        },
+        "pivot_saving": {
+          "max": 0.5241545893719807,
+          "mean": 0.17621228788425525,
+          "median": 0.14875,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.019915883226125683,
+          "q3": 0.320411084701815
+        },
+        "read_saved": {
+          "max": 6552.0,
+          "mean": 737.52,
+          "median": 196.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 28.0,
+          "q3": 791.0
+        },
+        "read_saving": {
+          "max": 0.5220338983050847,
+          "mean": 0.17351493552797034,
+          "median": 0.146695429697432,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.019472064393939396,
+          "q3": 0.3182932263814617
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.4663762582227058,
+          "mean": 0.00425271665033994,
+          "median": 0.025945197786414943,
+          "min": -0.6569874502303239,
+          "n": 200,
+          "q1": -0.10318986916753979,
+          "q3": 0.1046633845582251
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.594206719903571,
+          "mean": 1.019631145959798,
+          "median": 1.0262847412304203,
+          "min": 0.5184107225480977,
+          "n": 200,
+          "q1": 0.9019559790272295,
+          "q3": 1.110336918922195
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.6019417475728155,
+          "mean": 0.20465649048159787,
+          "median": 0.17542907871375024,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.023291925465838508,
+          "q3": 0.3683978873239437
+        },
+        "suffix_avoided_calls": {
+          "max": 234.0,
+          "mean": 26.34,
+          "median": 7.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 1.0,
+          "q3": 28.25
+        }
+      },
+      "queries": 200
+    },
+    "warehouse": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 6647.04,
+              "median": 5824.0,
+              "sum": 1329408
+            },
+            "expanded": {
+              "mean": 105.235,
+              "median": 95.5,
+              "sum": 21047
+            },
+            "full_calls": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            },
+            "generated": {
+              "mean": 320.295,
+              "median": 290.5,
+              "sum": 64059
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.075,
+              "median": 0.0,
+              "sum": 215
+            },
+            "manhattan_calls": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            },
+            "max_live_states": {
+              "mean": 101.485,
+              "median": 82.5,
+              "sum": 20297
+            },
+            "max_open_entries": {
+              "mean": 102.56,
+              "median": 82.5,
+              "sum": 20512
+            },
+            "pivot_evaluations": {
+              "mean": 6615.04,
+              "median": 5792.0,
+              "sum": 1323008
+            },
+            "pops": {
+              "mean": 106.235,
+              "median": 96.5,
+              "sum": 21247
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 206.795,
+              "median": 180.0,
+              "sum": 41359
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            }
+          },
+          "median_search_ns": {
+            "max": 16864750.0,
+            "mean": 4885868.5,
+            "median": 4088275.0,
+            "min": 221000.0,
+            "n": 200,
+            "q1": 2521387.5,
+            "q3": 6693337.5
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 3412.64,
+              "median": 3120.0,
+              "sum": 682528
+            },
+            "expanded": {
+              "mean": 105.235,
+              "median": 95.5,
+              "sum": 21047
+            },
+            "full_calls": {
+              "mean": 105.645,
+              "median": 96.5,
+              "sum": 21129
+            },
+            "generated": {
+              "mean": 320.295,
+              "median": 290.5,
+              "sum": 64059
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.075,
+              "median": 0.0,
+              "sum": 215
+            },
+            "manhattan_calls": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            },
+            "max_live_states": {
+              "mean": 101.485,
+              "median": 82.5,
+              "sum": 20297
+            },
+            "max_open_entries": {
+              "mean": 102.56,
+              "median": 82.5,
+              "sum": 20512
+            },
+            "pivot_evaluations": {
+              "mean": 3380.64,
+              "median": 3088.0,
+              "sum": 676128
+            },
+            "pops": {
+              "mean": 210.88,
+              "median": 193.0,
+              "sum": 42176
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 206.795,
+              "median": 180.0,
+              "sum": 41359
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 104.645,
+              "median": 95.5,
+              "sum": 20929
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            }
+          },
+          "median_search_ns": {
+            "max": 14867550.0,
+            "mean": 3589203.75,
+            "median": 3223875.0,
+            "min": 123850.0,
+            "n": 200,
+            "q1": 1787337.5,
+            "q3": 4813150.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 106.385,
+              "median": 96.5,
+              "sum": 21277
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 323.8,
+              "median": 292.0,
+              "sum": 64760
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.325,
+              "median": 0.0,
+              "sum": 265
+            },
+            "manhattan_calls": {
+              "mean": 207.885,
+              "median": 181.0,
+              "sum": 41577
+            },
+            "max_live_states": {
+              "mean": 101.5,
+              "median": 82.5,
+              "sum": 20300
+            },
+            "max_open_entries": {
+              "mean": 102.825,
+              "median": 82.5,
+              "sum": 20565
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 107.385,
+              "median": 97.5,
+              "sum": 21477
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 208.21,
+              "median": 180.0,
+              "sum": 41642
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 207.885,
+              "median": 181.0,
+              "sum": 41577
+            }
+          },
+          "median_search_ns": {
+            "max": 6480950.0,
+            "mean": 1653669.0,
+            "median": 1437850.0,
+            "min": 72500.0,
+            "n": 200,
+            "q1": 848575.0,
+            "q3": 2240375.0
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 3412.5,
+              "median": 3120.0,
+              "sum": 682500
+            },
+            "expanded": {
+              "mean": 105.235,
+              "median": 95.5,
+              "sum": 21047
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 320.295,
+              "median": 290.5,
+              "sum": 64059
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.075,
+              "median": 0.0,
+              "sum": 215
+            },
+            "manhattan_calls": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            },
+            "max_live_states": {
+              "mean": 101.485,
+              "median": 82.5,
+              "sum": 20297
+            },
+            "max_open_entries": {
+              "mean": 102.56,
+              "median": 82.5,
+              "sum": 20512
+            },
+            "pivot_evaluations": {
+              "mean": 3380.5,
+              "median": 3088.0,
+              "sum": 676100
+            },
+            "pops": {
+              "mean": 315.52,
+              "median": 288.5,
+              "sum": 63104
+            },
+            "prefix_calls": {
+              "mean": 105.645,
+              "median": 96.5,
+              "sum": 21129
+            },
+            "relaxations": {
+              "mean": 206.795,
+              "median": 180.0,
+              "sum": 41359
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 209.285,
+              "median": 191.0,
+              "sum": 41857
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 105.64,
+              "median": 96.5,
+              "sum": 21128
+            },
+            "unique_discovered": {
+              "mean": 206.72,
+              "median": 181.0,
+              "sum": 41344
+            }
+          },
+          "median_search_ns": {
+            "max": 14452850.0,
+            "mean": 4124626.0,
+            "median": 3592850.0,
+            "min": 140550.0,
+            "n": 200,
+            "q1": 2039687.5,
+            "q3": 5760525.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 794.0,
+          "mean": 209.28,
+          "median": 191.0,
+          "min": 2.0,
+          "n": 200,
+          "q1": 119.0,
+          "q3": 290.5
+        },
+        "pivot_saved": {
+          "max": 28.0,
+          "mean": 0.14,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "pivot_saving": {
+          "max": 0.025,
+          "mean": 0.000125,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saved": {
+          "max": 28.0,
+          "mean": 0.14,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saving": {
+          "max": 0.024305555555555556,
+          "mean": 0.00012152777777777777,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.49097491163566476,
+          "mean": 0.14248335513471827,
+          "median": 0.14144392665434735,
+          "min": -0.2843049132897814,
+          "n": 200,
+          "q1": 0.044147269284629434,
+          "q3": 0.24316582535258358
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.6339083600031223,
+          "mean": 1.1648876107360464,
+          "median": 1.1519364705828037,
+          "min": 0.752537151141718,
+          "n": 200,
+          "q1": 1.0451374852580837,
+          "q3": 1.2752802152293121
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.029411764705882353,
+          "mean": 0.00014705882352941175,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "suffix_avoided_calls": {
+          "max": 1.0,
+          "mean": 0.005,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 200,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "queries": 200
+    }
+  },
+  "figures": [
+    "figures/stage_schematic.png",
+    "figures/per_map_time_ratios.png",
+    "figures/saved_work_vs_time.png",
+    "figures/family_mechanism_decomposition.png",
+    "figures/preprocessing_amortization.png"
+  ],
+  "hypothesis_outcomes": [
+    {
+      "estimand": "BFS equality and full-landmark trace invariance",
+      "estimate": "800/800 queries passed both gates",
+      "hypothesis": "H1",
+      "interpretation": "Correctness/invariance gate passed before timing access.",
+      "interval": "not applicable (exact validation)",
+      "status": "passed"
+    },
+    {
+      "estimand": "median exact pivot/read saving of staged vs lazy_full",
+      "estimate": "pivot=0.0309758772; read=0.0301724138",
+      "hypothesis": "H2",
+      "interpretation": "Exact deterministic work counts; no timing inference.",
+      "interval": "descriptive IQRs in summary/map tables",
+      "status": "supported"
+    },
+    {
+      "estimand": "median paired staged/lazy_full time ratio; read-saving association",
+      "estimate": "ratio=1.05430023; Spearman rho=-0.640610853",
+      "hypothesis": "H3",
+      "interpretation": "Association is descriptive and not causal.",
+      "interval": "hierarchical bootstrap 95% CI [0.989043253, 1.10158524]",
+      "status": "descriptive"
+    }
+  ],
+  "integrity": {
+    "all_800_queries_retained": true,
+    "all_costs_match_bfs": true,
+    "all_full_landmark_expansion_digests_match": true,
+    "bfs_replayed": true,
+    "deterministic_methods_replayed": true,
+    "performance_unlocked_after_all_gates": true,
+    "post_hoc_exclusions": 0
+  },
+  "maps": {
+    "maze-128-128-10.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 16880.96,
+              "median": 14496.0,
+              "sum": 1688096
+            },
+            "expanded": {
+              "mean": 252.28,
+              "median": 203.0,
+              "sum": 25228
+            },
+            "full_calls": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            },
+            "generated": {
+              "mean": 894.05,
+              "median": 712.0,
+              "sum": 89405
+            },
+            "heuristic_cache_hits": {
+              "mean": 41.21,
+              "median": 0.0,
+              "sum": 4121
+            },
+            "manhattan_calls": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            },
+            "max_live_states": {
+              "mean": 274.25,
+              "median": 253.5,
+              "sum": 27425
+            },
+            "max_open_entries": {
+              "mean": 312.78,
+              "median": 272.5,
+              "sum": 31278
+            },
+            "pivot_evaluations": {
+              "mean": 16848.96,
+              "median": 14464.0,
+              "sum": 1684896
+            },
+            "pops": {
+              "mean": 255.96,
+              "median": 204.0,
+              "sum": 25596
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 566.74,
+              "median": 482.5,
+              "sum": 56674
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 2.68,
+              "median": 0.0,
+              "sum": 268
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            }
+          },
+          "median_search_ns": {
+            "max": 38536900.0,
+            "mean": 13341906.0,
+            "median": 11558775.0,
+            "min": 432600.0,
+            "n": 100,
+            "q1": 7008250.0,
+            "q3": 18634537.5
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 14877.44,
+              "median": 12464.0,
+              "sum": 1487744
+            },
+            "expanded": {
+              "mean": 252.28,
+              "median": 203.0,
+              "sum": 25228
+            },
+            "full_calls": {
+              "mean": 463.92,
+              "median": 388.5,
+              "sum": 46392
+            },
+            "generated": {
+              "mean": 894.05,
+              "median": 712.0,
+              "sum": 89405
+            },
+            "heuristic_cache_hits": {
+              "mean": 41.21,
+              "median": 0.0,
+              "sum": 4121
+            },
+            "manhattan_calls": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            },
+            "max_live_states": {
+              "mean": 274.25,
+              "median": 253.5,
+              "sum": 27425
+            },
+            "max_open_entries": {
+              "mean": 312.78,
+              "median": 272.5,
+              "sum": 31278
+            },
+            "pivot_evaluations": {
+              "mean": 14845.44,
+              "median": 12432.0,
+              "sum": 1484544
+            },
+            "pops": {
+              "mean": 718.88,
+              "median": 598.5,
+              "sum": 71888
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 566.74,
+              "median": 482.5,
+              "sum": 56674
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 462.92,
+              "median": 387.5,
+              "sum": 46292
+            },
+            "stale_pops": {
+              "mean": 2.68,
+              "median": 0.0,
+              "sum": 268
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            }
+          },
+          "median_search_ns": {
+            "max": 45507650.0,
+            "mean": 13863016.5,
+            "median": 12041025.0,
+            "min": 238900.0,
+            "n": 100,
+            "q1": 6470700.0,
+            "q3": 18885075.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 3958.54,
+              "median": 2931.0,
+              "sum": 395854
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 15024.98,
+              "median": 11160.0,
+              "sum": 1502498
+            },
+            "heuristic_cache_hits": {
+              "mean": 910.09,
+              "median": 718.0,
+              "sum": 91009
+            },
+            "manhattan_calls": {
+              "mean": 4094.89,
+              "median": 3011.5,
+              "sum": 409489
+            },
+            "max_live_states": {
+              "mean": 153.89,
+              "median": 153.0,
+              "sum": 15389
+            },
+            "max_open_entries": {
+              "mean": 524.55,
+              "median": 474.5,
+              "sum": 52455
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 4834.94,
+              "median": 3562.0,
+              "sum": 483494
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 5003.98,
+              "median": 3691.0,
+              "sum": 500398
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 875.4,
+              "median": 684.5,
+              "sum": 87540
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 4094.89,
+              "median": 3011.5,
+              "sum": 409489
+            }
+          },
+          "median_search_ns": {
+            "max": 168377400.0,
+            "mean": 53087109.5,
+            "median": 37292050.0,
+            "min": 127100.0,
+            "n": 100,
+            "q1": 18300262.5,
+            "q3": 76734275.0
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 10217.68,
+              "median": 8150.0,
+              "sum": 1021768
+            },
+            "expanded": {
+              "mean": 252.28,
+              "median": 203.0,
+              "sum": 25228
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 894.05,
+              "median": 712.0,
+              "sum": 89405
+            },
+            "heuristic_cache_hits": {
+              "mean": 41.21,
+              "median": 0.0,
+              "sum": 4121
+            },
+            "manhattan_calls": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            },
+            "max_live_states": {
+              "mean": 274.25,
+              "median": 253.5,
+              "sum": 27425
+            },
+            "max_open_entries": {
+              "mean": 312.78,
+              "median": 272.5,
+              "sum": 31278
+            },
+            "pivot_evaluations": {
+              "mean": 10185.68,
+              "median": 8118.0,
+              "sum": 1018568
+            },
+            "pops": {
+              "mean": 1015.38,
+              "median": 814.0,
+              "sum": 101538
+            },
+            "prefix_calls": {
+              "mean": 463.92,
+              "median": 388.5,
+              "sum": 46392
+            },
+            "relaxations": {
+              "mean": 566.74,
+              "median": 482.5,
+              "sum": 56674
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 759.42,
+              "median": 614.5,
+              "sum": 75942
+            },
+            "stale_pops": {
+              "mean": 2.68,
+              "median": 0.0,
+              "sum": 268
+            },
+            "suffix_calls": {
+              "mean": 297.5,
+              "median": 234.0,
+              "sum": 29750
+            },
+            "unique_discovered": {
+              "mean": 526.53,
+              "median": 452.0,
+              "sum": 52653
+            }
+          },
+          "median_search_ns": {
+            "max": 46338050.0,
+            "mean": 12919282.5,
+            "median": 10858700.0,
+            "min": 261450.0,
+            "n": 100,
+            "q1": 6772012.5,
+            "q3": 17187875.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 2088.0,
+          "mean": 593.0,
+          "median": 466.0,
+          "min": 12.0,
+          "n": 100,
+          "q1": 265.0,
+          "q3": 772.5
+        },
+        "pivot_saved": {
+          "max": 14140.0,
+          "mean": 4659.76,
+          "median": 4284.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 1554.0,
+          "q3": 6678.0
+        },
+        "pivot_saving": {
+          "max": 0.5019736842105263,
+          "mean": 0.2972343028045003,
+          "median": 0.30791666666666667,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.18710816693559232,
+          "q3": 0.4246741923641703
+        },
+        "read_saved": {
+          "max": 14140.0,
+          "mean": 4659.76,
+          "median": 4284.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 1554.0,
+          "q3": 6678.0
+        },
+        "read_saving": {
+          "max": 0.5006561679790026,
+          "mean": 0.2962850348518305,
+          "median": 0.3033995688869998,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.18683216924119506,
+          "q3": 0.42294927969627627
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.2723698964929689,
+          "mean": -0.06528893999440355,
+          "median": -0.06796944912034993,
+          "min": -0.3777075214617546,
+          "n": 100,
+          "q1": -0.1595622250899444,
+          "q3": 0.04728489047530383
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.313072612447001,
+          "mean": 0.946769357852044,
+          "median": 0.9342907172096773,
+          "min": 0.6854309451924984,
+          "n": 100,
+          "q1": 0.8525171166337921,
+          "q3": 1.0484213198506362
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.575197889182058,
+          "mean": 0.3407951057507782,
+          "median": 0.3555537244561635,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.21415496782290355,
+          "q3": 0.48732944328879174
+        },
+        "suffix_avoided_calls": {
+          "max": 505.0,
+          "mean": 166.42,
+          "median": 153.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 55.5,
+          "q3": 238.5
+        }
+      },
+      "queries": 100
+    },
+    "maze-128-128-2.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 38753.6,
+              "median": 36640.0,
+              "sum": 3875360
+            },
+            "expanded": {
+              "mean": 679.81,
+              "median": 589.5,
+              "sum": 67981
+            },
+            "full_calls": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            },
+            "generated": {
+              "mean": 2110.74,
+              "median": 1848.0,
+              "sum": 211074
+            },
+            "heuristic_cache_hits": {
+              "mean": 60.39,
+              "median": 0.0,
+              "sum": 6039
+            },
+            "manhattan_calls": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            },
+            "max_live_states": {
+              "mean": 530.28,
+              "median": 508.0,
+              "sum": 53028
+            },
+            "max_open_entries": {
+              "mean": 590.52,
+              "median": 537.0,
+              "sum": 59052
+            },
+            "pivot_evaluations": {
+              "mean": 38721.6,
+              "median": 36608.0,
+              "sum": 3872160
+            },
+            "pops": {
+              "mean": 680.92,
+              "median": 590.5,
+              "sum": 68092
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 1269.44,
+              "median": 1158.0,
+              "sum": 126944
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.11,
+              "median": 0.0,
+              "sum": 11
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            }
+          },
+          "median_search_ns": {
+            "max": 100989650.0,
+            "mean": 34320502.5,
+            "median": 28963725.0,
+            "min": 720500.0,
+            "n": 100,
+            "q1": 18286262.5,
+            "q3": 46335250.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 38204.8,
+              "median": 35632.0,
+              "sum": 3820480
+            },
+            "expanded": {
+              "mean": 679.81,
+              "median": 589.5,
+              "sum": 67981
+            },
+            "full_calls": {
+              "mean": 1192.9,
+              "median": 1112.5,
+              "sum": 119290
+            },
+            "generated": {
+              "mean": 2110.74,
+              "median": 1848.0,
+              "sum": 211074
+            },
+            "heuristic_cache_hits": {
+              "mean": 60.39,
+              "median": 0.0,
+              "sum": 6039
+            },
+            "manhattan_calls": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            },
+            "max_live_states": {
+              "mean": 530.28,
+              "median": 508.0,
+              "sum": 53028
+            },
+            "max_open_entries": {
+              "mean": 590.52,
+              "median": 537.0,
+              "sum": 59052
+            },
+            "pivot_evaluations": {
+              "mean": 38172.8,
+              "median": 35600.0,
+              "sum": 3817280
+            },
+            "pops": {
+              "mean": 1872.82,
+              "median": 1692.0,
+              "sum": 187282
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 1269.44,
+              "median": 1158.0,
+              "sum": 126944
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 1191.9,
+              "median": 1111.5,
+              "sum": 119190
+            },
+            "stale_pops": {
+              "mean": 0.11,
+              "median": 0.0,
+              "sum": 11
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            }
+          },
+          "median_search_ns": {
+            "max": 121317200.0,
+            "mean": 38565408.5,
+            "median": 33251250.0,
+            "min": 386550.0,
+            "n": 100,
+            "q1": 19326525.0,
+            "q3": 51416025.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 4638.34,
+              "median": 3780.5,
+              "sum": 463834
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 13864.83,
+              "median": 11260.5,
+              "sum": 1386483
+            },
+            "heuristic_cache_hits": {
+              "mean": 247.24,
+              "median": 215.5,
+              "sum": 24724
+            },
+            "manhattan_calls": {
+              "mean": 4669.15,
+              "median": 3812.5,
+              "sum": 466915
+            },
+            "max_live_states": {
+              "mean": 59.88,
+              "median": 62.5,
+              "sum": 5988
+            },
+            "max_open_entries": {
+              "mean": 63.84,
+              "median": 68.0,
+              "sum": 6384
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 4886.18,
+              "median": 3998.0,
+              "sum": 488618
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 4915.39,
+              "median": 4028.0,
+              "sum": 491539
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 246.84,
+              "median": 215.5,
+              "sum": 24684
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 4669.15,
+              "median": 3812.5,
+              "sum": 466915
+            }
+          },
+          "median_search_ns": {
+            "max": 145551750.0,
+            "mean": 57482671.0,
+            "median": 47152250.0,
+            "min": 222650.0,
+            "n": 100,
+            "q1": 25965587.5,
+            "q3": 88365937.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 26018.92,
+              "median": 24246.0,
+              "sum": 2601892
+            },
+            "expanded": {
+              "mean": 679.81,
+              "median": 589.5,
+              "sum": 67981
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 2110.74,
+              "median": 1848.0,
+              "sum": 211074
+            },
+            "heuristic_cache_hits": {
+              "mean": 60.39,
+              "median": 0.0,
+              "sum": 6039
+            },
+            "manhattan_calls": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            },
+            "max_live_states": {
+              "mean": 530.28,
+              "median": 508.0,
+              "sum": 53028
+            },
+            "max_open_entries": {
+              "mean": 590.52,
+              "median": 537.0,
+              "sum": 59052
+            },
+            "pivot_evaluations": {
+              "mean": 25986.92,
+              "median": 24214.0,
+              "sum": 2598692
+            },
+            "pops": {
+              "mean": 2629.51,
+              "median": 2372.5,
+              "sum": 262951
+            },
+            "prefix_calls": {
+              "mean": 1192.9,
+              "median": 1112.5,
+              "sum": 119290
+            },
+            "relaxations": {
+              "mean": 1269.44,
+              "median": 1158.0,
+              "sum": 126944
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 1948.59,
+              "median": 1795.0,
+              "sum": 194859
+            },
+            "stale_pops": {
+              "mean": 0.11,
+              "median": 0.0,
+              "sum": 11
+            },
+            "suffix_calls": {
+              "mean": 757.69,
+              "median": 712.0,
+              "sum": 75769
+            },
+            "unique_discovered": {
+              "mean": 1210.05,
+              "median": 1144.0,
+              "sum": 121005
+            }
+          },
+          "median_search_ns": {
+            "max": 127878550.0,
+            "mean": 36680977.5,
+            "median": 31226125.0,
+            "min": 462300.0,
+            "n": 100,
+            "q1": 19047350.0,
+            "q3": 49321412.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 5506.0,
+          "mean": 1513.38,
+          "median": 1422.0,
+          "min": 18.0,
+          "n": 100,
+          "q1": 833.5,
+          "q3": 2009.0
+        },
+        "pivot_saved": {
+          "max": 36988.0,
+          "mean": 12185.88,
+          "median": 11172.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 6020.0,
+          "q3": 16702.0
+        },
+        "pivot_saving": {
+          "max": 0.4564468503937008,
+          "mean": 0.3207416924500993,
+          "median": 0.31216364388087203,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.2681849468392136,
+          "q3": 0.39137056748906834
+        },
+        "read_saved": {
+          "max": 36988.0,
+          "mean": 12185.88,
+          "median": 11172.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 6020.0,
+          "q3": 16702.0
+        },
+        "read_saving": {
+          "max": 0.45599803343166173,
+          "mean": 0.32006405874378613,
+          "median": 0.31167763157894735,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.26644412878787876,
+          "q3": 0.39006347243362083
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.22987541978266585,
+          "mean": -0.06268393449507821,
+          "median": -0.06691594022567207,
+          "min": -0.3411102643304378,
+          "n": 100,
+          "q1": -0.14495369952843706,
+          "q3": 0.02950720874753376
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.2584432230331797,
+          "mean": 0.945946871412294,
+          "median": 0.9352744500329484,
+          "min": 0.7109805080944419,
+          "n": 100,
+          "q1": 0.8650623925234089,
+          "q3": 1.0299482143559735
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.5221674876847291,
+          "mean": 0.3673576940891872,
+          "median": 0.3573159582935998,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.3067982456140351,
+          "q3": 0.449602956207249
+        },
+        "suffix_avoided_calls": {
+          "max": 1321.0,
+          "mean": 435.21,
+          "median": 399.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 215.0,
+          "q3": 596.5
+        }
+      },
+      "queries": 100
+    },
+    "random-32-32-10.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1856.64,
+              "median": 1744.0,
+              "sum": 185664
+            },
+            "expanded": {
+              "mean": 22.1,
+              "median": 21.0,
+              "sum": 2210
+            },
+            "full_calls": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            },
+            "generated": {
+              "mean": 79.49,
+              "median": 74.5,
+              "sum": 7949
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            },
+            "max_live_states": {
+              "mean": 34.92,
+              "median": 33.0,
+              "sum": 3492
+            },
+            "max_open_entries": {
+              "mean": 34.98,
+              "median": 33.0,
+              "sum": 3498
+            },
+            "pivot_evaluations": {
+              "mean": 1824.64,
+              "median": 1712.0,
+              "sum": 182464
+            },
+            "pops": {
+              "mean": 23.1,
+              "median": 22.0,
+              "sum": 2310
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 56.08,
+              "median": 52.5,
+              "sum": 5608
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            }
+          },
+          "median_search_ns": {
+            "max": 3287350.0,
+            "mean": 1310748.5,
+            "median": 1143100.0,
+            "min": 154750.0,
+            "n": 100,
+            "q1": 764775.0,
+            "q3": 1713312.5
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 839.04,
+              "median": 768.0,
+              "sum": 83904
+            },
+            "expanded": {
+              "mean": 22.1,
+              "median": 21.0,
+              "sum": 2210
+            },
+            "full_calls": {
+              "mean": 25.22,
+              "median": 23.0,
+              "sum": 2522
+            },
+            "generated": {
+              "mean": 79.49,
+              "median": 74.5,
+              "sum": 7949
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            },
+            "max_live_states": {
+              "mean": 34.92,
+              "median": 33.0,
+              "sum": 3492
+            },
+            "max_open_entries": {
+              "mean": 34.98,
+              "median": 33.0,
+              "sum": 3498
+            },
+            "pivot_evaluations": {
+              "mean": 807.04,
+              "median": 736.0,
+              "sum": 80704
+            },
+            "pops": {
+              "mean": 47.32,
+              "median": 43.5,
+              "sum": 4732
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 56.08,
+              "median": 52.5,
+              "sum": 5608
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 24.22,
+              "median": 22.0,
+              "sum": 2422
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            }
+          },
+          "median_search_ns": {
+            "max": 2322050.0,
+            "mean": 883047.5,
+            "median": 782750.0,
+            "min": 83050.0,
+            "n": 100,
+            "q1": 536912.5,
+            "q3": 1208450.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 26.94,
+              "median": 23.0,
+              "sum": 2694
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 95.47,
+              "median": 84.0,
+              "sum": 9547
+            },
+            "heuristic_cache_hits": {
+              "mean": 2.51,
+              "median": 0.0,
+              "sum": 251
+            },
+            "manhattan_calls": {
+              "mean": 61.55,
+              "median": 57.5,
+              "sum": 6155
+            },
+            "max_live_states": {
+              "mean": 34.61,
+              "median": 33.0,
+              "sum": 3461
+            },
+            "max_open_entries": {
+              "mean": 37.12,
+              "median": 33.5,
+              "sum": 3712
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 27.94,
+              "median": 24.0,
+              "sum": 2794
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 63.06,
+              "median": 57.0,
+              "sum": 6306
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 61.55,
+              "median": 57.5,
+              "sum": 6155
+            }
+          },
+          "median_search_ns": {
+            "max": 1687350.0,
+            "mean": 481086.0,
+            "median": 389475.0,
+            "min": 50400.0,
+            "n": 100,
+            "q1": 274700.0,
+            "q3": 671275.0
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 808.24,
+              "median": 758.0,
+              "sum": 80824
+            },
+            "expanded": {
+              "mean": 22.1,
+              "median": 21.0,
+              "sum": 2210
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 79.49,
+              "median": 74.5,
+              "sum": 7949
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            },
+            "max_live_states": {
+              "mean": 34.92,
+              "median": 33.0,
+              "sum": 3492
+            },
+            "max_open_entries": {
+              "mean": 34.98,
+              "median": 33.0,
+              "sum": 3498
+            },
+            "pivot_evaluations": {
+              "mean": 776.24,
+              "median": 726.0,
+              "sum": 77624
+            },
+            "pops": {
+              "mean": 70.44,
+              "median": 64.5,
+              "sum": 7044
+            },
+            "prefix_calls": {
+              "mean": 25.22,
+              "median": 23.0,
+              "sum": 2522
+            },
+            "relaxations": {
+              "mean": 56.08,
+              "median": 52.5,
+              "sum": 5608
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 47.34,
+              "median": 44.0,
+              "sum": 4734
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 24.12,
+              "median": 22.5,
+              "sum": 2412
+            },
+            "unique_discovered": {
+              "mean": 57.02,
+              "median": 53.5,
+              "sum": 5702
+            }
+          },
+          "median_search_ns": {
+            "max": 2717150.0,
+            "mean": 992385.0,
+            "median": 820525.0,
+            "min": 80900.0,
+            "n": 100,
+            "q1": 602125.0,
+            "q3": 1395925.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 116.0,
+          "mean": 46.24,
+          "median": 43.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 27.5,
+          "q3": 60.0
+        },
+        "pivot_saved": {
+          "max": 532.0,
+          "mean": 30.8,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "pivot_saving": {
+          "max": 0.3684210526315789,
+          "mean": 0.024170566550961038,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saved": {
+          "max": 532.0,
+          "mean": 30.8,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saving": {
+          "max": 0.35,
+          "mean": 0.02347658973135898,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.42555986638691207,
+          "mean": 0.10913374548915822,
+          "median": 0.10475583840070915,
+          "min": -0.4768083320192314,
+          "n": 100,
+          "q1": 0.05078393886933964,
+          "q3": 0.20676836749272076
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.5304470256951777,
+          "mean": 1.1271981563640239,
+          "median": 1.1104412378445492,
+          "min": 0.6207614979946873,
+          "n": 100,
+          "q1": 1.0520971508276271,
+          "q3": 1.229698354582508
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.4444444444444444,
+          "mean": 0.028761743196697595,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 99,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "suffix_avoided_calls": {
+          "max": 19.0,
+          "mean": 1.1,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "queries": 100
+    },
+    "random-32-32-20.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1580.48,
+              "median": 1456.0,
+              "sum": 158048
+            },
+            "expanded": {
+              "mean": 21.81,
+              "median": 19.0,
+              "sum": 2181
+            },
+            "full_calls": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            },
+            "generated": {
+              "mean": 71.72,
+              "median": 63.5,
+              "sum": 7172
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.25,
+              "median": 0.0,
+              "sum": 25
+            },
+            "manhattan_calls": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            },
+            "max_live_states": {
+              "mean": 26.58,
+              "median": 24.0,
+              "sum": 2658
+            },
+            "max_open_entries": {
+              "mean": 26.83,
+              "median": 24.0,
+              "sum": 2683
+            },
+            "pivot_evaluations": {
+              "mean": 1548.48,
+              "median": 1424.0,
+              "sum": 154848
+            },
+            "pops": {
+              "mean": 22.81,
+              "median": 20.0,
+              "sum": 2281
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 47.64,
+              "median": 43.5,
+              "sum": 4764
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            }
+          },
+          "median_search_ns": {
+            "max": 3689950.0,
+            "mean": 1102125.5,
+            "median": 970675.0,
+            "min": 187800.0,
+            "n": 100,
+            "q1": 623425.0,
+            "q3": 1448550.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 930.56,
+              "median": 816.0,
+              "sum": 93056
+            },
+            "expanded": {
+              "mean": 21.81,
+              "median": 19.0,
+              "sum": 2181
+            },
+            "full_calls": {
+              "mean": 28.08,
+              "median": 24.5,
+              "sum": 2808
+            },
+            "generated": {
+              "mean": 71.72,
+              "median": 63.5,
+              "sum": 7172
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.25,
+              "median": 0.0,
+              "sum": 25
+            },
+            "manhattan_calls": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            },
+            "max_live_states": {
+              "mean": 26.58,
+              "median": 24.0,
+              "sum": 2658
+            },
+            "max_open_entries": {
+              "mean": 26.83,
+              "median": 24.0,
+              "sum": 2683
+            },
+            "pivot_evaluations": {
+              "mean": 898.56,
+              "median": 784.0,
+              "sum": 89856
+            },
+            "pops": {
+              "mean": 49.89,
+              "median": 44.0,
+              "sum": 4989
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 47.64,
+              "median": 43.5,
+              "sum": 4764
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 27.08,
+              "median": 23.5,
+              "sum": 2708
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            }
+          },
+          "median_search_ns": {
+            "max": 3515650.0,
+            "mean": 887363.5,
+            "median": 730750.0,
+            "min": 88700.0,
+            "n": 100,
+            "q1": 458412.5,
+            "q3": 1176025.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 39.86,
+              "median": 25.5,
+              "sum": 3986
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 129.08,
+              "median": 79.5,
+              "sum": 12908
+            },
+            "heuristic_cache_hits": {
+              "mean": 6.63,
+              "median": 0.0,
+              "sum": 663
+            },
+            "manhattan_calls": {
+              "mean": 66.83,
+              "median": 52.0,
+              "sum": 6683
+            },
+            "max_live_states": {
+              "mean": 27.09,
+              "median": 24.5,
+              "sum": 2709
+            },
+            "max_open_entries": {
+              "mean": 33.1,
+              "median": 26.0,
+              "sum": 3310
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 41.43,
+              "median": 27.0,
+              "sum": 4143
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 72.46,
+              "median": 51.5,
+              "sum": 7246
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.57,
+              "median": 0.0,
+              "sum": 57
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 66.83,
+              "median": 52.0,
+              "sum": 6683
+            }
+          },
+          "median_search_ns": {
+            "max": 4636650.0,
+            "mean": 563976.5,
+            "median": 420975.0,
+            "min": 60000.0,
+            "n": 100,
+            "q1": 237425.0,
+            "q3": 656362.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 837.6,
+              "median": 704.0,
+              "sum": 83760
+            },
+            "expanded": {
+              "mean": 21.81,
+              "median": 19.0,
+              "sum": 2181
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 71.72,
+              "median": 63.5,
+              "sum": 7172
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.25,
+              "median": 0.0,
+              "sum": 25
+            },
+            "manhattan_calls": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            },
+            "max_live_states": {
+              "mean": 26.58,
+              "median": 24.0,
+              "sum": 2658
+            },
+            "max_open_entries": {
+              "mean": 26.83,
+              "median": 24.0,
+              "sum": 2683
+            },
+            "pivot_evaluations": {
+              "mean": 805.6,
+              "median": 672.0,
+              "sum": 80560
+            },
+            "pops": {
+              "mean": 73.65,
+              "median": 66.0,
+              "sum": 7365
+            },
+            "prefix_calls": {
+              "mean": 28.08,
+              "median": 24.5,
+              "sum": 2808
+            },
+            "relaxations": {
+              "mean": 47.64,
+              "median": 43.5,
+              "sum": 4764
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 50.84,
+              "median": 45.0,
+              "sum": 5084
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 24.76,
+              "median": 20.5,
+              "sum": 2476
+            },
+            "unique_discovered": {
+              "mean": 48.39,
+              "median": 44.5,
+              "sum": 4839
+            }
+          },
+          "median_search_ns": {
+            "max": 3737950.0,
+            "mean": 915608.0,
+            "median": 804275.0,
+            "min": 92900.0,
+            "n": 100,
+            "q1": 485362.5,
+            "q3": 1233600.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 134.0,
+          "mean": 47.52,
+          "median": 39.0,
+          "min": 2.0,
+          "n": 100,
+          "q1": 23.5,
+          "q3": 70.0
+        },
+        "pivot_saved": {
+          "max": 1288.0,
+          "mean": 92.96,
+          "median": 28.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 119.0
+        },
+        "pivot_saving": {
+          "max": 0.49085365853658536,
+          "mean": 0.08072170085346503,
+          "median": 0.025735294117647058,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.14192708333333334
+        },
+        "read_saved": {
+          "max": 1288.0,
+          "mean": 92.96,
+          "median": 28.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 119.0
+        },
+        "read_saving": {
+          "max": 0.4791666666666667,
+          "mean": 0.07746791823387848,
+          "median": 0.025,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.1271701388888889
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.4298424779154205,
+          "mean": 0.05467754678993561,
+          "median": 0.06713839717545445,
+          "min": -0.5129755951841801,
+          "n": 100,
+          "q1": -0.016828572890648517,
+          "q3": 0.11552206281122707
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.5370153906097799,
+          "mean": 1.0663229151004883,
+          "median": 1.0694435876383057,
+          "min": 0.5987114028689521,
+          "n": 100,
+          "q1": 0.9833122596911972,
+          "q3": 1.122459281045591
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.575,
+          "mean": 0.09656300551112944,
+          "median": 0.030303030303030304,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.16818181818181818
+        },
+        "suffix_avoided_calls": {
+          "max": 46.0,
+          "mean": 3.32,
+          "median": 1.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 4.25
+        }
+      },
+      "queries": 100
+    },
+    "room-32-32-4.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1775.68,
+              "median": 1712.0,
+              "sum": 177568
+            },
+            "expanded": {
+              "mean": 28.01,
+              "median": 26.0,
+              "sum": 2801
+            },
+            "full_calls": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            },
+            "generated": {
+              "mean": 84.51,
+              "median": 78.5,
+              "sum": 8451
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            },
+            "max_live_states": {
+              "mean": 26.48,
+              "median": 26.5,
+              "sum": 2648
+            },
+            "max_open_entries": {
+              "mean": 26.54,
+              "median": 26.5,
+              "sum": 2654
+            },
+            "pivot_evaluations": {
+              "mean": 1743.68,
+              "median": 1680.0,
+              "sum": 174368
+            },
+            "pops": {
+              "mean": 29.01,
+              "median": 27.0,
+              "sum": 2901
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 53.55,
+              "median": 51.5,
+              "sum": 5355
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            }
+          },
+          "median_search_ns": {
+            "max": 3155200.0,
+            "mean": 1224640.5,
+            "median": 1169950.0,
+            "min": 116200.0,
+            "n": 100,
+            "q1": 788987.5,
+            "q3": 1517675.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1314.88,
+              "median": 1184.0,
+              "sum": 131488
+            },
+            "expanded": {
+              "mean": 28.01,
+              "median": 26.0,
+              "sum": 2801
+            },
+            "full_calls": {
+              "mean": 40.09,
+              "median": 36.0,
+              "sum": 4009
+            },
+            "generated": {
+              "mean": 84.51,
+              "median": 78.5,
+              "sum": 8451
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            },
+            "max_live_states": {
+              "mean": 26.48,
+              "median": 26.5,
+              "sum": 2648
+            },
+            "max_open_entries": {
+              "mean": 26.54,
+              "median": 26.5,
+              "sum": 2654
+            },
+            "pivot_evaluations": {
+              "mean": 1282.88,
+              "median": 1152.0,
+              "sum": 128288
+            },
+            "pops": {
+              "mean": 68.1,
+              "median": 61.0,
+              "sum": 6810
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 53.55,
+              "median": 51.5,
+              "sum": 5355
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 39.09,
+              "median": 35.0,
+              "sum": 3909
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            }
+          },
+          "median_search_ns": {
+            "max": 3346450.0,
+            "mean": 1132980.0,
+            "median": 1024075.0,
+            "min": 73500.0,
+            "n": 100,
+            "q1": 690862.5,
+            "q3": 1433387.5
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 69.62,
+              "median": 47.0,
+              "sum": 6962
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 202.49,
+              "median": 138.5,
+              "sum": 20249
+            },
+            "heuristic_cache_hits": {
+              "mean": 5.41,
+              "median": 2.0,
+              "sum": 541
+            },
+            "manhattan_calls": {
+              "mean": 94.37,
+              "median": 75.0,
+              "sum": 9437
+            },
+            "max_live_states": {
+              "mean": 26.25,
+              "median": 24.0,
+              "sum": 2625
+            },
+            "max_open_entries": {
+              "mean": 29.32,
+              "median": 25.5,
+              "sum": 2932
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 73.19,
+              "median": 48.5,
+              "sum": 7319
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 98.78,
+              "median": 74.5,
+              "sum": 9878
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 2.57,
+              "median": 0.0,
+              "sum": 257
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 94.37,
+              "median": 75.0,
+              "sum": 9437
+            }
+          },
+          "median_search_ns": {
+            "max": 5405450.0,
+            "mean": 840896.0,
+            "median": 580850.0,
+            "min": 41350.0,
+            "n": 100,
+            "q1": 350575.0,
+            "q3": 1029987.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 1103.48,
+              "median": 1032.0,
+              "sum": 110348
+            },
+            "expanded": {
+              "mean": 28.01,
+              "median": 26.0,
+              "sum": 2801
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 84.51,
+              "median": 78.5,
+              "sum": 8451
+            },
+            "heuristic_cache_hits": {
+              "mean": 0.06,
+              "median": 0.0,
+              "sum": 6
+            },
+            "manhattan_calls": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            },
+            "max_live_states": {
+              "mean": 26.48,
+              "median": 26.5,
+              "sum": 2648
+            },
+            "max_open_entries": {
+              "mean": 26.54,
+              "median": 26.5,
+              "sum": 2654
+            },
+            "pivot_evaluations": {
+              "mean": 1071.48,
+              "median": 1000.0,
+              "sum": 107148
+            },
+            "pops": {
+              "mean": 99.64,
+              "median": 91.5,
+              "sum": 9964
+            },
+            "prefix_calls": {
+              "mean": 40.09,
+              "median": 36.0,
+              "sum": 4009
+            },
+            "relaxations": {
+              "mean": 53.55,
+              "median": 51.5,
+              "sum": 5355
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 70.63,
+              "median": 63.0,
+              "sum": 7063
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 32.54,
+              "median": 31.0,
+              "sum": 3254
+            },
+            "unique_discovered": {
+              "mean": 54.49,
+              "median": 52.5,
+              "sum": 5449
+            }
+          },
+          "median_search_ns": {
+            "max": 3226300.0,
+            "mean": 1134542.0,
+            "median": 1100825.0,
+            "min": 78050.0,
+            "n": 100,
+            "q1": 729925.0,
+            "q3": 1422650.0
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 164.0,
+          "mean": 63.08,
+          "median": 60.0,
+          "min": 2.0,
+          "n": 100,
+          "q1": 36.0,
+          "q3": 82.5
+        },
+        "pivot_saved": {
+          "max": 1120.0,
+          "mean": 211.4,
+          "median": 112.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 28.0,
+          "q3": 280.0
+        },
+        "pivot_saving": {
+          "max": 0.4069767441860465,
+          "mean": 0.13995271174051835,
+          "median": 0.118981124807396,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.03977272727272727,
+          "q3": 0.21
+        },
+        "read_saved": {
+          "max": 1120.0,
+          "mean": 211.4,
+          "median": 112.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 28.0,
+          "q3": 280.0
+        },
+        "read_saving": {
+          "max": 0.40229885057471265,
+          "mean": 0.1361695647672839,
+          "median": 0.11463100686498856,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.03804347826086957,
+          "q3": 0.20192307692307693
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.4663762582227058,
+          "mean": 0.020370580806575615,
+          "median": 0.03793146460104114,
+          "min": -0.3978963264428303,
+          "n": 100,
+          "q1": -0.05549704103899948,
+          "q3": 0.10609857928102064
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.594206719903571,
+          "mean": 1.0327423605278703,
+          "median": 1.038660339859755,
+          "min": 0.6717316648633391,
+          "n": 100,
+          "q1": 0.9460231083956291,
+          "q3": 1.1119320924910696
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.47058823529411764,
+          "mean": 0.1646052945779924,
+          "median": 0.14087301587301587,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.04743303571428571,
+          "q3": 0.25
+        },
+        "suffix_avoided_calls": {
+          "max": 40.0,
+          "mean": 7.55,
+          "median": 4.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 1.0,
+          "q3": 10.0
+        }
+      },
+      "queries": 100
+    },
+    "room-64-64-16.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 5680.0,
+              "median": 4928.0,
+              "sum": 568000
+            },
+            "expanded": {
+              "mean": 71.06,
+              "median": 61.5,
+              "sum": 7106
+            },
+            "full_calls": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            },
+            "generated": {
+              "mean": 257.28,
+              "median": 220.5,
+              "sum": 25728
+            },
+            "heuristic_cache_hits": {
+              "mean": 2.1,
+              "median": 0.0,
+              "sum": 210
+            },
+            "manhattan_calls": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            },
+            "max_live_states": {
+              "mean": 105.44,
+              "median": 90.0,
+              "sum": 10544
+            },
+            "max_open_entries": {
+              "mean": 107.16,
+              "median": 90.5,
+              "sum": 10716
+            },
+            "pivot_evaluations": {
+              "mean": 5648.0,
+              "median": 4896.0,
+              "sum": 564800
+            },
+            "pops": {
+              "mean": 72.44,
+              "median": 62.5,
+              "sum": 7244
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 177.6,
+              "median": 152.0,
+              "sum": 17760
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.38,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            }
+          },
+          "median_search_ns": {
+            "max": 11854900.0,
+            "mean": 4120133.5,
+            "median": 3365075.0,
+            "min": 256550.0,
+            "n": 100,
+            "q1": 1866675.0,
+            "q3": 6112062.5
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 4095.04,
+              "median": 3312.0,
+              "sum": 409504
+            },
+            "expanded": {
+              "mean": 71.06,
+              "median": 61.5,
+              "sum": 7106
+            },
+            "full_calls": {
+              "mean": 126.97,
+              "median": 102.5,
+              "sum": 12697
+            },
+            "generated": {
+              "mean": 257.28,
+              "median": 220.5,
+              "sum": 25728
+            },
+            "heuristic_cache_hits": {
+              "mean": 2.1,
+              "median": 0.0,
+              "sum": 210
+            },
+            "manhattan_calls": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            },
+            "max_live_states": {
+              "mean": 105.44,
+              "median": 90.0,
+              "sum": 10544
+            },
+            "max_open_entries": {
+              "mean": 107.16,
+              "median": 90.5,
+              "sum": 10716
+            },
+            "pivot_evaluations": {
+              "mean": 4063.04,
+              "median": 3280.0,
+              "sum": 406304
+            },
+            "pops": {
+              "mean": 198.41,
+              "median": 165.0,
+              "sum": 19841
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 177.6,
+              "median": 152.0,
+              "sum": 17760
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 125.97,
+              "median": 101.5,
+              "sum": 12597
+            },
+            "stale_pops": {
+              "mean": 0.38,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            }
+          },
+          "median_search_ns": {
+            "max": 10825800.0,
+            "mean": 3742301.5,
+            "median": 2853675.0,
+            "min": 169700.0,
+            "n": 100,
+            "q1": 1355912.5,
+            "q3": 5703575.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 636.84,
+              "median": 273.0,
+              "sum": 63684
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 2379.55,
+              "median": 1030.0,
+              "sum": 237955
+            },
+            "heuristic_cache_hits": {
+              "mean": 164.84,
+              "median": 64.0,
+              "sum": 16484
+            },
+            "manhattan_calls": {
+              "mean": 715.53,
+              "median": 370.5,
+              "sum": 71553
+            },
+            "max_live_states": {
+              "mean": 82.53,
+              "median": 75.5,
+              "sum": 8253
+            },
+            "max_open_entries": {
+              "mean": 176.06,
+              "median": 119.0,
+              "sum": 17606
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 770.22,
+              "median": 327.0,
+              "sum": 77022
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 879.37,
+              "median": 450.0,
+              "sum": 87937
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 132.38,
+              "median": 44.0,
+              "sum": 13238
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 715.53,
+              "median": 370.5,
+              "sum": 71553
+            }
+          },
+          "median_search_ns": {
+            "max": 44629050.0,
+            "mean": 8519317.5,
+            "median": 4138350.0,
+            "min": 100550.0,
+            "n": 100,
+            "q1": 860487.5,
+            "q3": 14883925.0
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 2831.4,
+              "median": 2354.0,
+              "sum": 283140
+            },
+            "expanded": {
+              "mean": 71.06,
+              "median": 61.5,
+              "sum": 7106
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 257.28,
+              "median": 220.5,
+              "sum": 25728
+            },
+            "heuristic_cache_hits": {
+              "mean": 2.1,
+              "median": 0.0,
+              "sum": 210
+            },
+            "manhattan_calls": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            },
+            "max_live_states": {
+              "mean": 105.44,
+              "median": 90.0,
+              "sum": 10544
+            },
+            "max_open_entries": {
+              "mean": 107.16,
+              "median": 90.5,
+              "sum": 10716
+            },
+            "pivot_evaluations": {
+              "mean": 2799.4,
+              "median": 2322.0,
+              "sum": 279940
+            },
+            "pops": {
+              "mean": 279.25,
+              "median": 227.5,
+              "sum": 27925
+            },
+            "prefix_calls": {
+              "mean": 126.97,
+              "median": 102.5,
+              "sum": 12697
+            },
+            "relaxations": {
+              "mean": 177.6,
+              "median": 152.0,
+              "sum": 17760
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 206.81,
+              "median": 166.0,
+              "sum": 20681
+            },
+            "stale_pops": {
+              "mean": 0.38,
+              "median": 0.0,
+              "sum": 38
+            },
+            "suffix_calls": {
+              "mean": 81.84,
+              "median": 69.0,
+              "sum": 8184
+            },
+            "unique_discovered": {
+              "mean": 176.5,
+              "median": 153.0,
+              "sum": 17650
+            }
+          },
+          "median_search_ns": {
+            "max": 9800700.0,
+            "mean": 3552404.5,
+            "median": 2751325.0,
+            "min": 208800.0,
+            "n": 100,
+            "q1": 1376512.5,
+            "q3": 5664612.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 450.0,
+          "mean": 161.68,
+          "median": 136.0,
+          "min": 6.0,
+          "n": 100,
+          "q1": 65.5,
+          "q3": 240.5
+        },
+        "pivot_saved": {
+          "max": 6552.0,
+          "mean": 1263.64,
+          "median": 686.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 1848.0
+        },
+        "pivot_saving": {
+          "max": 0.5241545893719807,
+          "mean": 0.21247186402799215,
+          "median": 0.1861057692307692,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.389903129657228
+        },
+        "read_saved": {
+          "max": 6552.0,
+          "mean": 1263.64,
+          "median": 686.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 1848.0
+        },
+        "read_saving": {
+          "max": 0.5220338983050847,
+          "mean": 0.21086030628865682,
+          "median": 0.18471534653465346,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.3834425403225806
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.4525356515663235,
+          "mean": -0.011865147505895733,
+          "median": -0.010502828971760646,
+          "min": -0.6569874502303239,
+          "n": 100,
+          "q1": -0.12573207891856056,
+          "q3": 0.0974400278647897
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.572293924758105,
+          "mean": 1.0065199313917257,
+          "median": 0.9895691070611756,
+          "min": 0.5184107225480977,
+          "n": 100,
+          "q1": 0.8818511020683126,
+          "q3": 1.102346287703968
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.6019417475728155,
+          "mean": 0.24470768638520338,
+          "median": 0.21430802874101845,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.4532407407407408
+        },
+        "suffix_avoided_calls": {
+          "max": 234.0,
+          "mean": 45.13,
+          "median": 24.5,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 66.0
+        }
+      },
+      "queries": 100
+    },
+    "warehouse-10-20-10-2-1.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 4599.68,
+              "median": 4144.0,
+              "sum": 459968
+            },
+            "expanded": {
+              "mean": 89.18,
+              "median": 78.5,
+              "sum": 8918
+            },
+            "full_calls": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            },
+            "generated": {
+              "mean": 232.77,
+              "median": 196.0,
+              "sum": 23277
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.06,
+              "median": 0.0,
+              "sum": 106
+            },
+            "manhattan_calls": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            },
+            "max_live_states": {
+              "mean": 53.56,
+              "median": 49.5,
+              "sum": 5356
+            },
+            "max_open_entries": {
+              "mean": 54.62,
+              "median": 49.5,
+              "sum": 5462
+            },
+            "pivot_evaluations": {
+              "mean": 4567.68,
+              "median": 4112.0,
+              "sum": 456768
+            },
+            "pops": {
+              "mean": 90.18,
+              "median": 79.5,
+              "sum": 9018
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 142.8,
+              "median": 127.5,
+              "sum": 14280
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            }
+          },
+          "median_search_ns": {
+            "max": 9947850.0,
+            "mean": 3344545.0,
+            "median": 2795325.0,
+            "min": 221000.0,
+            "n": 100,
+            "q1": 1891100.0,
+            "q3": 4690575.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 2898.88,
+              "median": 2544.0,
+              "sum": 289888
+            },
+            "expanded": {
+              "mean": 89.18,
+              "median": 78.5,
+              "sum": 8918
+            },
+            "full_calls": {
+              "mean": 89.59,
+              "median": 78.5,
+              "sum": 8959
+            },
+            "generated": {
+              "mean": 232.77,
+              "median": 196.0,
+              "sum": 23277
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.06,
+              "median": 0.0,
+              "sum": 106
+            },
+            "manhattan_calls": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            },
+            "max_live_states": {
+              "mean": 53.56,
+              "median": 49.5,
+              "sum": 5356
+            },
+            "max_open_entries": {
+              "mean": 54.62,
+              "median": 49.5,
+              "sum": 5462
+            },
+            "pivot_evaluations": {
+              "mean": 2866.88,
+              "median": 2512.0,
+              "sum": 286688
+            },
+            "pops": {
+              "mean": 178.77,
+              "median": 157.0,
+              "sum": 17877
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 142.8,
+              "median": 127.5,
+              "sum": 14280
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 88.59,
+              "median": 77.5,
+              "sum": 8859
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            }
+          },
+          "median_search_ns": {
+            "max": 9346650.0,
+            "mean": 2802499.0,
+            "median": 2408550.0,
+            "min": 123850.0,
+            "n": 100,
+            "q1": 1410900.0,
+            "q3": 3937562.5
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 90.11,
+              "median": 79.0,
+              "sum": 9011
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 235.67,
+              "median": 196.0,
+              "sum": 23567
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.56,
+              "median": 0.0,
+              "sum": 156
+            },
+            "manhattan_calls": {
+              "mean": 143.68,
+              "median": 128.5,
+              "sum": 14368
+            },
+            "max_live_states": {
+              "mean": 53.57,
+              "median": 49.5,
+              "sum": 5357
+            },
+            "max_open_entries": {
+              "mean": 55.13,
+              "median": 49.5,
+              "sum": 5513
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 91.11,
+              "median": 80.0,
+              "sum": 9111
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 144.24,
+              "median": 127.5,
+              "sum": 14424
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 143.68,
+              "median": 128.5,
+              "sum": 14368
+            }
+          },
+          "median_search_ns": {
+            "max": 4608500.0,
+            "mean": 1212036.0,
+            "median": 1042975.0,
+            "min": 72500.0,
+            "n": 100,
+            "q1": 653737.5,
+            "q3": 1715800.0
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 2898.6,
+              "median": 2544.0,
+              "sum": 289860
+            },
+            "expanded": {
+              "mean": 89.18,
+              "median": 78.5,
+              "sum": 8918
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 232.77,
+              "median": 196.0,
+              "sum": 23277
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.06,
+              "median": 0.0,
+              "sum": 106
+            },
+            "manhattan_calls": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            },
+            "max_live_states": {
+              "mean": 53.56,
+              "median": 49.5,
+              "sum": 5356
+            },
+            "max_open_entries": {
+              "mean": 54.62,
+              "median": 49.5,
+              "sum": 5462
+            },
+            "pivot_evaluations": {
+              "mean": 2866.6,
+              "median": 2512.0,
+              "sum": 286660
+            },
+            "pops": {
+              "mean": 267.35,
+              "median": 234.5,
+              "sum": 26735
+            },
+            "prefix_calls": {
+              "mean": 89.59,
+              "median": 78.5,
+              "sum": 8959
+            },
+            "relaxations": {
+              "mean": 142.8,
+              "median": 127.5,
+              "sum": 14280
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 177.17,
+              "median": 155.0,
+              "sum": 17717
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 89.58,
+              "median": 78.5,
+              "sum": 8958
+            },
+            "unique_discovered": {
+              "mean": 142.74,
+              "median": 128.5,
+              "sum": 14274
+            }
+          },
+          "median_search_ns": {
+            "max": 9042600.0,
+            "mean": 3203819.0,
+            "median": 2727200.0,
+            "min": 140550.0,
+            "n": 100,
+            "q1": 1606812.5,
+            "q3": 4259412.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 466.0,
+          "mean": 177.16,
+          "median": 155.0,
+          "min": 2.0,
+          "n": 100,
+          "q1": 92.5,
+          "q3": 250.0
+        },
+        "pivot_saved": {
+          "max": 28.0,
+          "mean": 0.28,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "pivot_saving": {
+          "max": 0.025,
+          "mean": 0.00025,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saved": {
+          "max": 28.0,
+          "mean": 0.28,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saving": {
+          "max": 0.024305555555555556,
+          "mean": 0.00024305555555555555,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.49097491163566476,
+          "mean": 0.13230211890848,
+          "median": 0.12860172558826477,
+          "min": -0.2843049132897814,
+          "n": 100,
+          "q1": 0.028833197814143587,
+          "q3": 0.21539107622388814
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.6339083600031223,
+          "mean": 1.1529730445489492,
+          "median": 1.1372396320703206,
+          "min": 0.752537151141718,
+          "n": 100,
+          "q1": 1.029261785643529,
+          "q3": 1.2403629985503355
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.029411764705882353,
+          "mean": 0.0002941176470588235,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "suffix_avoided_calls": {
+          "max": 1.0,
+          "mean": 0.01,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "queries": 100
+    },
+    "warehouse-10-20-10-2-2.map": {
+      "methods": {
+        "eager_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 8694.4,
+              "median": 7984.0,
+              "sum": 869440
+            },
+            "expanded": {
+              "mean": 121.29,
+              "median": 114.0,
+              "sum": 12129
+            },
+            "full_calls": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            },
+            "generated": {
+              "mean": 407.82,
+              "median": 374.5,
+              "sum": 40782
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.09,
+              "median": 0.0,
+              "sum": 109
+            },
+            "manhattan_calls": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            },
+            "max_live_states": {
+              "mean": 149.41,
+              "median": 138.5,
+              "sum": 14941
+            },
+            "max_open_entries": {
+              "mean": 150.5,
+              "median": 138.5,
+              "sum": 15050
+            },
+            "pivot_evaluations": {
+              "mean": 8662.4,
+              "median": 7952.0,
+              "sum": 866240
+            },
+            "pops": {
+              "mean": 122.29,
+              "median": 115.0,
+              "sum": 12229
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 270.79,
+              "median": 247.5,
+              "sum": 27079
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            }
+          },
+          "median_search_ns": {
+            "max": 16864750.0,
+            "mean": 6427192.0,
+            "median": 5804375.0,
+            "min": 746150.0,
+            "n": 100,
+            "q1": 3873625.0,
+            "q3": 8646450.0
+          }
+        },
+        "lazy_full": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 3926.4,
+              "median": 3712.0,
+              "sum": 392640
+            },
+            "expanded": {
+              "mean": 121.29,
+              "median": 114.0,
+              "sum": 12129
+            },
+            "full_calls": {
+              "mean": 121.7,
+              "median": 115.0,
+              "sum": 12170
+            },
+            "generated": {
+              "mean": 407.82,
+              "median": 374.5,
+              "sum": 40782
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.09,
+              "median": 0.0,
+              "sum": 109
+            },
+            "manhattan_calls": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            },
+            "max_live_states": {
+              "mean": 149.41,
+              "median": 138.5,
+              "sum": 14941
+            },
+            "max_open_entries": {
+              "mean": 150.5,
+              "median": 138.5,
+              "sum": 15050
+            },
+            "pivot_evaluations": {
+              "mean": 3894.4,
+              "median": 3680.0,
+              "sum": 389440
+            },
+            "pops": {
+              "mean": 242.99,
+              "median": 229.0,
+              "sum": 24299
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 270.79,
+              "median": 247.5,
+              "sum": 27079
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 120.7,
+              "median": 114.0,
+              "sum": 12070
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            }
+          },
+          "median_search_ns": {
+            "max": 14867550.0,
+            "mean": 4375908.5,
+            "median": 3917450.0,
+            "min": 545200.0,
+            "n": 100,
+            "q1": 2697987.5,
+            "q3": 5813875.0
+          }
+        },
+        "manhattan": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "expanded": {
+              "mean": 122.66,
+              "median": 116.5,
+              "sum": 12266
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 411.93,
+              "median": 379.0,
+              "sum": 41193
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.09,
+              "median": 0.0,
+              "sum": 109
+            },
+            "manhattan_calls": {
+              "mean": 272.09,
+              "median": 253.5,
+              "sum": 27209
+            },
+            "max_live_states": {
+              "mean": 149.43,
+              "median": 138.5,
+              "sum": 14943
+            },
+            "max_open_entries": {
+              "mean": 150.52,
+              "median": 138.5,
+              "sum": 15052
+            },
+            "pivot_evaluations": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "pops": {
+              "mean": 123.66,
+              "median": 117.5,
+              "sum": 12366
+            },
+            "prefix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "relaxations": {
+              "mean": 272.18,
+              "median": 252.5,
+              "sum": 27218
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "unique_discovered": {
+              "mean": 272.09,
+              "median": 253.5,
+              "sum": 27209
+            }
+          },
+          "median_search_ns": {
+            "max": 6480950.0,
+            "mean": 2095302.0,
+            "median": 1918650.0,
+            "min": 265850.0,
+            "n": 100,
+            "q1": 1263000.0,
+            "q3": 2769762.5
+          }
+        },
+        "staged": {
+          "counters": {
+            "distance_table_reads": {
+              "mean": 3926.4,
+              "median": 3712.0,
+              "sum": 392640
+            },
+            "expanded": {
+              "mean": 121.29,
+              "median": 114.0,
+              "sum": 12129
+            },
+            "full_calls": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "generated": {
+              "mean": 407.82,
+              "median": 374.5,
+              "sum": 40782
+            },
+            "heuristic_cache_hits": {
+              "mean": 1.09,
+              "median": 0.0,
+              "sum": 109
+            },
+            "manhattan_calls": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            },
+            "max_live_states": {
+              "mean": 149.41,
+              "median": 138.5,
+              "sum": 14941
+            },
+            "max_open_entries": {
+              "mean": 150.5,
+              "median": 138.5,
+              "sum": 15050
+            },
+            "pivot_evaluations": {
+              "mean": 3894.4,
+              "median": 3680.0,
+              "sum": 389440
+            },
+            "pops": {
+              "mean": 363.69,
+              "median": 343.0,
+              "sum": 36369
+            },
+            "prefix_calls": {
+              "mean": 121.7,
+              "median": 115.0,
+              "sum": 12170
+            },
+            "relaxations": {
+              "mean": 270.79,
+              "median": 247.5,
+              "sum": 27079
+            },
+            "reopened": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "requeues": {
+              "mean": 241.4,
+              "median": 228.0,
+              "sum": 24140
+            },
+            "stale_pops": {
+              "mean": 0.0,
+              "median": 0.0,
+              "sum": 0
+            },
+            "suffix_calls": {
+              "mean": 121.7,
+              "median": 115.0,
+              "sum": 12170
+            },
+            "unique_discovered": {
+              "mean": 270.7,
+              "median": 248.5,
+              "sum": 27070
+            }
+          },
+          "median_search_ns": {
+            "max": 14452850.0,
+            "mean": 5045433.0,
+            "median": 4754125.0,
+            "min": 726750.0,
+            "n": 100,
+            "q1": 3121450.0,
+            "q3": 6579837.5
+          }
+        }
+      },
+      "paired_metrics": {
+        "extra_open_work": {
+          "max": 794.0,
+          "mean": 241.4,
+          "median": 228.0,
+          "min": 40.0,
+          "n": 100,
+          "q1": 139.5,
+          "q3": 321.5
+        },
+        "pivot_saved": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "pivot_saving": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saved": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "read_saving": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "staged_lazy_log_time_ratio": {
+          "max": 0.45567881732624155,
+          "mean": 0.15266459136095656,
+          "median": 0.1460737849262186,
+          "min": -0.14885644208018517,
+          "n": 100,
+          "q1": 0.05089806126341491,
+          "q3": 0.26022767459777646
+        },
+        "staged_lazy_time_ratio": {
+          "max": 1.5772436800625402,
+          "mean": 1.1768021769231434,
+          "median": 1.1572815877180722,
+          "min": 0.8616928088472804,
+          "n": 100,
+          "q1": 1.0522165814366178,
+          "q3": 1.2972289268191004
+        },
+        "suffix_avoidance_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "suffix_avoided_calls": {
+          "max": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "n": 100,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "queries": 100
+    }
+  },
+  "overall": {
+    "methods": {
+      "eager_full": {
+        "counters": {
+          "distance_table_reads": {
+            "mean": 9977.68,
+            "median": 3856.0,
+            "sum": 7982144
+          },
+          "expanded": {
+            "mean": 160.6925,
+            "median": 55.0,
+            "sum": 128554
+          },
+          "full_calls": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          },
+          "generated": {
+            "mean": 517.2975,
+            "median": 178.0,
+            "sum": 413838
+          },
+          "heuristic_cache_hits": {
+            "mean": 13.2775,
+            "median": 0.0,
+            "sum": 10622
+          },
+          "manhattan_calls": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          },
+          "max_live_states": {
+            "mean": 150.115,
+            "median": 61.5,
+            "sum": 120092
+          },
+          "max_open_entries": {
+            "mean": 162.99125,
+            "median": 62.0,
+            "sum": 130393
+          },
+          "pivot_evaluations": {
+            "mean": 9945.68,
+            "median": 3824.0,
+            "sum": 7956544
+          },
+          "pops": {
+            "mean": 162.08875,
+            "median": 56.0,
+            "sum": 129671
+          },
+          "prefix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "relaxations": {
+            "mean": 323.08,
+            "median": 119.0,
+            "sum": 258464
+          },
+          "reopened": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "requeues": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "stale_pops": {
+            "mean": 0.39625,
+            "median": 0.0,
+            "sum": 317
+          },
+          "suffix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "unique_discovered": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          }
+        },
+        "median_search_ns": {
+          "max": 100989650.0,
+          "mean": 8148974.1875,
+          "median": 2629550.0,
+          "min": 116200.0,
+          "n": 800,
+          "q1": 1177325.0,
+          "q3": 8210912.5
+        }
+      },
+      "lazy_full": {
+        "counters": {
+          "distance_table_reads": {
+            "mean": 8385.88,
+            "median": 2208.0,
+            "sum": 6708704
+          },
+          "expanded": {
+            "mean": 160.6925,
+            "median": 55.0,
+            "sum": 128554
+          },
+          "full_calls": {
+            "mean": 261.05875,
+            "median": 68.0,
+            "sum": 208847
+          },
+          "generated": {
+            "mean": 517.2975,
+            "median": 178.0,
+            "sum": 413838
+          },
+          "heuristic_cache_hits": {
+            "mean": 13.2775,
+            "median": 0.0,
+            "sum": 10622
+          },
+          "manhattan_calls": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          },
+          "max_live_states": {
+            "mean": 150.115,
+            "median": 61.5,
+            "sum": 120092
+          },
+          "max_open_entries": {
+            "mean": 162.99125,
+            "median": 62.0,
+            "sum": 130393
+          },
+          "pivot_evaluations": {
+            "mean": 8353.88,
+            "median": 2176.0,
+            "sum": 6683104
+          },
+          "pops": {
+            "mean": 422.1475,
+            "median": 128.0,
+            "sum": 337718
+          },
+          "prefix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "relaxations": {
+            "mean": 323.08,
+            "median": 119.0,
+            "sum": 258464
+          },
+          "reopened": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "requeues": {
+            "mean": 260.05875,
+            "median": 67.0,
+            "sum": 208047
+          },
+          "stale_pops": {
+            "mean": 0.39625,
+            "median": 0.0,
+            "sum": 317
+          },
+          "suffix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "unique_discovered": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          }
+        },
+        "median_search_ns": {
+          "max": 121317200.0,
+          "mean": 8281565.625,
+          "median": 2167375.0,
+          "min": 73500.0,
+          "n": 800,
+          "q1": 877900.0,
+          "q3": 6789900.0
+        }
+      },
+      "manhattan": {
+        "counters": {
+          "distance_table_reads": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "expanded": {
+            "mean": 1197.86375,
+            "median": 92.0,
+            "sum": 958291
+          },
+          "full_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "generated": {
+            "mean": 4043.0,
+            "median": 282.0,
+            "sum": 3234400
+          },
+          "heuristic_cache_hits": {
+            "mean": 167.42125,
+            "median": 2.0,
+            "sum": 133937
+          },
+          "manhattan_calls": {
+            "mean": 1264.76125,
+            "median": 155.0,
+            "sum": 1011809
+          },
+          "max_live_states": {
+            "mean": 73.40625,
+            "median": 52.0,
+            "sum": 58725
+          },
+          "max_open_entries": {
+            "mean": 133.705,
+            "median": 58.5,
+            "sum": 106964
+          },
+          "pivot_evaluations": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "pops": {
+            "mean": 1356.08375,
+            "median": 93.0,
+            "sum": 1084867
+          },
+          "prefix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "relaxations": {
+            "mean": 1431.1825,
+            "median": 163.5,
+            "sum": 1144946
+          },
+          "reopened": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "requeues": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "stale_pops": {
+            "mean": 157.22,
+            "median": 0.0,
+            "sum": 125776
+          },
+          "suffix_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "unique_discovered": {
+            "mean": 1264.76125,
+            "median": 155.0,
+            "sum": 1011809
+          }
+        },
+        "median_search_ns": {
+          "max": 168377400.0,
+          "mean": 15535299.3125,
+          "median": 1289500.0,
+          "min": 41350.0,
+          "n": 800,
+          "q1": 482350.0,
+          "q3": 11934112.5
+        }
+      },
+      "staged": {
+        "counters": {
+          "distance_table_reads": {
+            "mean": 6080.29,
+            "median": 1978.0,
+            "sum": 4864232
+          },
+          "expanded": {
+            "mean": 160.6925,
+            "median": 55.0,
+            "sum": 128554
+          },
+          "full_calls": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "generated": {
+            "mean": 517.2975,
+            "median": 178.0,
+            "sum": 413838
+          },
+          "heuristic_cache_hits": {
+            "mean": 13.2775,
+            "median": 0.0,
+            "sum": 10622
+          },
+          "manhattan_calls": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          },
+          "max_live_states": {
+            "mean": 150.115,
+            "median": 61.5,
+            "sum": 120092
+          },
+          "max_open_entries": {
+            "mean": 162.99125,
+            "median": 62.0,
+            "sum": 130393
+          },
+          "pivot_evaluations": {
+            "mean": 6048.29,
+            "median": 1946.0,
+            "sum": 4838632
+          },
+          "pops": {
+            "mean": 599.86375,
+            "median": 185.5,
+            "sum": 479891
+          },
+          "prefix_calls": {
+            "mean": 261.05875,
+            "median": 68.0,
+            "sum": 208847
+          },
+          "relaxations": {
+            "mean": 323.08,
+            "median": 119.0,
+            "sum": 258464
+          },
+          "reopened": {
+            "mean": 0.0,
+            "median": 0.0,
+            "sum": 0
+          },
+          "requeues": {
+            "mean": 437.775,
+            "median": 129.5,
+            "sum": 350220
+          },
+          "stale_pops": {
+            "mean": 0.39625,
+            "median": 0.0,
+            "sum": 317
+          },
+          "suffix_calls": {
+            "mean": 178.71625,
+            "median": 59.0,
+            "sum": 142973
+          },
+          "unique_discovered": {
+            "mean": 310.8025,
+            "median": 119.5,
+            "sum": 248642
+          }
+        },
+        "median_search_ns": {
+          "max": 127878550.0,
+          "mean": 8055556.4375,
+          "median": 2180900.0,
+          "min": 78050.0,
+          "n": 800,
+          "q1": 959362.5,
+          "q3": 7080987.5
+        }
+      }
+    },
+    "paired_metrics": {
+      "extra_open_work": {
+        "max": 5506.0,
+        "mean": 355.4325,
+        "median": 116.0,
+        "min": 0.0,
+        "n": 800,
+        "q1": 48.0,
+        "q3": 336.0
+      },
+      "pivot_saved": {
+        "max": 36988.0,
+        "mean": 2305.59,
+        "median": 28.0,
+        "min": 0.0,
+        "n": 800,
+        "q1": 0.0,
+        "q3": 1526.0
+      },
+      "pivot_saving": {
+        "max": 0.5241545893719807,
+        "mean": 0.13444285480344204,
+        "median": 0.030975877192982455,
+        "min": 0.0,
+        "n": 800,
+        "q1": 0.0,
+        "q3": 0.2734375
+      },
+      "read_saved": {
+        "max": 36988.0,
+        "mean": 2305.59,
+        "median": 28.0,
+        "min": 0.0,
+        "n": 800,
+        "q1": 0.0,
+        "q3": 1526.0
+      },
+      "read_saving": {
+        "max": 0.5220338983050847,
+        "mean": 0.1330708160215438,
+        "median": 0.03017241379310345,
+        "min": 0.0,
+        "n": 800,
+        "q1": 0.0,
+        "q3": 0.2693460221285564
+      },
+      "staged_lazy_log_time_ratio": {
+        "max": 0.49097491163566476,
+        "mean": 0.041163820169966066,
+        "median": 0.052877261943459306,
+        "min": -0.6569874502303239,
+        "n": 800,
+        "q1": -0.06699952064324399,
+        "q3": 0.145562193954004
+      },
+      "staged_lazy_time_ratio": {
+        "max": 1.6339083600031223,
+        "mean": 1.0569093517650672,
+        "median": 1.0543002346201797,
+        "min": 0.5184107225480977,
+        "n": 800,
+        "q1": 0.9351956604428028,
+        "q3": 1.1566896967681402
+      },
+      "suffix_avoidance_rate": {
+        "max": 0.6019417475728155,
+        "mean": 0.15554405878924654,
+        "median": 0.037037037037037035,
+        "min": 0.0,
+        "n": 799,
+        "q1": 0.0,
+        "q3": 0.31633061489968484
+      },
+      "suffix_avoided_calls": {
+        "max": 1321.0,
+        "mean": 82.3425,
+        "median": 1.0,
+        "min": 0.0,
+        "n": 800,
+        "q1": 0.0,
+        "q3": 54.5
+      }
+    },
+    "queries": 800
+  },
+  "preprocessing_amortization": {
+    "aggregation": "compute within each map, then equal-weight the eight maps",
+    "formula": "mean per-query median search_ns + map landmark_build_ns / Q",
+    "landmark_build_charge": "same measured per-map cost for all landmark modes",
+    "manhattan_build_ns": 0,
+    "mean_amortized_ns_by_method": {
+      "eager_full": {
+        "1": 1881862436.6875,
+        "10": 195520320.4375,
+        "100": 26886108.8125,
+        "1000": 10022687.65
+      },
+      "lazy_full": {
+        "1": 1881995028.125,
+        "10": 195652911.875,
+        "100": 27018700.25,
+        "1000": 10155279.0875
+      },
+      "manhattan": {
+        "1": 15535299.3125,
+        "10": 15535299.3125,
+        "100": 15535299.3125,
+        "1000": 15535299.3125
+      },
+      "staged": {
+        "1": 1881769018.9375,
+        "10": 195426902.6875,
+        "100": 26792691.0625,
+        "1000": 9929269.9
+      }
+    },
+    "queries_per_map_Q": [
+      1,
+      10,
+      100,
+      1000
+    ]
+  },
+  "primary_staged_vs_lazy_full": {
+    "bootstrap_probability_ratio_below_one": 0.053,
+    "ci95_log_ratio": [
+      -0.011017214160520615,
+      0.09675026964004946
+    ],
+    "ci95_ratio": [
+      0.9890432530795072,
+      1.1015852399893313
+    ],
+    "estimand": "median paired log(staged/lazy_full search-time ratio)",
+    "interval_method": "percentile interval with type-7 quantile endpoints",
+    "point_log_ratio": 0.052877261943459306,
+    "point_ratio": 1.0543002344159267,
+    "query_observations": 800,
+    "replicates": 10000,
+    "resampling_unit": "map-then-query-within-sampled-map",
+    "seed": 23725513,
+    "top_level_clusters": 8
+  },
+  "protocol_id": "progressive_landmarks_v2",
+  "schema": "progressive-landmarks-analysis-summary-v2",
+  "summary_sha256": "296b064bac542cd05c7d0ce8f09c26d03965438c298d9f18cadb9d94be0d57b7"
+}

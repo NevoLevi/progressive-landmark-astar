@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    "maps.json": {
+      "bytes": 16549,
+      "records": 8,
+      "sha256": "47db3e4a2b5b05a9671f27fec65259dc95318f055763e9dacae2dda640edb2d5"
+    },
+    "queries.jsonl": {
+      "bytes": 21988333,
+      "records": 800,
+      "sha256": "8ba0e1a008bcfe1e8281c98b454ff243bad1e9c367bc5f25ac35236218e63ed5"
+    },
+    "run.json": {
+      "bytes": 18207,
+      "records": 1,
+      "sha256": "23e35eae365cf0780094c3e087b684b73cd26ca4a554dcc2d7539263321fc55f"
+    }
+  },
+  "complete": true,
+  "experiment_split": "sealed_evaluation",
+  "formal": true,
+  "protocol_id": "progressive_landmarks_v2",
+  "record_counts": {
+    "maps": 8,
+    "queries": 800,
+    "search_runs": 28800
+  },
+  "schema": "progressive-landmarks-result-manifest-v2",
+  "validation": "passed"
+}

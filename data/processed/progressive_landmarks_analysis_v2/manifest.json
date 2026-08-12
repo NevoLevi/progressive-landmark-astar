@@ -1,0 +1,95 @@
+{
+  "analyzer": "progressive-landmarks-prospective-analysis-v2",
+  "artifacts": {
+    "figures/family_mechanism_decomposition.pdf": {
+      "bytes": 15944,
+      "records": 1,
+      "sha256": "8e2d666ac73a73a48d495a42e1a17c87a15477d378395b104b495b7d9c865204"
+    },
+    "figures/family_mechanism_decomposition.png": {
+      "bytes": 62827,
+      "records": 1,
+      "sha256": "3ea4f5daa508de109bd2d283bff7b9e7f096eed9f83a8580bf4220419dd8773e"
+    },
+    "figures/per_map_time_ratios.pdf": {
+      "bytes": 15599,
+      "records": 1,
+      "sha256": "3258302faab6410aa11d97b5e5fd4edcb2cd165b584523952ec2cc076ec67596"
+    },
+    "figures/per_map_time_ratios.png": {
+      "bytes": 74159,
+      "records": 1,
+      "sha256": "d2e8fdcde7e101f1e3c827a529d8a64db1e8c1959acacdd5e31a8c12ca40dcd0"
+    },
+    "figures/preprocessing_amortization.pdf": {
+      "bytes": 15863,
+      "records": 1,
+      "sha256": "55d37f18a2ed359961aa48826d1080e62d4f5dadff2d278eeb8ae2ca01603752"
+    },
+    "figures/preprocessing_amortization.png": {
+      "bytes": 65987,
+      "records": 1,
+      "sha256": "de04a64373bb8108ea5ad3b1a372149272e84332625d8db23c77492e567a487a"
+    },
+    "figures/saved_work_vs_time.pdf": {
+      "bytes": 39389,
+      "records": 1,
+      "sha256": "0d2083a542441d64097214100bd0226675bac80daa53f5e48456756c074fb993"
+    },
+    "figures/saved_work_vs_time.png": {
+      "bytes": 158391,
+      "records": 1,
+      "sha256": "9ebb262a492d48527d54f481aee211fe96d6a6a976ac37b27eec5f82d2c9bbec"
+    },
+    "figures/stage_schematic.pdf": {
+      "bytes": 13645,
+      "records": 1,
+      "sha256": "d23a640ff4d097d88db9fef7635108bf11ac6df811fc415649f36e92ca0f5a19"
+    },
+    "figures/stage_schematic.png": {
+      "bytes": 24054,
+      "records": 1,
+      "sha256": "bd7f89876607da6baca9e6bd87eef67a845d9f491a639ba04d64f79a6aaa3f5d"
+    },
+    "hypothesis_table.csv": {
+      "bytes": 668,
+      "records": 3,
+      "sha256": "ef07cca1b316940213163ecb05a3b0e2660f4d060ccefd7c31447bf7cf7ec04a"
+    },
+    "hypothesis_table.tex": {
+      "bytes": 422,
+      "records": 3,
+      "sha256": "70e2fdb5a49fc4ee466946b3204be0c06ccce9124d6ddf3fddb9db0f606059f7"
+    },
+    "map_metrics.csv": {
+      "bytes": 5904,
+      "records": 8,
+      "sha256": "9ddb3fc0be7d960bbda964295e5a0cb9bd9b428d73b0e9e78d73ff27ed4a5f80"
+    },
+    "provenance.json": {
+      "bytes": 19334,
+      "records": 1,
+      "sha256": "b06d5799a84670cd184b2d5bebe547b7521ed7215ca4fd508797772701aa6544"
+    },
+    "query_metrics.csv": {
+      "bytes": 590588,
+      "records": 800,
+      "sha256": "d12225dcc348aad43f33be19c9850b66e611fbc060a5b5fca87bb85c1b6acc32"
+    },
+    "summary.json": {
+      "bytes": 164440,
+      "records": 1,
+      "sha256": "0f6e9fc457c3b5e4cb4de54abf3762615cdca97e0ee0b04a86b49eeda4961f9a"
+    }
+  },
+  "complete": true,
+  "protocol_id": "progressive_landmarks_v2",
+  "record_counts": {
+    "figures": 10,
+    "hypotheses": 3,
+    "maps": 8,
+    "queries": 800
+  },
+  "schema": "progressive-landmarks-analysis-manifest-v2",
+  "validation": "passed"
+}

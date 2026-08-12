@@ -1,0 +1,84 @@
+% AAAI'27-style course report for BGU course 237-2-5513.
+% Official, unmodified style assets are documented in
+% AAAI27_AUTHOR_KIT_PROVENANCE.md.  The course instructions recommend
+% camera-ready formatting and \nocopyright for this submission.
+\documentclass[letterpaper]{article}
+\usepackage{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\frenchspacing
+
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+\nocopyright
+\setcounter{secnumdepth}{0}
+\graphicspath{{generated/}}
+
+\newcommand{\Astar}{A$^\ast$}
+\newcommand{\HMan}{\ensuremath{H_0}}
+\newcommand{\HPrefix}{\ensuremath{H_4}}
+\newcommand{\HFull}{\ensuremath{H_{32}}}
+\newcommand{\Staged}{\textsc{Staged}}
+\newcommand{\LazyFull}{\textsc{Lazy-Full}}
+\newcommand{\EagerFull}{\textsc{Eager-Full}}
+\newcommand{\Manhattan}{\textsc{Manhattan}}
+
+\title{Progressive Landmark Evaluation in \Astar{}:\\
+An Empirical Study of Nested Differential Heuristics}
+\author{\textbf{[STUDENT NAME AND ID REQUIRED]}\\
+        \textbf{[STUDENT NAME AND ID REQUIRED]}}
+\affiliations{
+  Ben-Gurion University of the Negev\\
+  Course 237-2-5513: Search Methods in Artificial Intelligence
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Differential landmarks give strong admissible estimates but require many
+table reads.  Lazy \Astar{} avoids some of this work by evaluating the full
+heuristic only when a state becomes competitive in OPEN.  We ask whether a
+fixed intermediate prefix can avoid still more landmark work: states first
+receive Manhattan distance, then four landmark terms, and only then the
+remaining terms of a 32-landmark heuristic.  We compare Manhattan, eager
+full-landmark, ordinary lazy full-landmark, and staged evaluation in a shared
+optimal graph-search implementation.  The map-disjoint evaluation contains
+800 queries over eight Moving AI maps from four topology families, with one
+warm-up and eight position-balanced timed repetitions per method and query.
+All returned costs matched independent BFS, and eager, lazy, and staged full
+landmark search had identical expansion traces on all 800 queries.  Staging
+saved a median 3.10\% of pivot evaluations and 3.02\% of distance-table reads
+relative to ordinary lazy evaluation, but its primary median paired time ratio
+was 1.0543 (staged/lazy; hierarchical 95\% bootstrap interval
+$[0.9890,1.1016]$).  Its descriptive bootstrap probability of a ratio below
+one was 0.053.  The crossover was strongly regime-dependent: both maze maps
+favored staging, whereas both warehouse maps had zero median read saving and
+favored ordinary lazy evaluation.  Thus the extra OPEN cycle can erase a real
+reduction in heuristic work; a fixed prefix is useful only when it filters
+enough full evaluations.  The contribution is this controlled empirical
+combination and mechanism decomposition, not a claim to invent landmarks,
+subsets, or multi-stage Lazy \Astar{}.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_questions}
+\input{sections/04_search_model}
+\input{sections/05_methods}
+\input{sections/06_protocol}
+\input{sections/07_results}
+\input{sections/08_discussion}
+\input{sections/09_limitations}
+\input{sections/10_reproducibility}
+\input{sections/11_conclusion}
+
+\bibliography{../references/references}
+
+\end{document}
