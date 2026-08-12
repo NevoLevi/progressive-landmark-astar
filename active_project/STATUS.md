@@ -24,19 +24,18 @@ project's evidence chain.
 | Formal development | Complete | 160 queries, four maps, and 5,760 searches passed the external replay gate with no tuning or selection. |
 | Sealed evaluation | Complete | 800 queries, eight maps, and 28,800 searches passed validation; all planned queries were retained. |
 | Analysis and figures | Complete | 800 query rows, eight map rows, three hypothesis rows, and ten PNG/PDF figures are bound by the analysis manifest. |
-| Submission report | Complete draft | Narrative integration, citation audit, official PDF build, and rendered-page QA passed; only the explicit identity/code-link placeholders remain. |
-| Public release boundary | Complete draft; isolated validation passed | A deterministic 152-file allowlist excludes private course files, superseded attempts, MVC/CBS history, and the non-redistributable `aaai2027.sty`. The current workspace eight-file active-public lane is `140 passed, 2 skipped`; the draft archive passed isolated validation, while final non-draft packaging remains gated on administrative metadata. |
-| Identities and repository hosting | Pending | Student names/IDs and an immutable public repository URL/commit are not yet supplied. |
+| Submission report | Complete | Narrative integration, citation audit, official PDF build, metadata insertion, and rendered-page QA passed. |
+| Public release boundary | Complete | A deterministic 152-file allowlist excludes private course files, superseded attempts, legacy solver/result artifacts, and the non-redistributable `aaai2027.sty`. The current workspace eight-file active-public lane is `140 passed, 2 skipped`; final active auditing and non-draft packaging pass. |
+| Identities and repository hosting | Complete | Nevo Levi and Dvir Chitrit are identified in the report, and the experiment/figure-generation snapshot is public at commit `4ee61db6787528efb7e01326e3c23d0006515570`. |
 
-The pre-documentation full working-archive checkpoint was `365 passed,
-1 skipped`, including historical MVC/CBS modules. The current workspace
-eight-file active-public lane is `140 passed, 2 skipped`; both skips are
+The current workspace eight-file active-public lane is `140 passed, 2 skipped`;
+both skips are
 optional Windows symlink-privilege branches in the runner safe-child and
 metadata-finalizer tests. All scientific gates passed. Two builds of the
-finalized 152-file draft boundary produced byte-identical ZIPs; the generated
+pre-metadata 152-file draft boundary produced byte-identical ZIPs; the generated
 manifest binds every member and its own canonical self-hash without a circular
 archive-hash claim inside the archive.
-A fresh extraction passed the exact-plan protocol verifier, syntax compilation,
+A pre-metadata fresh extraction passed the exact-plan protocol verifier, syntax compilation,
 the self-contained analysis loader, and an active audit with `PASS=8`,
 `PENDING=2` (administrative only), `FAIL=0`, and `WARN=0`. Its full public suite reported
 `139 passed, 3 skipped`: the same two privilege skips plus the
@@ -124,21 +123,20 @@ universal runtime advantage is not.
 
 Root-level MVC/CBS documents are historical side material.
 
-## Remaining actions
+## Publication closure
 
-1. Stage exactly the 152-file allowlist as scientific commit A, configure its
-   canonical public HTTPS remote, push A, and independently verify its commit
-   URL is publicly readable.
-2. Require the metadata-finalizer inputs to equal local `HEAD` (commit A) and
-   the configured remote; run `--dry-run` before `--apply` with the supplied
-   student identities.
-3. Rebuild and visually inspect the PDF, rerun the isolated and complete
-   audits, and create metadata/report/status-only commit B without changing
-   frozen scientific evidence.
+1. The exact 152-file scientific snapshot was committed and pushed as
+   `4ee61db6787528efb7e01326e3c23d0006515570`; an unauthenticated HTTPS request
+   confirmed that the commit is publicly readable.
+2. The Git-bound metadata finalizer passed dry-run and apply checks against that
+   commit and the configured public remote before inserting both identities.
+3. The final PDF was rebuilt, checked for stale markers and LaTeX/BibTeX
+   warnings, rendered, and visually inspected page by page.  Final active audit
+   and non-draft release-package validation pass without changing frozen
+   scientific evidence.
 
 ## Completion assessment
 
 Topic selection, protocol, implementation, development, sealed evaluation,
 replay validation, statistical analysis, tables, and figures are complete.
-The overall course-project goal remains active only because identity fields and
-immutable public repository hosting are pending.
+The complete course-project artifact is ready for submission and public review.

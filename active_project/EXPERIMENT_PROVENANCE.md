@@ -187,7 +187,7 @@ check were clean. The scientific loaders additionally replay BFS and all
 deterministic methods before performance output. Exact reproduction commands
 are maintained in the root [`README.md`](../README.md).
 
-## Remaining non-experimental work
+## Publication closure
 
 The minimal public boundary is implemented as an explicit deterministic
 152-file allowlist in `scripts/package_progressive_landmarks_release.py`. It
@@ -198,7 +198,7 @@ attempt, all MVC/CBS material, and `aaai2027.sty`, whose copyright notice
 prohibits redistribution without written permission. Its pinned official-kit
 URL and archive/file hashes remain in `report/AAAI27_AUTHOR_KIT_PROVENANCE.md`
 so a rebuilder can retrieve and verify it directly from AAAI. Two deterministic
-builds of the finalized 152-file draft boundary produced byte-identical ZIPs.
+builds of the pre-metadata 152-file draft boundary produced byte-identical ZIPs.
 The generated manifest binds every member and its own canonical self-hash; no
 circular archive hash is embedded inside the archive.
 A fresh extraction reported `139 passed, 3 skipped` across the full public
@@ -210,16 +210,16 @@ reproduced plan SHA-256
 syntax compilation, the self-contained analysis loader, and the active audit
 also passed, with the latter reporting `PASS=8`, `PENDING=2` (administrative
 only), `FAIL=0`, and `WARN=0`; the extraction also confirmed `aaai2027.sty` was
-absent. Draft isolated validation is complete. The default final build still
-refuses the remaining identity and repository placeholders.
+absent. That isolated run established the boundary before administrative
+metadata was finalized.
 
 The report, page-level citation audit, rendered-PDF QA, and chosen-project
-register recheck are complete. Publication must first preserve the exact
-allowlist as scientific commit A, configure and push its canonical public
-HTTPS remote, and independently verify the resulting commit URL is publicly
-readable. The metadata finalizer must then receive values equal to local `HEAD`
-and that configured remote, pass `--dry-run`, and only then run with `--apply`.
-After PDF rebuild/QA, commit B is limited to identity metadata, report
-artifacts, and administrative status/provenance; it must not mutate the
-authoritative raw or processed bundles. Student names/IDs and public hosting
-remain pending.
+register recheck are complete. The exact allowlist was preserved and pushed as
+scientific commit `4ee61db6787528efb7e01326e3c23d0006515570`, whose HTTPS commit
+page returned 200 without GitHub credentials. The Git-bound metadata finalizer
+then received values equal to local `HEAD` and the configured remote, passed
+`--dry-run`, and applied the two identities and exact commit link. The rebuilt
+eight-page PDF passes text, marker, LaTeX/BibTeX-log, and rendered-page checks.
+The final publication commit changes only identity metadata, report layout and
+PDF, and administrative status/provenance; authoritative raw and processed
+bundles remain byte-identical to the scientific snapshot.

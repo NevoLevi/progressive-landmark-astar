@@ -235,7 +235,7 @@ this mixed archive. The packager rejects links, path escapes, missing or extra
 files, any payload at the 50 MiB GitHub warning boundary, nondeterministic ZIP
 metadata, hash drift, and unresolved student/repository placeholders.
 
-The finalized 152-file draft boundary was built twice with identical ZIP bytes.
+The pre-metadata 152-file draft boundary was built twice with identical ZIP bytes.
 Its generated manifest records every member hash and its own canonical
 self-hash without embedding a circular archive hash in the archive itself. In a
 fresh extraction, the full public suite reported `139 passed, 3 skipped`:
@@ -248,11 +248,12 @@ audit reported `PASS=8`, `PENDING=2` (administrative only), `FAIL=0`, and
 `aaai2027.sty` is absent: AAAI's copyright notice prohibits redistribution
 without written permission, so report rebuilds retrieve and hash-check the
 pinned official kit documented in `report/AAAI27_AUTHOR_KIT_PROVENANCE.md`.
-Draft isolated validation is complete; the final non-draft build and validation
-remain gated on replacing the four administrative placeholders.
+That isolated validation established the release boundary before metadata
+finalization.  A finalized checkout must pass the same gates without
+`--allow-draft`.
 
-While the four administrative markers remain, an isolated QA archive requires
-the explicit draft override:
+For an intentionally incomplete QA checkout, the packager requires the
+explicit draft override:
 
 ```powershell
 & $Python scripts\package_progressive_landmarks_release.py `
@@ -266,7 +267,8 @@ After replacing the two student name/ID lines and repository URL/commit, omit
 is stored in sorted POSIX-path order with fixed timestamps and modes, and its
 manifest binds every member's size and SHA-256 plus a canonical manifest
 self-hash. The release excludes course-distributed instructions/examples,
-chosen-project registers, superseded raw attempts, and all MVC/CBS material.
+chosen-project registers, superseded raw attempts, and legacy MVC/CBS solver,
+configuration, and result artifacts.
 
 Because a Git commit cannot contain its own SHA, publication uses this exact
 two-commit sequence:
@@ -333,11 +335,11 @@ Root-level `PROJECT_SPEC.md`, `PLAN.md`, `STATUS.md`, `RESEARCH_LOG.md`, and
 belong to the frozen MVC/CBS history. They are intentionally preserved but do
 not govern or support the active progressive-landmarks claims.
 
-## Remaining submission work
+## Publication status
 
 The experiment, analysis, report, citation audit, register recheck, official
-PDF build, and rendered-page inspection are complete. Student names/IDs and a
-public immutable repository URL/commit are the only remaining administrative
-inputs. The code-link placeholder must be replaced with that hosted revision:
+PDF build, and rendered-page inspection are complete.  The student identities
+and public repository metadata are finalized.  The report links to the exact
+scientific snapshot used for the experiments and figure generation:
 
-`<REPOSITORY_URL>@<COMMIT_SHA>`
+<https://github.com/NevoLevi/progressive-landmark-astar/commit/4ee61db6787528efb7e01326e3c23d0006515570>

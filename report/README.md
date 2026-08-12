@@ -22,17 +22,12 @@ byte-identical to the analysis outputs; their source hashes are listed in
 `generated/README.md`.  The compact method, map, and preprocessing tables were
 made from immutable `summary.json` and `map_metrics.csv` values.
 
-## Administrative blockers
+## Final publication state
 
-Before submission, replace both explicit author/ID markers in `main.tex` and
-the public repository URL/commit-SHA blocker in
-`sections/10_reproducibility.tex`.  No guessed identity or repository URL is
-present.
-
-The checked-in `main.pdf` is an eight-page, warning-clean official-style draft
-compiled with pdfTeX and visually inspected page by page. It deliberately
-retains those three administrative placeholders and must be rebuilt and
-rechecked after they are filled.
+The two student identities and the immutable experiment/figure-generation
+commit link are finalized.  The checked-in `main.pdf` is an eight-page,
+warning-clean official-style paper compiled with pdfTeX and visually inspected
+page by page after metadata insertion.
 
 ## Build
 
@@ -51,8 +46,7 @@ Or use:
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-The bibliography is `../references/references.bib`.  A final release audit
-must show no unresolved references/citations, overfull boxes, clipped or
-illegible figures, or superseded project text.  Render every PDF page and visually
-inspect the two-column layout after the author and repository blockers are
-filled.
+The bibliography is `../references/references.bib`.  The final release audit
+shows no unresolved references/citations, overfull boxes, clipped or illegible
+figures, placeholder leakage, or superseded project text; all eight pages were
+rendered and visually inspected.

@@ -105,11 +105,11 @@ Required work:
 7. Build the PDF and inspect every page for clipping, illegible labels, broken
    citations, missing references, and placeholder leakage.
 
-The narrative, generated tables/figures, citations, official PDF build, and
-rendered-page checks are complete. Gate G5 will pass once the two identity lines
-and immutable public repository link replace their explicit placeholders.
+The narrative, generated tables/figures, citations, official PDF build,
+identities, immutable scientific-snapshot link, and rendered-page checks are
+complete. Gate G5 passes.
 
-### M6 - Final audit and handoff: draft checks complete; release pending
+### M6 - Final audit and handoff: complete
 
 Required work:
 
@@ -118,10 +118,9 @@ Required work:
   current workspace eight-file active-public lane is `140 passed, 2 skipped`;
   both skips are optional Windows symlink-privilege branches (runner safe-child
   and metadata finalizer).
-- The standard reproducibility audit has no warnings or failures;
-  `--require-complete` remains nonzero only for missing identities/repository
-  metadata.
-- Two deterministic builds of the finalized 152-file draft boundary produced
+- The standard reproducibility audit passes with no pending items, warnings, or
+  failures under `--require-complete`.
+- Two deterministic builds of the pre-metadata 152-file draft boundary produced
   byte-identical ZIPs. The generated manifest binds every member and its own
   canonical self-hash; no circular archive hash is embedded inside the archive.
   A fresh extraction reported `139 passed, 3 skipped` across the full public
@@ -133,18 +132,15 @@ Required work:
   `aaai2027.sty` is absent because AAAI prohibits redistribution without
   written permission; its pinned official-kit retrieval URL and hashes remain
   in report provenance.
-- Stage exactly those 152 allowlisted paths as scientific commit A, configure
-  the canonical public HTTPS remote, push A, and independently verify its
-  commit URL in a browser without relying on a private signed-in session.
-- Require the metadata-finalizer SHA to equal the unchanged local `HEAD` and
-  its repository base URL to equal the configured remote. Run `--dry-run`,
-  inspect the three proposed changes, and only then run `--apply` with the
-  supplied student names/IDs.
-- Rebuild and visually inspect the final PDF, run `--require-complete`, and
-  build/verify the deterministic archive without `--allow-draft`.
-- Create commit B containing only final identity metadata, finalizer-targeted
-  README/report sources, rebuilt report artifacts, and administrative
-  status/provenance. Commit B must not alter frozen scientific evidence.
+- Scientific commit `4ee61db6787528efb7e01326e3c23d0006515570` is public and
+  independently readable over unauthenticated HTTPS.
+- The Git-bound metadata finalizer passed `--dry-run` before `--apply` with the
+  supplied names, IDs, repository URL, and exact scientific SHA.
+- The eight-page final PDF passes marker, text, log, bibliography, and rendered
+  page inspection; final non-draft release validation passes.
+- The final publication commit is limited to identity metadata, report layout
+  and PDF, and administrative status/provenance. Frozen scientific evidence is
+  unchanged from the public scientific snapshot.
 
 Gate G6 passes only when report, code, inputs, configuration, raw results,
 analysis, figures, citations, identities, and reproduction instructions agree.

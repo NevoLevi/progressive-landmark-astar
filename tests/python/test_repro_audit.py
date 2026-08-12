@@ -105,7 +105,7 @@ def test_progressive_expected_completion_markers_match_checkout() -> None:
         assert repro_audit.sha256_file(REPOSITORY_ROOT / relative) == expected_sha256
 
 
-def test_cli_json_is_read_only_and_pending_is_not_an_error() -> None:
+def test_cli_json_is_read_only_and_complete() -> None:
     completed = subprocess.run(
         [sys.executable, str(SCRIPT), "--json"],
         cwd=REPOSITORY_ROOT,
@@ -117,7 +117,9 @@ def test_cli_json_is_read_only_and_pending_is_not_an_error() -> None:
     assert completed.returncode == 0, completed.stderr
     payload = json.loads(completed.stdout)
     assert payload["summary"]["FAIL"] == 0
-    assert payload["summary"]["PENDING"] >= 1
+    assert payload["summary"]["PENDING"] == 0
+    assert payload["summary"]["WARN"] == 0
+    assert payload["summary"]["PASS"] == 10
     names = {check["name"] for check in payload["checks"]}
     assert "registered exact oracle" not in names
 

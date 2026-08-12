@@ -1,7 +1,7 @@
 # Project Specification: Progressive Landmark Evaluation in A*
 
 Version: frozen protocol v2, 2026-08-12  
-Status: implementation, formal development, sealed evaluation, analysis, and report complete; student identities and public immutable repository metadata pending
+Status: implementation, formal development, sealed evaluation, analysis, report, identities, and public immutable repository metadata complete
 
 ## 1. Purpose and authority
 
@@ -288,11 +288,11 @@ No method may be added after sealed evaluation is opened. Extensions belong in f
 - The strict analysis loader recomputes aggregates, hypothesis rows, self-hashes, and the fixed-seed hierarchical bootstrap from query-level evidence.
 - The authoritative evaluation and analysis manifest SHA-256 values are `edaea56bb3aaa0b55b903e6dcde9692217a9d24a77da6a66bb52c1e583e62d53` and `47c3244fedcd52d2da0fa6f4889e0cb0cdb3289306f8b0ca69792149096c66df`.
 
-### Gate E - technical submission audit complete; administrative metadata pending
+### Gate E - submission audit and administrative metadata complete
 
 - The report contains motivation/literature, reproducible methodology, readable results, direct answers to RQ1-RQ4, limitations, conclusions, future work, and exact reproduction instructions.
 - Citation, novelty, collision, requirement-by-requirement, and rendered-PDF visual checks pass; the reproducibility audit has no warnings or failures.
-- A working public code link and the two students' names/IDs must be inserted before handoff.
+- The report contains both students' names/IDs and links to public scientific commit `4ee61db6787528efb7e01326e3c23d0006515570`.
 
 No positive performance result is required. Correct, reproducible, well-explained negative evidence satisfies the research objective.
 
