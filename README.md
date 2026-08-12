@@ -17,9 +17,6 @@ engine:
 The protocol fixes `K=4`, `M=32`, 12 public Moving AI maps, source-order query
 selection, stable tie breaking, one warm-up, and eight balanced timed rotations.
 Nothing was selected or tuned from development or sealed-evaluation outcomes.
-The earlier minimum-vertex-cover and CBS/MAPF program is retained in this
-checkout only as frozen historical side material; it is not evidence for this
-project.
 
 ## Result in one paragraph
 
@@ -77,8 +74,9 @@ either status as nonzero if a future checkout becomes incomplete. The checkpoint
 does not build, launch searches, regenerate analysis, repair files, or write
 scientific state.
 The active artifact is the default audit scope; `--active-only` makes that
-boundary explicit. Only maintainers of the larger working archive should use
-`--include-historical` to add the retired MVC/CBS checks.
+boundary explicit. The optional `--include-historical` mode is intended only
+for maintainers of a larger private working archive and is not part of this
+public project's validation lane.
 
 ## Superseded first attempt
 
@@ -110,10 +108,8 @@ any of those paths.
 The recorded execution environment was Windows 11 x64, CPython 3.12.9, eight
 logical CPUs, and little-endian AMD64. Search execution and validation use the
 Python standard library. Figure generation additionally requires Matplotlib;
-Pytest is required for tests. The minimal active-project environment is frozen
-in `requirements-progressive-landmarks-lock.txt`. The larger
-`requirements-direct-lock.txt` is needed only for the archived MVC/CBS side
-material and is not part of the landmark experiment.
+Pytest is required for tests. The active-project environment is frozen in
+`requirements-progressive-landmarks-lock.txt`.
 
 From the repository root in PowerShell:
 
@@ -136,10 +132,8 @@ manifests.
 The current workspace eight-file active-public lane is `140 passed, 2 skipped`. Both
 skips are optional Windows symlink-privilege branches (the runner safe-child
 check and the metadata-finalizer transaction check), not failed scientific
-gates. The larger working archive has additional tests for the earlier MVC/CBS
-research programs, but those are outside the public artifact. Re-run the
-active protocol verifier, tests, syntax compilation, and read-only artifact
-audit with:
+gates. Re-run the active protocol verifier, tests, syntax compilation, and
+read-only artifact audit with:
 
 ```powershell
 & $Python scripts\verify_progressive_landmarks_protocol.py `
@@ -162,8 +156,7 @@ $ActiveTests = @(
 & $Python scripts\repro_audit.py --active-only
 ```
 
-A bare `pytest -q` in the larger working archive also discovers historical
-MVC/CBS tests and is not the public-release validation command.
+The explicit list above is the public-release validation command.
 
 The verifier must report 12 maps, 48 scenario files, 960 unique queries, and
 34,560 searches, with canonical plan SHA-256
@@ -267,8 +260,8 @@ After replacing the two student name/ID lines and repository URL/commit, omit
 is stored in sorted POSIX-path order with fixed timestamps and modes, and its
 manifest binds every member's size and SHA-256 plus a canonical manifest
 self-hash. The release excludes course-distributed instructions/examples,
-chosen-project registers, superseded raw attempts, and legacy MVC/CBS solver,
-configuration, and result artifacts.
+chosen-project registers, superseded raw attempts, and unrelated historical
+solver, configuration, and result artifacts.
 
 Because a Git commit cannot contain its own SHA, publication uses this exact
 two-commit sequence:
@@ -329,11 +322,6 @@ data/processed/progressive_landmarks_analysis_v2/
                                         authoritative analysis, tables, and figures
 report/                                 final submission source and PDF
 ```
-
-Root-level `PROJECT_SPEC.md`, `PLAN.md`, `STATUS.md`, `RESEARCH_LOG.md`, and
-`EXPERIMENT_LOG.md`, along with the C++ sources and old result directories,
-belong to the frozen MVC/CBS history. They are intentionally preserved but do
-not govern or support the active progressive-landmarks claims.
 
 ## Publication status
 
